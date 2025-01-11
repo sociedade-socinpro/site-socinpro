@@ -72,13 +72,19 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        fadeInOverlay: {
+        fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        FadeInSlideUp: {
+          "0%": { opacity: "0", transform: "translateY(100%)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
-        "fade-in-overlay": "fadeInOverlay 1s ease-out forwards",
+        "fade-in": "fadeIn 2s ease-in-out forwards",
+        "slide-up":
+          "FadeInSlideUp 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
       },
     },
   },

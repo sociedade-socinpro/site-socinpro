@@ -19,16 +19,16 @@ export function MainNav() {
   return (
     <header className="flex flex-col sm:flex-row bg-coal-900 px-4 py-2 sm:gap-4 sm:items-center min-h-20 lg:px-[10%] xl:px-[16%]">
       <div className="flex items-center gap-4">
-        <SidebarTrigger className="absolute sm:relative lg:hidden" />
+        <SidebarTrigger className="absolute sm:relative xl:hidden z-10" />
         <Link
           href="/"
-          className="flex flex-1 items-center justify-center h-18 min-w-24 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
+          className="flex-1 flex items-center justify-center h-18 min-w-24 xl:min-w-32 cursor-pointer focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
         >
-          <Image src={Logo} alt="Logo" height={76} priority />
+          <Image src={Logo} alt="Logo" priority />
         </Link>
       </div>
-      <div className="hidden lg:flex min-h-full w-0.5 bg-white/10" />
-      <NavigationMenu className="hidden lg:flex shrink">
+      <div className="hidden xl:flex min-h-full w-0.5 bg-white/10" />
+      <NavigationMenu className="hidden xl:flex">
         <NavigationMenuList>
           {publicLinks.map((link) => (
             <NavigationMenuItem key={link.href}>
@@ -41,7 +41,7 @@ export function MainNav() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4">
+      <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4 mt-2 sm:mt-0">
         <Button variant="outline" size="lg">
           Filie-se
         </Button>

@@ -18,7 +18,7 @@ export function MainSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <nav aria-label="Navegação Lateral" className="w-full">
+            <nav aria-label="Navegação Lateral" className="w-full xl:hidden">
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
