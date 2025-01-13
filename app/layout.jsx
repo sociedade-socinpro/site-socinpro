@@ -1,10 +1,12 @@
 import "@/styles/globals.css";
 import { roboto } from "@/styles/fonts";
 
+import Providers from "./providers";
+
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { MainSidebar } from "@/components/MainSidebar";
 import { MainNav } from "@/components/MainNav";
-import Providers from "./providers";
+import { Footer } from "@/components/Footer";
 
 export const metadata = {
   title:
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col flex-1 min-h-screen w-screen overflow-x-hidden">
               <MainNav />
               <main className="flex-1">{children}</main>
+              <Footer />
             </div>
           </SidebarProvider>
         </Providers>
