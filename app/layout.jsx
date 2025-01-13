@@ -5,6 +5,7 @@ import Providers from "./providers";
 
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { MainSidebar } from "@/components/MainSidebar";
+import { TopBanner } from "@/components/TopBanner";
 import { MainNav } from "@/components/MainNav";
 import { Footer } from "@/components/Footer";
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
           <SidebarProvider defaultOpen={false}>
             <MainSidebar />
             <div className="flex flex-col flex-1 min-h-screen w-screen overflow-x-hidden">
+              <TopBanner />
               <MainNav />
               <main className="flex-1">{children}</main>
               <Footer />

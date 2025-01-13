@@ -68,7 +68,7 @@ export function Footer() {
             <Input
               placeholder="Seu melhor e-mail"
               type="email"
-              className="h-10 border border-neutral-600"
+              className="border border-neutral-600 bg-transparent placeholder:text-neutral-200 text-white"
             />
             <Button size="lg">Inscreva-se</Button>
           </div>

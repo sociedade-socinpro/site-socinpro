@@ -1,0 +1,32 @@
+import Link from "next/link";
+
+import { socialLinks } from "@/constants/socinprotInfo";
+
+export function TopBanner() {
+  return (
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-4 lg:px-[10%] xl:px-[16%] bg-teal text-white text-center px-4 py-2 lg:p-4 text-[10px] sm:text-xs">
+      <p className="font-bold">
+        SOCINPRO - Sociedade Brasileira de Administração e Proteção de Direitos
+        Intelectuais
+        <span className="font-normal">
+          {" "}
+          - Desde 1962 defendendo o direito autoral.
+        </span>
+      </p>
+      <div className="flex gap-4 items-center">
+        <p>Nos Siga nas Redes Sociais</p>
+        <ul className="flex gap-4">
+          {socialLinks.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href}>
+                <div className="h-5 w-5 lg:h-6 lg:w-6 rounded-full bg-white flex items-center justify-center p-1">
+                  {link.icon}
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
