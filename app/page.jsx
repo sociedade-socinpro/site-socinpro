@@ -1,10 +1,10 @@
-import { HeroSection } from "@/components/home1/HeroSection";
-import { FeaturesSection } from "@/components/home1/FeaturesSection";
-import { ArtistsSection } from "@/components/home1/ArtistsSection";
-import { NewsSection } from "@/components/home1/NewsSection";
-import { SupportSection } from "@/components/home1/SupportSection";
-import { SignupSection } from "@/components/home1/SignupSection";
-import { ContactSection } from "@/components/home1/ContactSection";
+import { HeroSection } from "@/components/home/HeroSection";
+import { FeaturesSection } from "@/components/home/FeaturesSection";
+import { ArtistsSection } from "@/components/home/ArtistsSection";
+import { NewsSection } from "@/components/home/NewsSection";
+import { SupportSection } from "@/components/home/SupportSection";
+import { SignupSection } from "@/components/home/SignupSection";
+import { ContactSection } from "@/components/home/ContactSection";
 
 export default function Home() {
   return (
