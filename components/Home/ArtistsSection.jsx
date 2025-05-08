@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 import CesarMenottiFabiano from "@/public/images/artists/cesar_menotti_fabiano.png";
 import MichelTelo from "@/public/images/artists/michel_telo.png";
