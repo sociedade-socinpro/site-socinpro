@@ -11,7 +11,7 @@ import News4 from "@/public/images/news/news_4.png";
 export const NewsSection = () => {
   return (
     <section>
-      <div className="flex flex-col gap-8 items-center -mt-4 lg:mt-32">
+      <div className="flex flex-col gap-8 items-center">
         <div className="px-[8%] xl:px-[14%] uppercase font-bold text-center">
           <p className="text-xs md:text-base text-teal mb-4">
             Últimas publicações

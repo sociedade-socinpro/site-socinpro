@@ -1,12 +1,11 @@
 import Image from "next/image";
 
+import { cn } from "@/utils/utils";
+
 import { Button } from "@/components/ui/button";
 
-import CesarMenottiFabiano from "@/public/images/artists/cesar_menotti_fabiano.png";
-import MichelTelo from "@/public/images/artists/michel_telo.png";
-import RobertoCarlos from "@/public/images/artists/roberto_carlos.png";
-
-export const ArtistsSection = () => {
+export const ArtistsSection = ({ artists }) => {
+  const slice = artists.slice(0, 3);
   return (
     <section>
       <div className="uppercase font-bold text-center px-[8%] xl:px-[14%] space-y-4">
@@ -25,22 +24,22 @@ export const ArtistsSection = () => {
         </p>
         <Button size="lg">Conheça nossos artistas</Button>
       </div>
-      <div className="px-[20%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 md:mt-8 justify-items-center">
-        <Image
-          src={CesarMenottiFabiano}
-          alt="Dupla sertaneja César Menotti e Fabiano"
-          className="object-contain z-10 md:scale-[110%] lg:scale-[115%] hover:scale-[110%] transition-transform ease-in-out duration-300"
-        />
-        <Image
-          src={MichelTelo}
-          alt="Cantor sertanejo Michel Teló"
-          className="object-contain lg:translate-y-14 md:scale-[95%] lg:scale-[115%] lg:ml-[10%] hover:scale-[110%] transition-transform ease-in-out duration-300"
-        />
-        <Image
-          src={RobertoCarlos}
-          alt="Cantor Roberto Carlos"
-          className="object-contain z-10 lg:scale-[115%] hover:scale-[110%] transition-transform ease-in-out duration-300"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:mb-28 mt-5 md:mt-8 gap-y-8 justify-items-center px-[12%] lg:px-[20%]">
+        {slice.map((artist, index) => (
+          <Image
+            key={artist.id}
+            src={artist.imgUrl}
+            alt={artist.titulo}
+            height={index === 1 ? 864 : 768}
+            width={index === 1 ? 780 : 586}
+            className={cn(
+              "object-contain z-10 w-full max-w-xs hover:scale-[102%] transition-transform duration-300",
+              {
+                "md:translate-y-12": index === 1,
+              }
+            )}
+          />
+        ))}
       </div>
     </section>
   );
