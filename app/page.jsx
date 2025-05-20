@@ -9,7 +9,7 @@ import { SupportSection } from "@/components/home/SupportSection";
 export default async function Home() {
   const allArtists =
     (await fetcher("/sipa-documentacao/v1/publico/site/artistas/home", {
-      next: { revalidate: 3600 },
+      next: { revalidate: 60 },
     })) || [];
 
   const artists = allArtists.filter(
