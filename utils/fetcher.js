@@ -1,5 +1,5 @@
 export async function fetcher(path, init = {}) {
-  const baseUrl = process.env.API_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const url = `${baseUrl}${path}`;
 
