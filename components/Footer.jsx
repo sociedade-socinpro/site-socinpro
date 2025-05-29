@@ -18,9 +18,14 @@ import Logo from "@/public/icons/logo.svg";
 export function Footer() {
   return (
     <footer>
-      <div className="px-[8%] xl:px-[14%] py-8 lg:py-12 bg-coal-900 text-white text-xs sm:text-sm grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="px-[6%] md:px-[14%] py-8 lg:py-12 bg-coal-900 text-white text-xs sm:text-sm text-center md:text-left justify-items-center md:justify-items-left grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="flex flex-col uppercase">
-          <Image src={Logo} alt="Logo" height={84} className="-mt-6" />
+          <Image
+            src={Logo}
+            alt="Logo"
+            height={84}
+            className="-mt-6 mx-auto md:mx-0"
+          />
           <span className="space-y-4">
             <p>
               Referência em gestão de direitos autorais, valorizando artistas e

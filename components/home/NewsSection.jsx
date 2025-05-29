@@ -12,7 +12,7 @@ export const NewsSection = () => {
   return (
     <section>
       <div className="flex flex-col gap-8 items-center">
-        <div className="px-[8%] xl:px-[14%] uppercase font-bold text-center">
+        <div className="px-[6%] md:px-[14%] uppercase font-bold text-center">
           <p className="text-xs md:text-base text-teal mb-4">
             Últimas publicações
           </p>
@@ -20,7 +20,7 @@ export const NewsSection = () => {
             Fique por dentro do que acontece na SOCINPRO
           </h2>
         </div>
-        <ul className="px-[20%] md:px-[8%] xl:px-[14%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <ul className="px-[6%] md:px-[14%] grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
           <li>
             <ImageLink src={News1} alt="Notícia sobre a SOCINPRO" />
           </li>

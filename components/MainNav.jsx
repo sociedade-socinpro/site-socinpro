@@ -17,14 +17,14 @@ import Logo from "@/public/icons/logo.svg";
 
 export function MainNav() {
   return (
-    <header className="flex flex-col sm:flex-row bg-coal-900 px-4 py-2 sm:gap-4 sm:items-center min-h-20 lg:px-[10%] xl:px-[16%]">
+    <header className="flex flex-col sm:flex-row bg-coal-900 px-4 py-2 sm:gap-4 sm:items-center min-h-20 md:px-[6%] xl:px-[16%]">
       <div className="flex items-center gap-4">
         <SidebarTrigger className="absolute sm:relative xl:hidden z-10" />
         <Link
           href="/"
-          className="flex-1 flex items-center justify-center h-18 min-w-24 xl:min-w-32 cursor-pointer focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
+          className="flex-1 flex items-center justify-center h-18 min-w-24 xl:min-w-32 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
         >
-          <Image src={Logo} alt="Logo" priority />
+          <Image src={Logo} alt="Logo" />
         </Link>
       </div>
       <div className="hidden xl:flex min-h-full w-0.5 bg-white/10" />
@@ -41,7 +41,7 @@ export function MainNav() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4 mt-2 sm:mt-0">
+      <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4">
         <Button variant="outline" size="lg">
           Filie-se
         </Button>

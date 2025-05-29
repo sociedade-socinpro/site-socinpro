@@ -12,14 +12,21 @@ export default async function Home() {
       next: { revalidate: 60 },
     })) || [];
 
+  const allBanners =
+    (await fetcher("/sipa-documentacao/v1/publico/site/banners/home", {
+      next: { revalidate: 60 },
+    })) || [];
+
   const artists = allArtists.filter(
     (a) => a?.ativo === "S" && a?.mostrarNaHome === "S"
   );
 
+  const banners = allBanners.filter((b) => b?.ativo === "S");
+
   return (
     <div className="space-y-16 pb-16 overflow-hidden">
       <section>
-        <HeroSection />
+        <HeroSection banners={banners} />
         <FeaturesSection />
       </section>
       <ArtistsSection artists={artists} />
