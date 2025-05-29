@@ -4,7 +4,7 @@ import { socialLinks } from "@/constants/socinprotInfo";
 
 export function TopBanner() {
   return (
-    <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-4 lg:px-[10%] xl:px-[16%] bg-teal text-white text-center px-4 py-2 lg:p-4 text-[10px] sm:text-xs">
+    <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-4 px-[6%] xl:px-[14%] py-2 bg-teal text-white text-center text-[10px] sm:text-xs">
       <p className="font-bold">
         SOCINPRO - Sociedade Brasileira de Administração e Proteção de Direitos
         Intelectuais
