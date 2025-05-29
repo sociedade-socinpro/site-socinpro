@@ -16,27 +16,29 @@ import Chords from "@/public/icons/chords.svg";
 export const SupportSection = () => {
   return (
     <section className="relative group">
-      <div className="px-[8%] xl:px-[14%] z-10 relative">
+      <div className="px-[6%] md:px-[14%] z-10 relative">
         <Card className="flex flex-col justify-between lg:flex-row shadow-none overflow-hidden border-l-[14px] border-l-teal">
           <div>
             <CardHeader>
               <Image
                 src={FaqIcon}
-                className="mb-6"
+                className="mb-6 mx-auto md:mx-0"
                 width={48}
                 alt=""
                 aria-hidden="true"
               />
-              <CardTitle className="text-left">
+              <CardTitle className="md:text-left">
                 Suporte completo para suas dúvidas.
               </CardTitle>
-              <CardDescription className="text-left">
+              <CardDescription className="md:text-left">
                 Consulte nosso FAQ e encontre respostas para as perguntas mais
                 frequentes sobre direitos autorais, filiação e mais.
               </CardDescription>
             </CardHeader>
             <CardFooter>
-              <Button size="lg">Acesse o FAQ</Button>
+              <Button size="lg" className="mx-auto md:mx-0">
+                Acesse o FAQ
+              </Button>
             </CardFooter>
           </div>
           <Image
@@ -51,7 +53,7 @@ export const SupportSection = () => {
         src={Chords}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 my-auto w-full group-hover:transform group-hover:scale-[102%] transition-transform ease-in-out duration-300"
+        className="hidden md:block absolute inset-0 my-auto w-full group-hover:transform group-hover:scale-[102%] transition-transform ease-in-out duration-300"
       />
     </section>
   );
