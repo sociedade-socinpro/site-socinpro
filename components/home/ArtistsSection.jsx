@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@/utils/utils";
 
@@ -40,7 +41,9 @@ export const ArtistsSection = ({ artists }) => {
             garantir que suas criações sejam protegidas e valorizadas. Junte-se
             a uma comunidade que inspira e transforma o mundo da música.
           </p>
-          <Button size="lg">Conheça nossos artistas</Button>
+          <Link href="/artistas" className="inline-block">
+            <Button size="lg">Conheça nossos artistas</Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -17,12 +17,12 @@ import Logo from "@/public/icons/logo.svg";
 
 export function MainNav() {
   return (
-    <header className="flex flex-col sm:flex-row bg-coal-900 px-4 py-2 sm:gap-4 sm:items-center min-h-20 md:px-[6%] xl:px-[16%]">
+    <header className="flex flex-col sm:flex-row bg-coal-900 sm:gap-4 sm:items-center pt-2 pb-4 sm:py-0 min-h-20 px-[6%] xl:px-[14%]">
       <div className="flex items-center gap-4">
         <SidebarTrigger className="absolute sm:relative xl:hidden z-10" />
         <Link
           href="/"
-          className="flex-1 flex items-center justify-center h-18 min-w-24 xl:min-w-32 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
+          className="flex-1 flex items-center justify-center h-16 min-w-24 xl:min-w-32 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
         >
           <Image src={Logo} alt="Logo" />
         </Link>
