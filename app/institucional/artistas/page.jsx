@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import { fetcher } from "@/utils/fetcher";
 
+import { SupportSection } from "@/components/home/SupportSection";
+
 export const metadata = {
   title: "Artistas – SOCINPRO",
   description: "Conheça alguns dos artistas que confiam na SOCINPRO.",
@@ -27,7 +29,7 @@ export default async function Page() {
   };
 
   return (
-    <>
+    <div className="py-12 space-y-24">
       <Head>
         <script
           key="ld-json"
@@ -35,7 +37,7 @@ export default async function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
-      <section className="uppercase font-bold text-center px-[6%] xl:px-[14%] py-12">
+      <section className="uppercase font-bold text-center px-[6%] md:px-[14%]">
         <h2 className="text-xs md:text-base text-teal opacity-0 animate-fade-in">
           Conheça quem confia em nós
         </h2>
@@ -53,15 +55,15 @@ export default async function Page() {
               className="hover:scale-[102%] transition-transform duration-300"
             >
               <figure
-                className="relative rounded-lg overflow-hidden opacity-0 animate-slide-up"
+                className="relative rounded-lg overflow-hidden opacity-0 animate-slide-up h-[450px]"
                 style={{ animationDelay: `${i * 200 + 1000}ms` }}
               >
                 <Image
                   src={art.imgUrl}
                   alt={art.titulo}
-                  width={400}
-                  height={450}
-                  className="object-cover w-full h-[450px]"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
                 <div
                   className="absolute inset-0 pointer-events-none"
@@ -81,6 +83,7 @@ export default async function Page() {
           ))}
         </ul>
       </section>
-    </>
+      <SupportSection />
+    </div>
   );
 }
