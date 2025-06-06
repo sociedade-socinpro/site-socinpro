@@ -1,9 +1,9 @@
 import { fetchPdfAndReturnResponse } from "@/utils/pdfHandler";
-import { socinproOrganizationalChartUrl } from "@/constants/socinprotInfo";
+import { socinproArticlesOfAssociationUrl } from "@/constants/socinprotInfo";
 
 export async function GET() {
   return await fetchPdfAndReturnResponse(
-    socinproOrganizationalChartUrl,
-    "organograma-socinpro.pdf"
+    socinproArticlesOfAssociationUrl,
+    "estatuto-socinpro.pdf"
   );
 }

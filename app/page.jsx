@@ -8,12 +8,12 @@ import { SupportSection } from "@/components/home/SupportSection";
 
 export default async function Home() {
   const allArtists =
-    (await fetcher("/sipa-documentacao/v1/publico/site/artistas/home", {
+    (await fetcher("/sipa-documentacao/v1/site/publico/artistas/home", {
       next: { revalidate: 60 },
     })) || [];
 
   const allBanners =
-    (await fetcher("/sipa-documentacao/v1/publico/site/banners/home", {
+    (await fetcher("/sipa-documentacao/v1/site/publico/banners/home", {
       next: { revalidate: 60 },
     })) || [];
 
