@@ -25,3 +25,6 @@ export const socialLinks = [
     ),
   },
 ];
+
+export const socinproOrganizationalChartUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/organograma-socinpro.pdf";

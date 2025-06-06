@@ -41,7 +41,7 @@ export const ArtistsSection = ({ artists }) => {
             garantir que suas criações sejam protegidas e valorizadas. Junte-se
             a uma comunidade que inspira e transforma o mundo da música.
           </p>
-          <Link href="/artistas" className="inline-block">
+          <Link href="/institucional/artistas" className="inline-block">
             <Button size="lg">Conheça nossos artistas</Button>
           </Link>
         </div>
