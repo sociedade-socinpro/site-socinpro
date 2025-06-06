@@ -12,7 +12,7 @@ export const metadata = {
 
 export default async function Page() {
   const allArtists =
-    (await fetcher("/sipa-documentacao/v1/publico/site/artistas", {
+    (await fetcher("/sipa-documentacao/v1/site/publico/artistas", {
       next: { revalidate: 60 },
     })) || [];
   const artists = allArtists.filter((a) => a.ativo === "S");
