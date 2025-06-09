@@ -4,7 +4,7 @@ import { SupportSection } from "@/components/shared/SupportSection";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "Socinpro Estatuto Social – Nossas Diretrizes",
+  title: "SOCINPRO – Diretrizes",
   description:
     "Conheça o Estatuto Social da Socinpro, que rege nossa estrutura, funcionamento e compromisso com a transparência e ética na gestão dos direitos autorais.",
 };

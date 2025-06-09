@@ -13,7 +13,7 @@ export async function generateMetadata(props) {
   const pageNum = page?.[0] ? Number(page[0]) : 0;
 
   return {
-    title: `Artistas – SOCINPRO – Página ${pageNum + 1}`,
+    title: `SOCINPRO – Artistas - Página ${pageNum + 1}`,
     description: "Conheça alguns dos artistas que confiam na SOCINPRO.",
     alternates: { canonical: `/institucional/artistas/${pageNum}` },
   };

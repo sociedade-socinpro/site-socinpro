@@ -12,7 +12,7 @@ import { NewsSection } from "@/components/shared/NewsSection";
 import VinylImage from "@/public/images/vinyl.png";
 
 export const metadata = {
-  title: "Socinpro por Dentro – Quem Somos",
+  title: "SOCINPRO – Quem Somos",
   description:
     "Conheça a Sociedade Brasileira de Administração e Proteção de Direitos Intelectuais",
 };

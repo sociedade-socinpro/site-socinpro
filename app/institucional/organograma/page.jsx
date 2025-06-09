@@ -4,7 +4,7 @@ import { SupportSection } from "@/components/shared/SupportSection";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "Socinpro por Dentro – Organização",
+  title: "SOCINPRO – Organograma",
   description:
     "Conheça nosso organograma e veja como os departamentos da Socinpro se interligam para melhor atender nossos associados.",
 };

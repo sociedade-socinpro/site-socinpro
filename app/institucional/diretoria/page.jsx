@@ -3,7 +3,7 @@ import { DirectorsSection } from "@/components/institucional/DirectorsSection";
 import { OrganizationSection } from "@/components/institucional/OrganizationSection";
 
 export const metadata = {
-  title: "Socinpro por Dentro – Nossa Diretoria",
+  title: "SOCINPRO – Diretoria",
   description:
     "Conheça a equipe que lidera a Sociedade Brasileira de Direitos Autorais e Conexos",
 };
