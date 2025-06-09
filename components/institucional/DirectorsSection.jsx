@@ -1,4 +1,5 @@
 import { User } from "lucide-react";
+import Image from "next/image";
 
 import { socinproDirectors } from "@/constants/socinprotInfo";
 import { cn } from "@/utils/utils";
@@ -70,9 +71,11 @@ const DirectorItem = ({ director, className, ...props }) => {
     >
       <div className="h-32 w-32 sm:h-44 sm:w-44 flex items-center justify-center rounded-lg bg-coal-100 overflow-hidden hover:scale-[102%] transition-transform">
         {hasImage ? (
-          <img
+          <Image
             src={director.image}
             alt={director.name}
+            width={176}
+            height={176}
             className="h-full w-full object-cover"
           />
         ) : (
