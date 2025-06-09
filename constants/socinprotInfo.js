@@ -26,8 +26,44 @@ export const socialLinks = [
   },
 ];
 
+export const socinproDirectors = [
+  {
+    name: "ADONIS MARCELO RAMOS DE OLIVEIRA",
+    nickname: "DONY",
+    position: "Diretor Geral",
+    image: "",
+  },
+  {
+    name: "ALTAY VELLOSO DA SILVA",
+    nickname: "ALTAY VELLOSO",
+    position: "Diretor Secretário",
+    image: "",
+  },
+  {
+    name: "FERNANDO JOSE VITALE",
+    nickname: "FERNANDO VITALE",
+    position: "Diretor Administrativo e Financeiro",
+    image: "",
+  },
+  {
+    name: "JOSÉ ORLANDO DOS SANTOS MOTA",
+    nickname: "ORLANDO MOTTA",
+    position: "Diretor de Controle de Arrecadação e Distribuição",
+    image: "",
+  },
+  {
+    name: "TALITA FERRAZ ZIOLI",
+    nickname: "TALITA ZIOLI",
+    position: "Diretora de Comunicação, Cultural e Social",
+    image: "",
+  },
+];
+
 export const socinproOrganizationalChartUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/organograma-socinpro.pdf";
 
 export const socinproArticlesOfAssociationUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/estatuto-socinpro.pdf";
+
+export const socinproDirectorsUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/diretoria-eleita-e-duracao-mandato.pdf";

@@ -1,6 +1,6 @@
 import { socinproArticlesOfAssociationUrl } from "@/constants/socinprotInfo";
 
-import { SupportSection } from "@/components/home/SupportSection";
+import { SupportSection } from "@/components/shared/SupportSection";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {

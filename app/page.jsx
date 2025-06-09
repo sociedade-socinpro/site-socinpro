@@ -3,8 +3,8 @@ import { fetcher } from "@/utils/fetcher";
 import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { ArtistsSection } from "@/components/home/ArtistsSection";
-import { NewsSection } from "@/components/home/NewsSection";
-import { SupportSection } from "@/components/home/SupportSection";
+import { NewsSection } from "@/components/shared/NewsSection";
+import { SupportSection } from "@/components/shared/SupportSection";
 
 export default async function Home() {
   const allArtists =

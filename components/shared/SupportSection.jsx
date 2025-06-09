@@ -16,7 +16,7 @@ import Chords from "@/public/icons/chords.svg";
 export const SupportSection = () => {
   return (
     <section className="relative group">
-      <div className="px-[6%] md:px-[14%] z-10 relative">
+      <div className="px-[6%] md:px-[14%] z-10 relative opacity-0 animate-fade-in">
         <Card className="flex flex-col justify-between lg:flex-row shadow-none overflow-hidden border-l-[14px] border-l-teal">
           <div>
             <CardHeader>
@@ -45,7 +45,7 @@ export const SupportSection = () => {
             src={MusicProducers}
             alt=""
             aria-hidden="true"
-            className="object-cover"
+            className="object-cover group-hover:scale-[101%] transition-transform"
           />
         </Card>
       </div>
@@ -53,7 +53,8 @@ export const SupportSection = () => {
         src={Chords}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute inset-0 my-auto w-full group-hover:transform group-hover:scale-[102%] transition-transform ease-in-out duration-300"
+        className="hidden md:block absolute inset-0 my-auto w-full opacity-0 animate-slide-left"
+        style={{ animationDelay: "800ms" }}
       />
     </section>
   );

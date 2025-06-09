@@ -16,7 +16,8 @@ export const HeroSection = async ({ banners }) => {
         src={Chords}
         alt=""
         aria-hidden="true"
-        className="absolute hidden md:block inset-0 m-auto w-full animate-slide-right"
+        className="absolute hidden md:block inset-0 m-auto w-full opacity-0 animate-slide-right"
+        style={{ animationDelay: "800ms" }}
       />
     </section>
   );

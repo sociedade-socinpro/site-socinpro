@@ -51,7 +51,7 @@ export const HeroCarousel = ({ banners }) => {
   return (
     <div className="md:px-[6%] xl:px-[8%] mx-auto">
       <div
-        className="z-10 relative embla md:rounded-b-2xl overflow-hidden"
+        className="z-10 relative embla md:rounded-b-2xl overflow-hidden opacity-0 animate-fade-in"
         role="region"
         aria-roledescription="carousel"
         aria-label="Banner principal"
@@ -107,19 +107,24 @@ export const HeroCarousel = ({ banners }) => {
         <button
           onClick={() => emblaApi?.scrollPrev()}
           aria-label="Anterior"
-          className="hidden md:flex items-center justify-center absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-8 h-8 shadow-md opacity-0 animate-fade-in-delay"
+          className="hidden md:flex items-center justify-center absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-8 h-8 shadow-md opacity-0 animate-fade-in"
+          style={{ animationDelay: "800ms" }}
         >
           <ChevronLeft size={20} className="text-black" />
         </button>
         <button
           onClick={() => emblaApi?.scrollNext()}
           aria-label="Próximo"
-          className="hidden md:flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-8 h-8 shadow-md opacity-0 animate-fade-in-delay"
+          className="hidden md:flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-8 h-8 shadow-md opacity-0 animate-fade-in"
+          style={{ animationDelay: "800ms" }}
         >
           <ChevronRight size={20} className="text-black" />
         </button>
         <nav aria-label="Paginação do carrossel">
-          <div className="absolute bottom-10 md:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20 opacity-0 animate-fade-in-delay">
+          <div
+            className="absolute bottom-10 md:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20 opacity-0 animate-fade-in"
+            style={{ animationDelay: "800ms" }}
+          >
             {scrollSnaps.map((_, idx) => (
               <button
                 key={idx}
