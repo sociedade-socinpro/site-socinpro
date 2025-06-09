@@ -13,6 +13,7 @@ export default {
           DEFAULT: "#004857",
         },
         coal: {
+          100: "#D9D9D9",
           300: "#333333",
           500: "#1A1A1A",
           900: "#0D0D0D",
@@ -84,16 +85,19 @@ export default {
           "0%": { opacity: "0", transform: "translateX(100%)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        FadeInSlideLeft: {
+          "0%": { opacity: "0", transform: "translateX(-100%)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out forwards",
-        "fade-in-delay": "fadeIn 1s ease-in-out 0.8s forwards",
         "slide-up":
           "FadeInSlideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
-        "slide-up-delay":
-          "FadeInSlideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.8s forwards",
         "slide-right":
           "FadeInSlideRight 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+        "slide-left":
+          "FadeInSlideLeft 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
       },
     },
   },

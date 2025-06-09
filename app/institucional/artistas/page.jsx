@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { fetcher } from "@/utils/fetcher";
 
-import { SupportSection } from "@/components/home/SupportSection";
+import { SupportSection } from "@/components/shared/SupportSection";
 
 export const metadata = {
   title: "Artistas – SOCINPRO",
@@ -12,7 +12,7 @@ export const metadata = {
 
 export default async function Page() {
   const allArtists =
-    (await fetcher("/sipa-documentacao/v1/site/publico/artistas", {
+    (await fetcher("/sipa-documentacao/v1/site/publico/artistas/ativos", {
       next: { revalidate: 60 },
     })) || [];
   const artists = allArtists.filter((a) => a.ativo === "S");
@@ -52,7 +52,7 @@ export default async function Page() {
           {artists.map((art, i) => (
             <li
               key={art.id}
-              className="hover:scale-[102%] transition-transform duration-300"
+              className="hover:scale-[101%] transition-transform"
             >
               <figure
                 className="relative rounded-lg overflow-hidden opacity-0 animate-slide-up h-[450px]"

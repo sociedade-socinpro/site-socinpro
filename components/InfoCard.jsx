@@ -12,9 +12,18 @@ import {
 
 import SoundIcon from "@/public/icons/sound.svg";
 
-export function InfoCard({ title, description, className, children }) {
+export function InfoCard({
+  title,
+  description,
+  className,
+  children,
+  ...props
+}) {
   return (
-    <Card className={cn("border-b-[14px] border-b-teal max-w-xl", className)}>
+    <Card
+      className={cn("border-b-[14px] border-b-teal max-w-xl", className)}
+      {...props}
+    >
       <CardHeader className="items-center">
         <Image
           src={SoundIcon}
