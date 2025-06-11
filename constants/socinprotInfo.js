@@ -77,6 +77,15 @@ export const authorWorksRegistrationUrl =
 export const authorsWorksRegistrationUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/declaracao-de-obras-varios-autores-editavel.pdf";
 
+export const sisrcSoftwareUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/software/sisrc_install.exe";
+
+export const sisrcSoftwareUpdateUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/software/sisrc_update.exe";
+
+export const anydeskSoftwareUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/software/anydesk.exe";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",
