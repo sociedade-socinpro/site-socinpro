@@ -39,7 +39,7 @@ export default async function Page() {
           ACESSE A LISTA NOMINAL ABAIXO:
         </p>
         <OpenDocumentCard
-          title="LISTAGEM NONIMAL (PDF)"
+          title="Listagem Nominal (PDF)"
           href={receivableCreditsUrl}
           className="opacity-0 animate-fade-in mt-10 mx-auto"
           style={{ animationDelay: "1000ms" }}
