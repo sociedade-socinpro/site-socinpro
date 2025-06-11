@@ -74,6 +74,7 @@ export const HeroCarousel = ({ banners }) => {
                     src={b.imgUrl || DefaultBanner}
                     alt={b.titulo}
                     fill
+                    sizes="(max-width: 1536px) 100vw, 100vw"
                     className="object-cover bg-coal-300"
                     priority={b.id === banners[0].id}
                   />

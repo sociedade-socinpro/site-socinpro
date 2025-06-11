@@ -48,15 +48,15 @@ export default function Page() {
                 Socinpro – Sociedade Brasileira de Administração e Proteção de
                 Direitos Intelectuais
               </strong>{" "}
-              é uma associação sem fins lucrativos, dedicada à administraçãoe
+              é uma associação sem fins lucrativos, dedicada à administração e
               defesa dos direitos autorais e conexos de compositores, autores,
               intérpretes, músicos, produtores fonográficos e editores musicais.{" "}
               <br />
               <br /> Desde 1962, nossa missão é garantir que cada criador receba
-              de forma justae transparente a remuneração pela utilização de suas
-              obras e fonogramas. Trabalhamos incansavelmente para simplificar a
-              gestão desses direitos, atuando na arrecadação e distribuição,
-              além de representar nossos associados nacional e
+              de forma justa e transparente a remuneração pela utilização de
+              suas obras e fonogramas. Trabalhamos incansavelmente para
+              simplificar a gestão desses direitos, atuando na arrecadação e
+              distribuição, além de representar nossos associados nacional e
               internacionalmente.
             </p>
           </div>
