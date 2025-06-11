@@ -21,7 +21,10 @@ export const publicLinks = [
         label: "Documentos e Demonstrativos",
         href: "/transparencia/documentos",
       },
-      { label: "Créditos Recebíveis", href: "/transparencia/creditos" },
+      {
+        label: "Créditos Recebíveis",
+        href: "/transparencia/creditos-recebiveis",
+      },
       { label: "Declaração de Obras", href: "/transparencia/declaracao-obras" },
       { label: "ISRC", href: "/transparencia/isrc" },
       { label: "Contratos", href: "/transparencia/contratos" },

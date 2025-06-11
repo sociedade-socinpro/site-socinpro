@@ -68,49 +68,44 @@ export const socinproArticlesOfAssociationUrl =
 export const socinproDirectorsUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/diretoria-eleita-e-duracao-mandato.pdf";
 
+export const receivableCreditsUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/listagem-nominal.pdf";
+
 export const documents = [
   {
     slug: "gestao-pessoas-carreiras",
     title: "Gestão de Pessoas e Carreiras",
     url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/descricoes-de-cargos.pdf",
-    filename: "ART-2-INCISO-VI-Descricoes-de-Cargos-2021.PDF",
     category: "gestao",
   },
   {
     slug: "diretrizes-carreiras",
     title: "Diretrizes de Carreiras",
     url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/descricoes-de-cargos.pdf",
-    filename: "ART-2-INCISO-VI-Diretrizes-de-Carreiras-2021.pdf",
     category: "gestao",
   },
   {
     slug: "mapeamento-competencias-i",
     title: "Mapeamento de Competências I",
     url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/ART-2-INCISO-VI-Mapeamento-Competencias-2021.pdf",
-    filename: "ART-2-INCISO-VI-Mapeamento-Competencias-2021.pdf",
     category: "gestao",
   },
   {
     slug: "mapeamento-competencias-ii",
     title: "Mapeamento de Competências II",
     url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/ART-2-INCISO-VI-Mapeamento-Competencias-2021-2.pdf",
-    filename: "ART-2-INCISO-VI-Mapeamento-Competencias-2021-2.pdf",
     category: "gestao",
   },
   {
     slug: "avaliacao-desempenho",
     title: "Sistema de Avaliação de Desempenho por Competências",
     url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/sistema-de-avaliacao-de-desempenho-por-competencias.pdf",
-    filename:
-      "Sistema-de-Avaliacao-de-Desempenho-por-Competencias-SOCINPRO.pdf",
     category: "registros",
   },
   {
     slug: "ata-eleicao-diretoria-2020-2023",
     title: "Ata da Eleição da Diretoria (Gestão 2020-2023)",
     url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/ata-eleicao-socinpro.pdf",
-    filename:
-      "ATA-DE-AGO-DA-ELEICAO-2020-A-2023-COM-FUNDAMENTO-LEGAL-DA-ELEICAO.pdf",
     category: "registros",
   },
 ];

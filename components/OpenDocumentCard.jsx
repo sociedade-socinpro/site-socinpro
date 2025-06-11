@@ -11,12 +11,12 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export function DocumentDownloadCard({
+export function OpenDocumentCard({
   title,
   description,
-  buttonText = "Baixar PDF",
+  buttonText = "Visualizar PDF",
   className,
-  path,
+  href,
   ...props
 }) {
   return (
@@ -42,7 +42,7 @@ export function DocumentDownloadCard({
       </CardHeader>
       <CardFooter className="flex justify-center">
         <Button size="lg" asChild>
-          <a href={path} download>
+          <a href={href} target="_blank" rel="noopener noreferrer">
             {buttonText}
           </a>
         </Button>
