@@ -8,8 +8,10 @@ import { SupportSection } from "@/components/shared/SupportSection";
 
 const categories = [
   { key: "todos", label: "Todos os Documentos" },
-  { key: "gestao", label: "Gestão de Pessoas e Carreiras" },
-  { key: "registros", label: "Registros e Atas" },
+  { key: "governanca", label: "Governança" },
+  { key: "titulares", label: "Relação de Titulares" },
+  { key: "dominio-publico", label: "Obras de Domínio Público" },
+  { key: "atas", label: "Atas" },
 ];
 
 export const metadata = {
@@ -82,7 +84,7 @@ export default async function Page({ searchParams }) {
               title={doc.title}
               href={doc.url}
               className="opacity-0 animate-fade-in"
-              style={{ animationDelay: `${index * 200}ms` }}
+              style={{ animationDelay: `${index * 100}ms` }}
             />
           ))}
         </div>
