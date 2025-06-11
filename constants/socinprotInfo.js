@@ -71,6 +71,12 @@ export const socinproDirectorsUrl =
 export const receivableCreditsUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/listagem-nominal.pdf";
 
+export const authorWorksRegistrationUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/declaracao-de-obras-unico-autor-editavel.pdf";
+
+export const authorsWorksRegistrationUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/declaracao-de-obras-varios-autores-editavel.pdf";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",
