@@ -19,30 +19,32 @@ import Logo from "@/public/icons/logo.svg";
 
 export function MainNav() {
   return (
-    <header className="z-20 flex flex-col sm:flex-row bg-coal-900 sm:gap-4 sm:items-center pt-2 pb-4 sm:py-0 min-h-20 px-[6%] xl:px-[14%]">
-      <div className="flex items-center gap-4">
-        <SidebarTrigger className="absolute sm:relative xl:hidden z-10" />
-        <Link
-          href="/"
-          className="flex-1 flex items-center justify-center h-16 min-w-24 xl:min-w-32 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
-        >
-          <Image src={Logo} alt="Logo" />
-        </Link>
-      </div>
-      <div className="hidden xl:flex min-h-full w-0.5 bg-white/10" />
-      <NavigationMenu className="hidden xl:flex">
-        <NavigationMenuList>
-          {publicLinks.map((link) => (
-            <Submenu key={link.label} item={link} />
-          ))}
-        </NavigationMenuList>
-        <NavigationMenuViewport />
-      </NavigationMenu>
-      <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4">
-        <Button variant="outline" size="lg">
-          Filie-se
-        </Button>
-        <Button size="lg">Contato</Button>
+    <header className="z-20 bg-coal-900 px-[6%] xl:px-[14%]">
+      <div className="flex flex-col sm:flex-row sm:gap-4 sm:items-center pt-2 pb-4 sm:py-0 min-h-20 2xl:max-w-[1920px] mx-auto">
+        <div className="flex items-center gap-4">
+          <SidebarTrigger className="absolute sm:relative xl:hidden z-10" />
+          <Link
+            href="/"
+            className="flex-1 flex items-center justify-center h-16 min-w-24 xl:min-w-32 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-teal"
+          >
+            <Image src={Logo} alt="Logo" />
+          </Link>
+        </div>
+        <div className="hidden xl:flex min-h-full w-0.5 bg-white/10" />
+        <NavigationMenu className="hidden xl:flex">
+          <NavigationMenuList>
+            {publicLinks.map((link) => (
+              <Submenu key={link.label} item={link} />
+            ))}
+          </NavigationMenuList>
+          <NavigationMenuViewport />
+        </NavigationMenu>
+        <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4">
+          <Button variant="outline" size="lg">
+            Filie-se
+          </Button>
+          <Button size="lg">Contato</Button>
+        </div>
       </div>
     </header>
   );
