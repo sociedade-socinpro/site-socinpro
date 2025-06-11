@@ -3,7 +3,7 @@ import Link from "next/link";
 import { cn } from "@/utils/utils";
 import { documents } from "@/constants/socinprotInfo";
 
-import { DocumentDownloadCard } from "@/components/DocumentDownloadCard";
+import { OpenDocumentCard } from "@/components/OpenDocumentCard";
 import { SupportSection } from "@/components/shared/SupportSection";
 
 const categories = [
@@ -77,10 +77,10 @@ export default async function Page({ searchParams }) {
         </div>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8">
           {filteredDocs.map((doc, index) => (
-            <DocumentDownloadCard
+            <OpenDocumentCard
               key={doc.slug}
               title={doc.title}
-              path={`/api/documents/${doc.slug}`}
+              href={doc.url}
               className="opacity-0 animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             />
