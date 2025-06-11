@@ -34,10 +34,10 @@ export default async function Page() {
         >
           O ISRC (International Standard Recording Code ou Código de Gravação
           Padrão Internacional) é o código único de identificação para gravações
-          sonoras (fonogramas) e videoclipes musicais. Ele funciona como um 'RG'
-          da gravação, essencial para o controle e distribuição de direitos
-          autorais. A Socinpro auxilia seus associados na obtenção do ISRC
-          através do software SISRC.
+          sonoras (fonogramas) e videoclipes musicais. Ele funciona como um
+          &apos;RG&apos; da gravação, essencial para o controle e distribuição
+          de direitos autorais. A Socinpro auxilia seus associados na obtenção
+          do ISRC através do software SISRC.
         </p>
         <p
           className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-normal text-teal opacity-0 animate-fade-in mt-8 border border-teal rounded-lg p-4"
