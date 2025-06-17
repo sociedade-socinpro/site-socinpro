@@ -6,8 +6,8 @@ import { socinproInstagramUrl } from "@/constants/socinprotInfo";
 import { Button } from "@/components/ui/button";
 
 export const NewsSection = async () => {
-  const IG_PAGE_ID = process.env.NEXT_PUBLIC_IG_PAGE_ID;
-  const IG_ACCESS_TOKEN = process.env.NEXT_PUBLIC_IG_PAGE_ACCESS_TOKEN;
+  const IG_PAGE_ID = process.env.IG_PAGE_ID;
+  const IG_ACCESS_TOKEN = process.env.IG_PAGE_ACCESS_TOKEN;
 
   const url =
     `https://graph.facebook.com/v23.0/${IG_PAGE_ID}/media` +
