@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "socinpro-publico-dev.s3.amazonaws.com",
       },
+      {
+        protocol: "https",
+        hostname: "scontent.cdninstagram.com",
+      },
     ],
   },
 };
