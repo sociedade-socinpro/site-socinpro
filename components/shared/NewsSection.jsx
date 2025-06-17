@@ -1,13 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import News1 from "@/public/images/news/news_1.png";
-import News2 from "@/public/images/news/news_2.png";
-import News3 from "@/public/images/news/news_3.png";
-import News4 from "@/public/images/news/news_4.png";
+import { socinproInstagramUrl } from "@/constants/socinprotInfo";
 
-export const NewsSection = () => {
+import { Button } from "@/components/ui/button";
+
+export const NewsSection = async () => {
+  const IG_PAGE_ID = process.env.NEXT_PUBLIC_IG_PAGE_ID;
+  const IG_ACCESS_TOKEN = process.env.NEXT_PUBLIC_IG_PAGE_ACCESS_TOKEN;
+
+  const url =
+    `https://graph.facebook.com/v23.0/${IG_PAGE_ID}/media` +
+    `?fields=id,caption,thumbnail_url,permalink,media_url,media_type` +
+    `&limit=4` +
+    `&access_token=${IG_ACCESS_TOKEN}`;
+
+  const res = await fetch(url, { next: { revalidate: 60 } });
+  if (!res.ok) {
+    return null;
+  }
+
+  const { data: posts = [] } = await res.json();
+
   return (
     <section>
       <div className="flex flex-col gap-8 items-center">
@@ -23,54 +37,48 @@ export const NewsSection = () => {
           </h2>
         </div>
         <ul className="px-[6%] md:px-[14%] grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
-          <li>
-            <ImageLink
-              src={News1}
-              alt="Notícia sobre a SOCINPRO"
-              style={{ animationDelay: "800ms" }}
-            />
-          </li>
-          <li>
-            <ImageLink
-              src={News2}
-              alt="Notícia sobre a SOCINPRO"
-              style={{ animationDelay: "1000ms" }}
-            />
-          </li>
-          <li>
-            <ImageLink
-              src={News3}
-              alt="Notícia sobre a SOCINPRO"
-              style={{ animationDelay: "1200ms" }}
-            />
-          </li>
-          <li>
-            <ImageLink
-              src={News4}
-              alt="Notícia sobre a SOCINPRO"
-              style={{ animationDelay: "1400ms" }}
-            />
-          </li>
+          {posts.map((post, i) => (
+            <li key={post.id}>
+              <Link
+                href={post.permalink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <figure className="relative w-full h-56 lg:h-[340px] aspect-square rounded-lg overflow-hidden cursor-pointer hover:scale-[101%] transition-transform">
+                  <Image
+                    src={
+                      post.media_type === "VIDEO"
+                        ? post.thumbnail_url
+                        : post.media_url
+                    }
+                    sizes="(max-width: 1023px) 50vw, 25vw"
+                    fill
+                    alt={
+                      post.caption?.slice(0, 100) ??
+                      "Imagem do Post do Instagram"
+                    }
+                    className="object-cover opacity-0 animate-fade-in"
+                    style={{ animationDelay: `${800 + i * 200}ms` }}
+                  />
+                </figure>
+              </Link>
+            </li>
+          ))}
         </ul>
-        <Button
-          size="lg"
-          className="opacity-0 animate-fade-in"
-          style={{ animationDelay: "1600ms" }}
+        <Link
+          href={socinproInstagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Siga-nos no Instagram
-        </Button>
+          <Button
+            size="lg"
+            className="opacity-0 animate-fade-in"
+            style={{ animationDelay: "1600ms" }}
+          >
+            Siga-nos no Instagram
+          </Button>
+        </Link>
       </div>
     </section>
   );
 };
-
-const ImageLink = ({ src, alt, ...props }) => (
-  <Link href="/">
-    <Image
-      src={src}
-      alt={alt}
-      className="cursor-pointer hover:scale-[101%] transition-transform opacity-0 animate-fade-in"
-      {...props}
-    />
-  </Link>
-);

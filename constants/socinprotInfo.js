@@ -7,6 +7,8 @@ export const socinproAddress =
 
 export const socinproEmail = "sede.rj@socinpro.org.br";
 
+export const socinproInstagramUrl = "https://www.instagram.com/socinpro/";
+
 export const socialLinks = [
   {
     href: "https://www.facebook.com/socinpro",
