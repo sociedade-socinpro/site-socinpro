@@ -73,7 +73,7 @@ export const NewsSection = async () => {
           <Button
             size="lg"
             className="opacity-0 animate-fade-in"
-            style={{ animationDelay: "1600ms" }}
+            style={{ animationDelay: "1800ms" }}
           >
             Siga-nos no Instagram
           </Button>
