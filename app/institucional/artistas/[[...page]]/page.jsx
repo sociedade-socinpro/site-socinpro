@@ -25,7 +25,10 @@ export default async function Page(props) {
   const size = 9;
 
   const { content: artists = [], totalPages } = await fetcher(
-    `/sipa-documentacao/v1/site/publico/artistas/ativos?size=${size}&page=${pageNum}`
+    `/sipa-documentacao/v1/site/publico/artistas/ativos?size=${size}&page=${pageNum}`,
+    {
+      next: { revalidate: 60 },
+    }
   );
 
   return (
