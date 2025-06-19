@@ -32,10 +32,10 @@ export default async function Page(props) {
     <>
       <Head>
         {pageNum > 0 && (
-          <link rel="prev" href={`/institucional/artistas/${pageNum - 1}`} />
+          <link rel="prev" href={`/comunicacao/noticias/${pageNum - 1}`} />
         )}
         {pageNum < totalPages - 1 && (
-          <link rel="next" href={`/institucional/artistas/${pageNum + 1}`} />
+          <link rel="next" href={`/comunicacao/noticias/${pageNum + 1}`} />
         )}
       </Head>
       <div className="py-12 space-y-24">
