@@ -89,27 +89,32 @@ export default async function Page(props) {
               </li>
             ))}
           </ul>
-          <nav
-            aria-label="Paginação de notícias"
-            className="flex justify-center gap-4 mt-8"
-          >
-            {pageNum > 0 && (
-              <Button asChild>
-                <Link href={`/comunicacao/noticias/${pageNum - 1}`} rel="prev">
-                  <ArrowLeft className="w-5 h-5" />
-                  <span>Anterior</span>
-                </Link>
-              </Button>
-            )}
-            {pageNum < totalPages - 1 && (
-              <Button asChild>
-                <Link href={`/comunicacao/noticias/${pageNum + 1}`} rel="next">
-                  <span>Próximo</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-            )}
-            <span className="sr-only">
+          <nav aria-label="Paginação de notícias">
+            <div className="flex justify-center gap-4 mt-8 mb-1">
+              {pageNum > 0 && (
+                <Button asChild>
+                  <Link
+                    href={`/comunicacao/noticias/${pageNum - 1}`}
+                    rel="prev"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    <span>Anterior</span>
+                  </Link>
+                </Button>
+              )}
+              {pageNum < totalPages - 1 && (
+                <Button asChild>
+                  <Link
+                    href={`/comunicacao/noticias/${pageNum + 1}`}
+                    rel="next"
+                  >
+                    <span>Próximo</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              )}
+            </div>
+            <span className="text-xs font-medium text-gray-500">
               Página {pageNum + 1} de {totalPages}
             </span>
           </nav>
