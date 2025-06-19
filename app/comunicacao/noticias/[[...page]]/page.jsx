@@ -13,9 +13,9 @@ export async function generateMetadata(props) {
   const pageNum = page?.[0] ? Number(page[0]) : 0;
 
   return {
-    title: `SOCINPRO – Artistas - Página ${pageNum + 1}`,
-    description: "Conheça alguns dos artistas que confiam na SOCINPRO.",
-    alternates: { canonical: `/institucional/artistas/${pageNum}` },
+    title: `SOCINPRO – Notícias - Página ${pageNum + 1}`,
+    description: "Fique por dentro das últimas notícias da SOCINPRO.",
+    alternates: { canonical: `/comunicacao/noticias/${pageNum}` },
   };
 }
 
@@ -24,8 +24,8 @@ export default async function Page(props) {
   const pageNum = page?.[0] ? Number(page[0]) : 0;
   const size = 9;
 
-  const { content: artists = [], totalPages } = await fetcher(
-    `/sipa-documentacao/v1/site/publico/artistas/ativos?size=${size}&page=${pageNum}`
+  const { content: news = [], totalPages } = await fetcher(
+    `/sipa-documentacao/v1/site/publico/noticias/todas?size=${size}&page=${pageNum}`
   );
 
   return (
@@ -41,61 +41,61 @@ export default async function Page(props) {
       <div className="py-12 space-y-24">
         <section className="uppercase font-bold text-center px-[6%] md:px-[14%]">
           <h2 className="text-xs md:text-base text-teal opacity-0 animate-fade-in">
-            Conheça quem confia em nós
+            últimas publicações
           </h2>
           <h1
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 mt-4 opacity-0 animate-fade-in delay-400"
             style={{ animationDelay: "400ms" }}
           >
-            Trabalhamos com artistas renomados e emergentes, sempre valorizando
-            a autenticidade de cada obra.
+            fique por dentro do que acontece na SOCINPRO
           </h1>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto gap-6 mt-10">
-            {artists.map((art, i) => (
-              <li
-                key={art.id}
-                className="hover:scale-[101%] transition-transform"
-              >
-                <figure
-                  className="relative rounded-lg overflow-hidden opacity-0 animate-slide-up h-[400px]"
+            {news.map((post, i) => (
+              <li key={post.id}>
+                <article
+                  itemScope
+                  itemType="https://schema.org/NewsArticle"
+                  className="rounded-lg overflow-hidden bg-white shadow-sm h-full opacity-0 animate-slide-up group"
                   style={{ animationDelay: `${i * 200}ms` }}
                 >
-                  {art.imgUrl && (
-                    <Image
-                      src={art.imgUrl}
-                      alt={art.titulo}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
-                    />
+                  {post.imgUrl && (
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={post.imgUrl}
+                        alt={post.titulo}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover group-hover:scale-[102%] transition-transform duration-300"
+                        loading="lazy"
+                        itemProp="image"
+                      />
+                    </div>
                   )}
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background:
-                        "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%)",
-                    }}
-                  />
-                  <figcaption
-                    className="absolute bottom-2 left-4 text-white opacity-0 animate-fade-in"
-                    style={{ animationDelay: `${i * 200 + 400}ms` }}
-                  >
-                    {art.titulo}
-                  </figcaption>
-                </figure>
+                  <div className="p-4 normal-case text-left">
+                    <h3
+                      itemProp="headline"
+                      className="text-2xl normal-case font-medium mb-2"
+                    >
+                      {post.titulo}
+                    </h3>
+                    <p
+                      itemProp="description"
+                      className="text-sm sm:text-base font-normal"
+                    >
+                      {post.descricao}
+                    </p>
+                  </div>
+                </article>
               </li>
             ))}
           </ul>
           <nav
-            aria-label="Paginação de artistas"
+            aria-label="Paginação de notícias"
             className="flex justify-center gap-4 mt-8"
           >
             {pageNum > 0 && (
               <Button asChild>
-                <Link
-                  href={`/institucional/artistas/${pageNum - 1}`}
-                  rel="prev"
-                >
+                <Link href={`/comunicacao/noticias/${pageNum - 1}`} rel="prev">
                   <ArrowLeft className="w-5 h-5" />
                   <span>Anterior</span>
                 </Link>
@@ -103,10 +103,7 @@ export default async function Page(props) {
             )}
             {pageNum < totalPages - 1 && (
               <Button asChild>
-                <Link
-                  href={`/institucional/artistas/${pageNum + 1}`}
-                  rel="next"
-                >
+                <Link href={`/comunicacao/noticias/${pageNum + 1}`} rel="next">
                   <span>Próximo</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>
