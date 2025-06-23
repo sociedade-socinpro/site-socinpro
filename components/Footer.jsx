@@ -9,9 +9,8 @@ import {
 } from "@/constants/socinprotInfo";
 import { publicLinks } from "@/constants/navigationLinks";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { CopyrightFooter } from "@/components/CopyrightFooter";
+import { NewsletterForm } from "./NewsletterForm";
 
 import Logo from "@/public/icons/logo.svg";
 
@@ -93,14 +92,7 @@ export function Footer() {
               <h3 className="font-bold text-base sm:text-lg uppercase mb-6">
                 Fique por dentro de todas as novidades do mercado da música:
               </h3>
-              <div className="flex flex-col gap-2">
-                <Input
-                  placeholder="Seu melhor e-mail"
-                  type="email"
-                  className="border border-neutral-600 bg-transparent placeholder:text-neutral-200 text-white"
-                />
-                <Button size="lg">Inscreva-se</Button>
-              </div>
+              <NewsletterForm />
             </div>
           </div>
         </div>
