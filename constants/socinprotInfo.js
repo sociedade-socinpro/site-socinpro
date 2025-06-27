@@ -98,7 +98,7 @@ export const documents = [
   {
     slug: "governanca-diretrizes-carreiras",
     title: "Diretrizes de Carreiras",
-    url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/descricoes-de-cargos.pdf",
+    url: "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/diretrizes-de-carreiras.pdf",
     category: "governanca",
   },
   {
