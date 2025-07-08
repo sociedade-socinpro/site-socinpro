@@ -178,7 +178,15 @@ export function ContactForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="PAGAMENTO">Pagamento</SelectItem>
+                    <SelectItem value="DOC_CADASTRO">
+                      Documentação e cadastro
+                    </SelectItem>
+                    <SelectItem value="PAGAMENTO">
+                      Informações de pagamento
+                    </SelectItem>
+                    <SelectItem value="INTERNACIONAL">Internacional</SelectItem>
+                    <SelectItem value="DIGITAL">Digital</SelectItem>
+                    <SelectItem value="OUTROS">Outros</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
