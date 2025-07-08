@@ -18,6 +18,10 @@ export default {
           500: "#1A1A1A",
           900: "#0D0D0D",
         },
+        dust: {
+          500: "#9B7A57",
+          DEFAULT: "#9B7A57",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

@@ -43,7 +43,9 @@ export function MainNav() {
           <Button variant="outline" size="lg">
             Filie-se
           </Button>
-          <Button size="lg">Contato</Button>
+          <Link href="/contato">
+            <Button size="lg">Contato</Button>
+          </Link>
         </div>
       </div>
     </header>

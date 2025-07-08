@@ -50,7 +50,6 @@ export function NewsletterForm() {
 
       setStatus("success");
     } catch (err) {
-      console.error(err);
       setErrorMsg(err.message || "Erro ao enviar");
       setStatus("error");
     }
@@ -73,7 +72,11 @@ export function NewsletterForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Seu nome completo" {...field} />
+                <Input
+                  placeholder="Seu nome completo"
+                  className="border-coal-300 placeholder:text-coal-200 text-coal-100"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -88,6 +91,7 @@ export function NewsletterForm() {
                 <Input
                   placeholder="Seu melhor e-mail"
                   type="email"
+                  className="border-coal-300 placeholder:text-coal-200 text-coal-100"
                   {...field}
                 />
               </FormControl>

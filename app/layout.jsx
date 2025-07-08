@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col flex-1 min-h-screen w-screen overflow-x-hidden">
               <TopBanner />
               <MainNav />
-              <main className="flex-1 2xl:max-w-[1920px] mx-auto">
+              <main className="flex-1 w-full 2xl:max-w-[1920px] mx-auto">
                 {children}
               </main>
               <Footer />
