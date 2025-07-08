@@ -1,3 +1,4 @@
+import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";
 import { DirectorsSection } from "@/components/institucional/DirectorsSection";
 import { OrganizationSection } from "@/components/institucional/OrganizationSection";
@@ -11,9 +12,17 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <h1 className="sr-only">Diretoria da Socinpro – Conheça Nossa Equipe</h1>
+      <PageHeader
+        title="Corpo Administrativo da Sociedade"
+        description={
+          <>
+            Uma Equipe Especializada para <br />
+            Atender os Seus Objetivos
+          </>
+        }
+      />
       <div className="py-12 space-y-24">
-        <DirectorsSection />
+        <DirectorsSection showHeader={false} />
         <OrganizationSection />
         <SupportSection />
       </div>

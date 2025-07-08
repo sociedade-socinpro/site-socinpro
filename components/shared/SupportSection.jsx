@@ -15,7 +15,10 @@ import Chords from "@/public/icons/chords.svg";
 
 export const SupportSection = () => {
   return (
-    <section className="relative group">
+    <section className="relative group" aria-labelledby="suporte">
+      <h2 id="suporte" className="sr-only">
+        Suporte completo para suas dúvidas
+      </h2>
       <div className="px-[6%] md:px-[14%] z-10 relative opacity-0 animate-fade-in">
         <Card className="flex flex-col justify-between lg:flex-row shadow-none overflow-hidden border-l-[14px] border-l-teal">
           <div>

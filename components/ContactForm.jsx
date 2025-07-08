@@ -101,7 +101,7 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
+        <div className="gap-4 grid grid-cols-1 md:grid-cols-2 mt-6">
           <FormField
             control={form.control}
             name="nome"

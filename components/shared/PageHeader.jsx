@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import TitleBg from "@/public/images/title_bg.png";
 
-export function PageTitle({ title, description }) {
+export function PageHeader({ title, description }) {
   return (
     <div className="relative py-8 lg:py-0 max-h-80 lg:min-h-80 w-full uppercase font-bold flex items-center">
       <Image
@@ -16,12 +16,12 @@ export function PageTitle({ title, description }) {
         <h1 className="text-xs md:text-base text-dust opacity-0 animate-fade-in">
           {title}
         </h1>
-        <h2
+        <p
           className="text-lg text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 mt-4 opacity-0 animate-fade-in"
           style={{ animationDelay: "400ms" }}
         >
           {description}
-        </h2>
+        </p>
       </div>
     </div>
   );
