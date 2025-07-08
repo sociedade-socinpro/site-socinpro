@@ -53,7 +53,7 @@ export default function Page() {
             </p>
           </noscript>
           <p
-            className="mt-6 text-sm normal-case font-normal md:text-base opacity-0 animate-fade-in"
+            className="mt-6 text-sm md:text-base opacity-0 animate-fade-in"
             style={{ animationDelay: "1400ms" }}
           >
             O organograma ilustra a hierarquia e as relações funcionais entre as

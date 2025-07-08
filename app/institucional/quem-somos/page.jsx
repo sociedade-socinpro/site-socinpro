@@ -5,6 +5,7 @@ import { Gem } from "lucide-react";
 import { Eye } from "lucide-react";
 
 import { PageHeader } from "@/components/shared/PageHeader";
+import { SectionIconItem } from "@/components/shared/SectionIconItem";
 import { SupportSection } from "@/components/shared/SupportSection";
 import { DirectorsSection } from "@/components/institucional/DirectorsSection";
 import { OrganizationSection } from "@/components/institucional/OrganizationSection";
@@ -66,19 +67,19 @@ export default function Page() {
             </div>
           </div>
           <div className="flex justify-center gap-6 flex-wrap">
-            <Item
+            <SectionIconItem
               title="Nossa Missão:"
               description="Arrecadar e distribuir direitos autorais e conexos com transparência e eficiência, promovendo a valorização da música e cultura de nossos associados."
               icon={<Target />}
               style={{ animationDelay: "900ms" }}
             />
-            <Item
+            <SectionIconItem
               title="Nossa Visão:"
               description="Ser referência em gestão coletiva no Brasil, reconhecida pela excelência, inovação constante e total compromisso com os titulares."
               icon={<Eye />}
               style={{ animationDelay: "1200ms" }}
             />
-            <Item
+            <SectionIconItem
               title="Nossos Valores:"
               description="Conduta pautada na Ética, Transparência em todas as ações, busca incessante pela Eficiência, defesa da Justiça e a contínua Valorização da Cultura."
               icon={<Gem />}
@@ -99,16 +100,3 @@ export default function Page() {
     </>
   );
 }
-
-const Item = ({ title, description, icon, ...props }) => (
-  <div
-    className="bg-gray-100 p-6 rounded-lg text-center w-full sm:max-w-[250px] lg:max-w-[300px] xl:max-w-[400px] opacity-0 animate-fade-in hover:scale-[101%] transition-transform"
-    {...props}
-  >
-    <div className="text-white bg-teal rounded-full h-10 w-10 mx-auto mb-4 flex items-center justify-center">
-      {icon}
-    </div>
-    <p className="text-base lg:text-xl xl:text-2xl font-medium mb-2">{title}</p>
-    <p className="text-sm lg:text-base">{description}</p>
-  </div>
-);

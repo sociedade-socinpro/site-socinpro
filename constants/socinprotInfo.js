@@ -88,6 +88,9 @@ export const sisrcSoftwareUpdateUrl =
 export const anydeskSoftwareUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/software/anydesk.exe";
 
+export const individualManagementModelUrl =
+  "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/formulario-gestao-individual.pdf";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",
