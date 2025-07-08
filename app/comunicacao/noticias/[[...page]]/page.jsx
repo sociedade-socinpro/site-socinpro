@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { fetcher } from "@/utils/fetcher";
 
+import { PageHeader } from "@/components/shared/PageHeader";
 import { Button } from "@/components/ui/button";
 import { SupportSection } from "@/components/shared/SupportSection";
 
@@ -41,18 +42,20 @@ export default async function Page(props) {
           <link rel="next" href={`/comunicacao/noticias/${pageNum + 1}`} />
         )}
       </Head>
+      <PageHeader
+        title="últimas publicações"
+        description={
+          <>
+            fique por dentro do que <br /> acontece na SOCINPRO
+          </>
+        }
+      />
       <div className="py-12 space-y-24">
-        <section className="uppercase font-bold text-center px-[6%] md:px-[14%]">
-          <h2 className="text-xs md:text-base text-teal opacity-0 animate-fade-in">
-            últimas publicações
-          </h2>
-          <h1
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 mt-4 opacity-0 animate-fade-in delay-400"
-            style={{ animationDelay: "400ms" }}
+        <section className="text-center px-[6%] md:px-[14%]">
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto gap-6"
+            id="news"
           >
-            fique por dentro do que acontece na SOCINPRO
-          </h1>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto gap-6 mt-10">
             {news.map((post, i) => (
               <li key={post.id}>
                 <article
@@ -97,7 +100,7 @@ export default async function Page(props) {
               {pageNum > 0 && (
                 <Button asChild>
                   <Link
-                    href={`/comunicacao/noticias/${pageNum - 1}`}
+                    href={`/comunicacao/noticias/${pageNum - 1}#news`}
                     rel="prev"
                   >
                     <ArrowLeft className="w-5 h-5" />
@@ -108,7 +111,7 @@ export default async function Page(props) {
               {pageNum < totalPages - 1 && (
                 <Button asChild>
                   <Link
-                    href={`/comunicacao/noticias/${pageNum + 1}`}
+                    href={`/comunicacao/noticias/${pageNum + 1}#news`}
                     rel="next"
                   >
                     <span>Próximo</span>

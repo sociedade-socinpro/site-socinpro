@@ -3,12 +3,13 @@ import Link from "next/link";
 
 import { cn } from "@/utils/utils";
 
+import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
 
 export const ArtistsSection = ({ artists }) => {
   const slice = artists.slice(0, 3);
   return (
-    <section>
+    <section aria-labelledby="artistas">
       <div className="flex flex-col md:flex-col-reverse">
         <div className="grid grid-cols-3 mb-8 md:mt-8 md:mb-5 justify-items-center px-[14%] lg:px-[20%]">
           {slice.map(
@@ -31,19 +32,15 @@ export const ArtistsSection = ({ artists }) => {
               )
           )}
         </div>
-        <div className="uppercase font-bold text-center px-[6%] md:px-[14%] space-y-4">
-          <p className="text-xs md:text-base text-teal opacity-0 animate-fade-in">
-            Conheça quem confia em nós
-          </p>
-          <h2
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: "400ms" }}
-          >
-            Trabalhamos com artistas renomados e emergentes, sempre valorizando
-            a autenticidade de cada obra.
-          </h2>
+        <div className="text-center px-[6%] md:px-[14%] space-y-4">
+          <SectionHeader
+            id="artistas"
+            title="Conheça quem confia em nós"
+            subtitle="Trabalhamos com artistas renomados e emergentes, sempre valorizando
+            a autenticidade de cada obra."
+          />
           <p
-            className="text-xs md:text-base font-normal normal-case px-[6%] xl:px-[14%] opacity-0 animate-fade-in"
+            className="text-xs md:text-base px-[6%] xl:px-[14%] opacity-0 animate-fade-in"
             style={{ animationDelay: "800ms" }}
           >
             Na SOCINPRO, temos o orgulho de representar artistas de todos os

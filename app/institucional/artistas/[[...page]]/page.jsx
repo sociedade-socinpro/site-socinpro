@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { fetcher } from "@/utils/fetcher";
 
+import { PageHeader } from "@/components/shared/PageHeader";
 import { Button } from "@/components/ui/button";
 import { SupportSection } from "@/components/shared/SupportSection";
 
@@ -41,19 +42,21 @@ export default async function Page(props) {
           <link rel="next" href={`/institucional/artistas/${pageNum + 1}`} />
         )}
       </Head>
+      <PageHeader
+        title="Conheça quem confia em nós"
+        description={
+          <>
+            Trabalhamos com artistas renomados e emergentes, <br />
+            sempre valorizando a autenticidade de cada obra.
+          </>
+        }
+      />
       <div className="py-12 space-y-24">
         <section className="uppercase font-bold text-center px-[6%] md:px-[14%]">
-          <h2 className="text-xs md:text-base text-teal opacity-0 animate-fade-in">
-            Conheça quem confia em nós
-          </h2>
-          <h1
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 mt-4 opacity-0 animate-fade-in delay-400"
-            style={{ animationDelay: "400ms" }}
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto gap-6"
+            id="artistas"
           >
-            Trabalhamos com artistas renomados e emergentes, sempre valorizando
-            a autenticidade de cada obra.
-          </h1>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-2xl mx-auto gap-6 mt-10">
             {artists.map((art, i) => (
               <li
                 key={art.id}
@@ -94,7 +97,7 @@ export default async function Page(props) {
               {pageNum > 0 && (
                 <Button asChild>
                   <Link
-                    href={`/institucional/artistas/${pageNum - 1}`}
+                    href={`/institucional/artistas/${pageNum - 1}#artistas`}
                     rel="prev"
                   >
                     <ArrowLeft className="w-5 h-5" />
@@ -105,7 +108,7 @@ export default async function Page(props) {
               {pageNum < totalPages - 1 && (
                 <Button asChild>
                   <Link
-                    href={`/institucional/artistas/${pageNum + 1}`}
+                    href={`/institucional/artistas/${pageNum + 1}#artistas`}
                     rel="next"
                   >
                     <span>Próximo</span>

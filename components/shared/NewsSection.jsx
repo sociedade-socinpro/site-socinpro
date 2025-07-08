@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { socinproInstagramUrl } from "@/constants/socinprotInfo";
 
+import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
 
 export const NewsSection = async () => {
@@ -23,18 +24,14 @@ export const NewsSection = async () => {
   const { data: posts = [] } = await res.json();
 
   return (
-    <section>
+    <section aria-labelledby="noticias">
       <div className="flex flex-col gap-8 items-center">
-        <div className="px-[6%] md:px-[14%] uppercase font-bold text-center">
-          <p className="text-xs md:text-base text-teal mb-4 opacity-0 animate-fade-in">
-            Últimas publicações
-          </p>
-          <h2
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: "400ms" }}
-          >
-            Fique por dentro do que acontece na SOCINPRO
-          </h2>
+        <div className="px-[6%] md:px-[14%]">
+          <SectionHeader
+            id="noticias"
+            title="Últimas Publicações"
+            subtitle="Fique por dentro do que acontece na SOCINPRO"
+          />
         </div>
         <ul className="px-[6%] md:px-[14%] grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
           {posts.map((post, i) => (

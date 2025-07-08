@@ -5,21 +5,27 @@ import { socinproDirectors } from "@/constants/socinprotInfo";
 import { cn } from "@/utils/utils";
 
 import { Button } from "@/components/ui/button";
+import { SectionHeader } from "@/components/shared/SectionHeader";
 
-export function DirectorsSection({ buttonContent }) {
+export function DirectorsSection({ buttonContent, showHeader = true }) {
   return (
-    <section className="uppercase font-bold text-center px-[6%] md:px-[14%]">
-      <h3 className="text-xs md:text-base text-teal opacity-0 animate-fade-in">
-        Corpo Administrativo da Sociedade
-      </h3>
-      <h2
-        className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-6 mt-4 opacity-0 animate-fade-in"
-        style={{ animationDelay: "400ms" }}
-      >
-        Uma Equipe Especializada para Atender os Seus Objetivos
-      </h2>
+    <section
+      className="text-center px-[6%] md:px-[14%]"
+      aria-labelledby="diretoria"
+    >
+      {showHeader ? (
+        <SectionHeader
+          id="diretoria"
+          title="Corpo Administrativo da Sociedade"
+          subtitle="Uma Equipe Especializada para Atender os Seus Objetivos"
+        />
+      ) : (
+        <h2 id="diretoria" className="sr-only">
+          Diretoria da Socinpro
+        </h2>
+      )}
       <p
-        className="mt-4 text-sm normal-case font-normal md:text-base opacity-0 animate-fade-in"
+        className="text-sm md:text-base opacity-0 animate-fade-in"
         style={{ animationDelay: "800ms" }}
       >
         Apresentamos os profissionais que compõem nossa Diretoria Executiva. São
@@ -82,10 +88,10 @@ const DirectorItem = ({ director, className, ...props }) => {
           <User className="w-12 h-12 sm:w-20 sm:h-20 text-teal" />
         )}
       </div>
-      <h3 className="text-lg font-medium leading-6">
+      <p className="text-lg font-medium leading-6">
         {director.name}
         <span className="font-light"> ({director.nickname})</span>
-      </h3>
+      </p>
       <p className="normal-case text-base text-gray-500 font-normal leading-5">
         {director.position}
       </p>

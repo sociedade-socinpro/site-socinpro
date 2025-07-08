@@ -6,7 +6,7 @@ import Chords from "@/public/icons/chords-left.svg";
 
 export const HeroSection = async ({ banners }) => {
   return (
-    <section className="relative">
+    <div className="relative">
       <h1 className="sr-only">
         Socinpro - Sociedade Brasileira de Administração e Proteção de Direitos
         Intelectuais
@@ -19,6 +19,6 @@ export const HeroSection = async ({ banners }) => {
         className="absolute hidden md:block inset-0 m-auto w-full opacity-0 animate-slide-right"
         style={{ animationDelay: "800ms" }}
       />
-    </section>
+    </div>
   );
 };
