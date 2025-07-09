@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function RequestTemplateSection() {
   return (
     <section aria-labelledby="modelo-solicitacao-gestao-individual">
-      <div className="px-[6%] md:px-[14%] lg:justify-items-center space-y-10">
+      <div className="flex flex-col items-center px-[6%] md:px-[14%] space-y-10">
         <SectionHeader
           id="modelo-solicitacao-gestao-individual"
           title="Modelo de Solicitação"

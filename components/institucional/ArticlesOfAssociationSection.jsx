@@ -11,7 +11,7 @@ export function ArticlesOfAssociationSection() {
       className="flex flex-col-reverse lg:flex-row px-[6%] md:px-[14%] group"
       aria-labelledby="estatuto-social"
     >
-      <div className="lg:flex flex-col justify-center items-start w-full text-center lg:text-left lg:px-8 xl:px-12">
+      <div className="lg:flex flex-col justify-center items-start w-full text-center lg:text-left lg:pr-8 xl:pr-12">
         <SectionHeader
           id="estatuto-social"
           title="Nossas Diretrizes"

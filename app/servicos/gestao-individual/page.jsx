@@ -4,9 +4,9 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";
 import { SectionTitle } from "@/components/shared/SectionTitle";
 import { SectionIconItem } from "@/components/shared/SectionIconItem";
-import { RequirementsSection } from "@/components/servicos/individual-management/RequirementsSection";
-import { HowToRequestSection } from "@/components/servicos/individual-management/HowToRequestSection";
-import { RequestTemplateSection } from "@/components/servicos/individual-management/RequestTemplateSection";
+import { RequirementsSection } from "@/components/servicos/gestao-individual/RequirementsSection";
+import { HowToRequestSection } from "@/components/servicos/gestao-individual/HowToRequestSection";
+import { RequestTemplateSection } from "@/components/servicos/gestao-individual/RequestTemplateSection";
 
 export const metadata = {
   title: "SOCINPRO – Gestão Individual",

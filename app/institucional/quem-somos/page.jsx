@@ -44,7 +44,7 @@ export default function Page() {
               />
             </div>
             <div
-              className="lg:flex flex-col justify-center xl:items-start w-full text-center xl:text-left lg:px-8 xl:px-12 opacity-0 animate-fade-in"
+              className="lg:flex flex-col justify-center xl:items-start w-full text-center xl:text-left lg:pl-8 xl:pl-12 opacity-0 animate-fade-in"
               style={{ animationDelay: "600ms" }}
             >
               <p className="text-sm md:text-base">
