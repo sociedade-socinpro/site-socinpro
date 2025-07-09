@@ -331,7 +331,7 @@ export const locations = [
       {
         name: "Atendimento",
         phone: "+55 (21) 99245-0702",
-        whatsappUrl: "https://wa.me/5521992450702",
+        whatsappUrl: "https://wa.me/5521992450702/?text=Olá",
       },
       {
         name: "Pagadoria",
@@ -348,7 +348,11 @@ export const locations = [
         phone: "+55 (21) 99296-3894",
         whatsappUrl: "https://wa.me/55992963894/?text=Olá",
       },
-      { name: "Conflito de Obras", phone: "+55 (21) 97087-6222" },
+      {
+        name: "Conflito de Obras",
+        phone: "+55 (21) 97087-6222",
+        whatsappUrl: "https://wa.me/5521970876222/?text=Olá",
+      },
       {
         name: "Dispensa de Cobrança",
         phone: "+55 (21) 99149-5310",
@@ -364,7 +368,11 @@ export const locations = [
         phone: "+55 (21) 99264-3677",
         whatsappUrl: "https://wa.me/5521992643677/?text=Olá",
       },
-      { name: "Documentação e ECAD", phone: "+55 (21) 99253-4291" },
+      {
+        name: "Documentação e ECAD",
+        phone: "+55 (21) 99253-4291",
+        whatsappUrl: "https://wa.me/5521992534291/?text=Olá",
+      },
       {
         name: "Financeiro",
         phone: "+55 (21) 97734-5949",
@@ -380,7 +388,11 @@ export const locations = [
         phone: "+55 (21) 99304-1282",
         whatsappUrl: "https://wa.me/5521993041282/?text=Olá",
       },
-      { name: "Secretaria", phone: "+55 (21) 97553-4565" },
+      {
+        name: "Secretaria",
+        phone: "+55 (21) 97553-4565",
+        whatsappUrl: "https://wa.me/5521975534565/?text=Olá",
+      },
     ],
     emails: ["sede.rj@socinpro.org.br", "gestaoindividual@socinpro.org.br"],
   },
