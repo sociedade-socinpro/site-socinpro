@@ -21,7 +21,7 @@ export function OrganizationSection() {
         />
       </div>
       <div
-        className="lg:flex flex-col justify-center items-start w-full font-bold text-center lg:text-left lg:px-8 xl:px-12 opacity-0 animate-fade-in"
+        className="lg:flex flex-col justify-center items-start w-full font-bold text-center lg:text-left lg:pl-8 xl:pl-12 opacity-0 animate-fade-in"
         style={{ animationDelay: "400ms" }}
       >
         <SectionHeader

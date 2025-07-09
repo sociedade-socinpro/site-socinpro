@@ -91,6 +91,9 @@ export const anydeskSoftwareUrl =
 export const individualManagementModelUrl =
   "https://socinpro-publico.s3.us-east-1.amazonaws.com/site/documentos/formulario-gestao-individual.pdf";
 
+export const distributionRegulationUrl =
+  "https://www4.ecad.org.br/wp-content/themes/ecad/public/docs/regulamento-de-distribuicao.pdf";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",
