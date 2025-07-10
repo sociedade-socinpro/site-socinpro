@@ -45,6 +45,10 @@ export const publicLinks = [
             label: "ECAD",
             href: "/servicos/direito-autoral/ecad",
           },
+          {
+            label: "Calendário",
+            href: "/servicos/direito-autoral/calendario",
+          },
         ],
       },
       {
