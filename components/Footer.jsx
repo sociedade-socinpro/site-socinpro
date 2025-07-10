@@ -57,7 +57,11 @@ export function Footer() {
               <ul className="flex gap-4 justify-center md:justify-start">
                 {socialLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}>
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <div className="h-6 w-6 rounded-full bg-white flex items-center justify-center p-1">
                         {link.icon}
                       </div>
