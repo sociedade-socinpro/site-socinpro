@@ -18,7 +18,7 @@ export function Footer() {
   return (
     <footer>
       <div className="px-[6%] md:px-[14%] bg-coal-900">
-        <div className="py-8 lg:py-12 text-white text-xs sm:text-sm text-center md:text-left justify-items-center md:justify-items-left grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 2xl:max-w-[1920px] mx-auto">
+        <div className="py-8 lg:py-12 text-white text-xs sm:text-sm text-center md:text-left grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 2xl:max-w-[1920px] mx-auto">
           <div className="flex flex-col uppercase">
             <Image
               src={Logo}
@@ -44,34 +44,12 @@ export function Footer() {
                   <h4 className="font-semibold text-xs sm:text-sm mb-2">
                     {section.label}
                   </h4>
-                  <ul className="space-y-1 pl-1">
-                    {section.children.map((sub) => (
-                      <li key={sub.label}>
-                        {sub.external ? (
-                          <Link
-                            href={sub.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-teal transition-colors duration-200"
-                          >
-                            {sub.label}
-                          </Link>
-                        ) : (
-                          <Link
-                            href={sub.href}
-                            className="hover:text-teal transition-colors duration-200"
-                          >
-                            {sub.label}
-                          </Link>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                  <FooterLinksTree items={section.children} />
                 </div>
               ))}
             </div>
           </div>
-          <div className="gap-6 col-span-1 sm:col-span-2 lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 col-span-1 sm:col-span-2 lg:col-span-1">
             <div>
               <h3 className="font-normal text-sm sm:text-base mb-6">
                 Redes Sociais
@@ -99,5 +77,32 @@ export function Footer() {
       </div>
       <CopyrightFooter />
     </footer>
+  );
+}
+
+function FooterLinksTree({ items }) {
+  return (
+    <ul className="space-y-1 pl-1">
+      {items.map((item) => (
+        <li key={item.label}>
+          {item.href ? (
+            <Link
+              href={item.href}
+              {...(item.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="hover:text-teal transition-colors duration-200 block"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <span className="font-medium mb-1 block">{item.label}</span>
+          )}
+          {Array.isArray(item.children) && item.children.length > 0 && (
+            <FooterLinksTree items={item.children} />
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }

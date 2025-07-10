@@ -32,7 +32,7 @@ export default function Page() {
           className="text-center px-[6%] md:px-[14%] space-y-10"
           aria-labelledby="o-que-e-direito-autoral"
         >
-          <p
+          <article
             className="text-sm md:text-base opacity-0 animate-fade-in"
             style={{ animationDelay: "600ms" }}
           >
@@ -48,7 +48,7 @@ export default function Page() {
             possuindo letra. O fonograma é a fixação de sons de uma
             interpretação de obra musical ou de outros sons. Cada faixa do CD,
             DVD ou LP é um fonograma distinto.
-          </p>
+          </article>
           <SectionTitle
             id="o-que-e-direito-autoral"
             style={{ animationDelay: "800ms" }}

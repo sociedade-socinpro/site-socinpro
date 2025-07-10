@@ -30,7 +30,7 @@ export default function Page() {
           className="text-center px-[6%] md:px-[14%] space-y-10"
           aria-labelledby="gestao-individual"
         >
-          <p
+          <article
             className="text-sm md:text-base opacity-0 animate-fade-in"
             style={{ animationDelay: "600ms" }}
           >
@@ -38,7 +38,7 @@ export default function Page() {
             pessoalmente, a defesa de seus direitos autorais, autorizando o uso
             de suas criações de forma onerosa ou gratuita. Esta prerrogativa
             está prevista na Lei Federal nº 9.610/98.
-          </p>
+          </article>
           <SectionTitle
             id="gestao-individual"
             style={{ animationDelay: "800ms" }}

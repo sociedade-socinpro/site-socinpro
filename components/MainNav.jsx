@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronRightIcon } from "lucide-react";
 
 import { publicLinks } from "@/constants/navigationLinks";
 
@@ -14,7 +15,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@/components/ui/collapsible";
 import Logo from "@/public/icons/logo.svg";
 
 export function MainNav() {
@@ -33,8 +38,8 @@ export function MainNav() {
         <div className="hidden xl:flex min-h-full w-0.5 bg-white/10" />
         <NavigationMenu className="hidden xl:flex">
           <NavigationMenuList>
-            {publicLinks.map((link) => (
-              <Submenu key={link.label} item={link} />
+            {publicLinks.map((group) => (
+              <NavSection key={group.label} item={group} />
             ))}
           </NavigationMenuList>
           <NavigationMenuViewport />
@@ -52,26 +57,51 @@ export function MainNav() {
   );
 }
 
-function Submenu({ item }) {
-  if (!Array.isArray(item.children) || item.children.length === 0) {
-    return null;
-  }
+function NavSection({ item }) {
+  if (!Array.isArray(item.children) || item.children.length === 0) return null;
 
   return (
     <NavigationMenuItem>
       <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
       <NavigationMenuContent>
         <ul className="grid w-[200px]">
-          {item.children.map((sub) => (
-            <ListItem key={sub.label} item={sub} />
-          ))}
+          <NavSubmenu items={item.children} />
         </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>
   );
 }
 
-function ListItem({ item }) {
+function NavSubmenu({ items }) {
+  return items.map((node) => {
+    if (Array.isArray(node.children) && node.children.length > 0) {
+      return (
+        <li key={node.label}>
+          <Collapsible>
+            <CollapsibleTrigger asChild className="group">
+              <button
+                type="button"
+                className="flex items-center justify-between w-full px-4 py-3 hover:bg-teal/10 hover:font-semibold focus:font-semibold focus:bg-teal/10 text-sm leading-none text-teal font-medium transition-colors duration-200"
+              >
+                <span>{node.label}</span>
+                <ChevronRightIcon className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-90" />
+              </button>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <ul className="pl-4">
+                <NavSubmenu items={node.children} />
+              </ul>
+            </CollapsibleContent>
+          </Collapsible>
+        </li>
+      );
+    } else {
+      return <NavLinkItem key={node.label} item={node} />;
+    }
+  });
+}
+
+function NavLinkItem({ item }) {
   return (
     <li>
       <NavigationMenuLink asChild>

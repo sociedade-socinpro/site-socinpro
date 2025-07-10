@@ -34,7 +34,19 @@ export const publicLinks = [
     label: "Serviços",
     children: [
       { label: "Gestão Individual", href: "/servicos/gestao-individual" },
-      { label: "Direito Autoral", href: "/servicos/direito-autoral" },
+      {
+        label: "Direito Autoral",
+        children: [
+          {
+            label: "O que é direito autoral?",
+            href: "/servicos/direito-autoral/o-que-e-direito-autoral",
+          },
+          {
+            label: "ECAD",
+            href: "/servicos/direito-autoral/ecad",
+          },
+        ],
+      },
       {
         label: "Direito Internacional",
         href: "/servicos/direito-internacional",
