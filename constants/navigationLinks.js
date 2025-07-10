@@ -49,6 +49,10 @@ export const publicLinks = [
             label: "Calendário",
             href: "/servicos/direito-autoral/calendario",
           },
+          {
+            label: "Legislação",
+            href: "/servicos/direito-autoral/legislacao",
+          },
         ],
       },
       {
