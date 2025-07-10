@@ -110,14 +110,17 @@ export default function Page() {
                   </thead>
                   <tbody>
                     {paymentData.map((row) => (
-                      <tr key={row.origem}>
+                      <tr
+                        key={row.origem}
+                        className="border-b border-gray-200 last:border-b-0"
+                      >
                         <th
                           scope="row"
-                          className="px-4 py-2 whitespace-nowrap border-b font-normal border-gray-200"
+                          className="px-4 py-2 whitespace-nowrap font-normal"
                         >
                           {row.origem}
                         </th>
-                        <td className="px-4 py-2 border-b border-gray-200">
+                        <td className="px-4 py-2 whitespace-nowrap">
                           {row.meses}
                         </td>
                       </tr>
