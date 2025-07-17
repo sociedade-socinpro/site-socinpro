@@ -59,7 +59,7 @@ export const publicLinks = [
         label: "Direito Internacional",
         href: "/servicos/direito-internacional",
       },
-      { label: "Filiação", href: "/servicos/filiacao" },
+      { label: "Filiação Socinpro", href: "/servicos/filiacao-socinpro" },
     ],
   },
   {

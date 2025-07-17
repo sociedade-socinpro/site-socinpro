@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { InfoCard } from "@/components/InfoCard";
 import { Button } from "@/components/ui/button";
 
@@ -31,7 +33,9 @@ export const FeaturesSection = () => {
           className="z-10 opacity-0 animate-fade-in"
           style={{ animationDelay: "800ms" }}
         >
-          <Button size="lg">Saiba mais</Button>
+          <Button size="lg" asChild>
+            <Link href="/institucional/quem-somos">Saiba mais</Link>
+          </Button>
         </InfoCard>
       </div>
     </>
