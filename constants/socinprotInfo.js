@@ -94,6 +94,9 @@ export const individualManagementModelUrl =
 export const distributionRegulationUrl =
   "https://www4.ecad.org.br/wp-content/themes/ecad/public/docs/regulamento-de-distribuicao.pdf";
 
+export const membershipRequestFormUrl =
+  "https://associado.socinpro.org.br/portal-web/pages/public/solicitacao-filiacao.xhtml?_gl=1*idwi35*_ga*MjAyNTQyODU3OC4xNzQzNTIzNzYw*_ga_HKVS018C8M*czE3NTI3MDYxODEkbzQwJGcxJHQxNzUyNzA2MTg2JGo1NSRsMCRoMA..&_ga=2.52453472.978817970.1752706182-2025428578.1743523760";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",

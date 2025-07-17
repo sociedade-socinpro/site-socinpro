@@ -45,8 +45,8 @@ export function MainNav() {
           <NavigationMenuViewport />
         </NavigationMenu>
         <div className="mx-auto sm:mx-0 sm:ml-auto flex gap-4">
-          <Button variant="outline" size="lg">
-            Filie-se
+          <Button variant="outline" size="lg" asChild>
+            <Link href="/servicos/filiacao-socinpro">Filie-se</Link>
           </Button>
           <Link href="/contato">
             <Button size="lg">Contato</Button>
