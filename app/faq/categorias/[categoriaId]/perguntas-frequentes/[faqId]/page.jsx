@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   const answerSnippet = data.descricao
     ? data.descricao.replace(/\s+/g, " ").slice(0, 140) + "…"
     : "";
-  const title = `${question} | Socinpro Responde`;
+  const title = `${question} | SOCINPRO Responde`;
   const description = answerSnippet;
   const canonical = `/faq/categorias/${data.siteFaqPai.id}/perguntas-frequentes/${faqId}`;
 

@@ -16,7 +16,7 @@ export async function generateMetadata({ searchParams }) {
   const pageNum = pagina?.[0] ? Number(pagina[0]) : 0;
 
   return {
-    title: `Socinpro Responde – Categorias - Página ${pageNum + 1}`,
+    title: `SOCINPRO Responde – Categorias - Página ${pageNum + 1}`,
     description:
       "Navegue pelas categorias de perguntas frequentes da SOCINPRO.",
     alternates: { canonical: `/faq/categorias?pagina=${pageNum}` },
@@ -34,7 +34,7 @@ export default async function Page({ searchParams }) {
   return (
     <section className="flex flex-col flex-1 py-10 sm:py-14 2xl:py-32 px-6 lg:px-10">
       <h1 className="sr-only">
-        Socinpro Responde - Categorias – Página {pageNum + 1}
+        SOCINPRO Responde - Categorias – Página {pageNum + 1}
       </h1>
       <div className="flex flex-col flex-1 mx-auto w-full justify-center max-w-3xl 3xl:max-w-4xl">
         <FaqNavigation />

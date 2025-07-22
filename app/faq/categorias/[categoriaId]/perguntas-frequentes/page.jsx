@@ -21,7 +21,7 @@ export async function generateMetadata({ params, searchParams }) {
   );
 
   const categoryTitle = category?.titulo || "Perguntas Frequentes";
-  const title = `Socinpro Responde – ${categoryTitle} – Página ${pageNum + 1}`;
+  const title = `SOCINPRO Responde – ${categoryTitle} – Página ${pageNum + 1}`;
   const description = `Tire suas dúvidas sobre ${categoryTitle} na SOCINPRO. Encontre perguntas e respostas mais comuns sobre ${categoryTitle}.`;
 
   return {

@@ -14,7 +14,7 @@ export function FaqNavigation({ categoryId, categoryTitle, faqTitle }) {
   const router = useRouter();
 
   const crumbs = [
-    { href: "/faq/categorias", label: "Socinpro Responde", clickable: true },
+    { href: "/faq/categorias", label: "SOCINPRO Responde", clickable: true },
   ];
 
   if (categoryId && categoryTitle) {

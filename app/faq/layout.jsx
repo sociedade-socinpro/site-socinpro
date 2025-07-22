@@ -1,7 +1,7 @@
 import { FaqTopBanner } from "@/components/FaqTopBanner";
 
 export const metadata = {
-  title: "Socinpro Responde - Perguntas Frequentes",
+  title: "SOCINPRO Responde - Perguntas Frequentes",
   description:
     "Encontre respostas para suas perguntas sobre o universo da música, direitos autorais, serviços e muito mais com a SOCINPRO.",
 };
