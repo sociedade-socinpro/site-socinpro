@@ -8,6 +8,7 @@ export async function fetcher(path, init = {}) {
     headers: {
       ...init.headers,
     },
+    next: init.next || { revalidate: 60 },
   });
 
   if (!res.ok) {

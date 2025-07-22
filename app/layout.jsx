@@ -3,37 +3,16 @@ import { roboto } from "@/styles/fonts";
 
 import Providers from "./providers";
 
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { MainSidebar } from "@/components/MainSidebar";
-import { TopBanner } from "@/components/TopBanner";
-import { MainNav } from "@/components/MainNav";
-import { Footer } from "@/components/Footer";
-
 export const metadata = {
-  title:
-    "SOCINPRO - Sociedade Brasileira de Administração e Proteção de Direitos Intelectuais",
-  description:
-    "Desde 1962 defendendo o direito autoral no Brasil. Conheça nossos serviços de administração e proteção de direitos intelectuais.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.className} antialiased`}>
-        <Providers>
-          <SidebarProvider defaultOpen={false}>
-            <MainSidebar />
-            <div className="flex flex-col flex-1 min-h-screen w-screen overflow-x-hidden">
-              <TopBanner />
-              <MainNav />
-              <main className="flex-1 w-full 2xl:max-w-[1920px] mx-auto">
-                {children}
-              </main>
-              <Footer />
-            </div>
-          </SidebarProvider>
-        </Providers>
-      </body>
+      <Providers>
+        <body className={`${roboto.className} antialiased`}>{children}</body>
+      </Providers>
     </html>
   );
 }
