@@ -26,10 +26,7 @@ export default async function Page(props) {
   const size = 9;
 
   const { content: news = [], totalPages } = await fetcher(
-    `/sipa-documentacao/v1/site/publico/noticias/todas?size=${size}&page=${pageNum}`,
-    {
-      next: { revalidate: 60 },
-    }
+    `/sipa-documentacao/v1/site/publico/noticias/todas?size=${size}&page=${pageNum}`
   );
 
   return (

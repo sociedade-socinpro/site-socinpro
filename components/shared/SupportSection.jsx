@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import {
@@ -39,9 +40,11 @@ export const SupportSection = () => {
               </CardDescription>
             </CardHeader>
             <CardFooter>
-              <Button size="lg" className="mx-auto md:mx-0">
-                Acesse o FAQ
-              </Button>
+              <Link href="/faq">
+                <Button size="lg" className="mx-auto md:mx-0">
+                  Acesse o FAQ
+                </Button>
+              </Link>
             </CardFooter>
           </div>
           <Image
