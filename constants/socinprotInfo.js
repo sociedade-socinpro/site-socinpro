@@ -97,6 +97,9 @@ export const distributionRegulationUrl =
 export const membershipRequestFormUrl =
   "https://associado.socinpro.org.br/portal-web/pages/public/solicitacao-filiacao.xhtml?_gl=1*idwi35*_ga*MjAyNTQyODU3OC4xNzQzNTIzNzYw*_ga_HKVS018C8M*czE3NTI3MDYxODEkbzQwJGcxJHQxNzUyNzA2MTg2JGo1NSRsMCRoMA..&_ga=2.52453472.978817970.1752706182-2025428578.1743523760";
 
+export const webConsultationUrl =
+  "https://associado.socinpro.org.br/portal-web/pages/public/consulta.xhtml";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",

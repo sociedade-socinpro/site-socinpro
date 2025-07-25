@@ -1,3 +1,5 @@
+import { webConsultationUrl } from "./socinprotInfo";
+
 export const publicLinks = [
   {
     label: "Institucional",
@@ -14,7 +16,7 @@ export const publicLinks = [
     children: [
       {
         label: "Consulta Web",
-        href: "https://externo.exemplo/consulta",
+        href: webConsultationUrl,
         external: true,
       },
       {
@@ -27,7 +29,6 @@ export const publicLinks = [
       },
       { label: "Declaração de Obras", href: "/transparencia/declaracao-obras" },
       { label: "ISRC", href: "/transparencia/isrc" },
-      { label: "Contratos", href: "/transparencia/contratos" },
     ],
   },
   {
