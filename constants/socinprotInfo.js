@@ -100,6 +100,12 @@ export const membershipRequestFormUrl =
 export const webConsultationUrl =
   "https://associado.socinpro.org.br/portal-web/pages/public/consulta.xhtml";
 
+export const berneConventionUrl = "https://www.wipo.int/treaties/en/ip/berne/";
+
+export const romeConventionUrl = "https://www.wipo.int/treaties/en/ip/rome/";
+
+export const genevaConventionUrl = "https://www.wipo.int/treaties/en/";
+
 export const documents = [
   {
     slug: "governanca-descricoes-cargos",

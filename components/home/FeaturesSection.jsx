@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { InfoCard } from "@/components/InfoCard";
+import { InfoCard } from "@/components/shared/InfoCard";
 import { Button } from "@/components/ui/button";
 
 export const FeaturesSection = () => {

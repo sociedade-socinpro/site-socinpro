@@ -8,14 +8,10 @@ import { SupportSection } from "@/components/shared/SupportSection";
 
 export default async function Home() {
   const allArtists =
-    (await fetcher("/sipa-documentacao/v1/site/publico/artistas/home", {
-      next: { revalidate: 60 },
-    })) || [];
+    (await fetcher("/sipa-documentacao/v1/site/publico/artistas/home")) || [];
 
   const allBanners =
-    (await fetcher("/sipa-documentacao/v1/site/publico/banners/home", {
-      next: { revalidate: 60 },
-    })) || [];
+    (await fetcher("/sipa-documentacao/v1/site/publico/banners/home")) || [];
 
   const artists = allArtists.filter(
     (a) => a?.ativo === "S" && a?.mostrarNaHome === "S"

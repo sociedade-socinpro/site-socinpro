@@ -39,11 +39,9 @@ export const SupportSection = () => {
                 frequentes sobre direitos autorais, filiação e mais.
               </CardDescription>
             </CardHeader>
-            <CardFooter>
+            <CardFooter className="justify-center md:justify-start">
               <Link href="/faq">
-                <Button size="lg" className="mx-auto md:mx-0">
-                  Acesse o FAQ
-                </Button>
+                <Button size="lg">Acesse o FAQ</Button>
               </Link>
             </CardFooter>
           </div>
@@ -51,7 +49,8 @@ export const SupportSection = () => {
             src={MusicProducers}
             alt=""
             aria-hidden="true"
-            className="object-cover group-hover:scale-[101%] transition-transform"
+            className="object-cover group-hover:scale-[101%] transition-transform duration-300"
+            loading="lazy"
           />
         </Card>
       </div>
