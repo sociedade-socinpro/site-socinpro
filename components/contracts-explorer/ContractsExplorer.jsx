@@ -132,7 +132,7 @@ export default function ContractsExplorer({
           </Button>
         </div>
       </div>
-      <div className="border rounded-md aspect-[3/2] overflow-scroll">
+      <div className="border rounded-md aspect-[3/2] overflow-y-auto">
         <MapChart
           ref={mapRef}
           contracts={contracts}
