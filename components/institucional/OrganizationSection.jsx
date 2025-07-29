@@ -11,11 +11,11 @@ export function OrganizationSection() {
       className="flex flex-col lg:flex-row px-[6%] md:px-[14%] group"
       aria-labelledby="estrutura-interna"
     >
-      <div className="w-full mb-5 lg:mb-0 max-h-[200px] max-w-[380px] lg:max-h-none lg:max-w-none mx-auto rounded-lg overflow-hidden">
+      <div className="w-full mb-5 lg:mb-0 max-h-[200px] max-w-[380px] lg:max-h-none lg:max-w-none mx-auto rounded-lg overflow-hidden opacity-0 animate-fade-in">
         <Image
           src={ListenImage}
           alt="Imagem de uma pessoa ouvindo música"
-          className="w-full h-full opacity-0 animate-fade-in group-hover:scale-[102%] transition-transform"
+          className="w-full h-full group-hover:scale-[102%] transition-transform duration-300"
           width={730}
           height={440}
         />

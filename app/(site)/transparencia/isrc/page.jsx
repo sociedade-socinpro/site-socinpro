@@ -7,7 +7,7 @@ import {
 } from "@/constants/socinprotInfo";
 
 import { PageHeader } from "@/components/shared/PageHeader";
-import { OpenDocumentCard } from "@/components/OpenDocumentCard";
+import { OpenDocumentCard } from "@/components/shared/OpenDocumentCard";
 import { SupportSection } from "@/components/shared/SupportSection";
 
 export const metadata = {

@@ -7,10 +7,10 @@ import MicImage from "@/public/images/mic.png";
 export function HowToCollectSection() {
   return (
     <section
-      className="px-[6%] md:px-[14%] group space-y-8 text-center"
+      className="px-[6%] md:px-[14%] space-y-8 text-center"
       aria-labelledby="como-receber-o-direito-autoral"
     >
-      <div className="flex flex-col-reverse 2xl:flex-row">
+      <div className="flex flex-col-reverse 2xl:flex-row group">
         <div className="2xl:flex flex-col justify-center items-start w-full 2xl:text-left lg:pr-8 xl:pr-12">
           <SectionHeader
             id="como-receber-o-direito-autoral"
@@ -41,11 +41,11 @@ export function HowToCollectSection() {
             captadas naquela região.
           </p>
         </div>
-        <div className="w-full mb-5 2xl:mb-0 max-h-[200px] max-w-[380px] xl:max-h-[380px] xl:max-w-[650px] 2xl:max-h-none 2xl:max-w-none mx-auto rounded-xl overflow-hidden">
+        <div className="w-full mb-5 2xl:mb-0 max-h-[200px] max-w-[380px] xl:max-h-[380px] xl:max-w-[650px] 2xl:max-h-none 2xl:max-w-none mx-auto rounded-xl overflow-hidden opacity-0 animate-fade-in">
           <Image
             src={MicImage}
             alt="Imagem de um microfone em um pedestal"
-            className="w-full h-full opacity-0 animate-fade-in group-hover:scale-[102%] transition-transform"
+            className="w-full h-full group-hover:scale-[102%] transition-transform duration-300"
             width={730}
             height={440}
           />
