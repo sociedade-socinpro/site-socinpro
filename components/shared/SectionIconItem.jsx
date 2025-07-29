@@ -1,7 +1,7 @@
 export function SectionIconItem({ title, description, image, icon, ...props }) {
   return (
     <div
-      className="bg-gray-100 p-6 rounded-lg text-center w-full md:max-w-[270px] lg:max-w-[350px] xl:max-w-[440px] opacity-0 animate-fade-in hover:scale-[101%] transition-transform"
+      className="bg-gray-100 p-6 rounded-lg text-center w-full md:max-w-[270px] lg:max-w-[350px] xl:max-w-[440px] opacity-0 animate-fade-in"
       {...props}
     >
       {image && (

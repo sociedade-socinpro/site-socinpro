@@ -75,7 +75,7 @@ const DirectorItem = ({ director, className, ...props }) => {
       )}
       {...props}
     >
-      <div className="h-32 w-32 sm:h-44 sm:w-44 flex items-center justify-center rounded-lg bg-coal-100 overflow-hidden hover:scale-[102%] transition-transform">
+      <div className="h-32 w-32 sm:h-44 sm:w-44 flex items-center justify-center rounded-lg bg-coal-100 overflow-hidden hover:scale-[102%] transition-transform duration-300">
         {hasImage ? (
           <Image
             src={director.image}

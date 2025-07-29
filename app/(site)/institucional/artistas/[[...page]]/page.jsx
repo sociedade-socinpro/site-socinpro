@@ -57,7 +57,7 @@ export default async function Page(props) {
             {artists.map((art, i) => (
               <li
                 key={art.id}
-                className="hover:scale-[101%] transition-transform"
+                className="hover:scale-[101%] transition-transform duration-300"
               >
                 <figure
                   className="relative rounded-lg overflow-hidden opacity-0 animate-slide-up h-[400px]"

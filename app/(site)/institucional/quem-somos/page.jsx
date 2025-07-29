@@ -33,12 +33,14 @@ export default function Page() {
       <div className="py-12 space-y-24">
         <section className="px-[6%] md:px-[14%]">
           <div className="flex flex-col xl:flex-row mb-10 group">
-            <div className="w-full mb-5 xl:mb-0 max-h-[200px] max-w-[380px] lg:max-h-[400px] xl:max-h-none xl:max-w-none mx-auto overflow-hidden rounded-lg">
+            <div
+              className="w-full mb-5 xl:mb-0 max-h-[200px] max-w-[380px] lg:max-h-[400px] xl:max-h-none xl:max-w-none mx-auto overflow-hidden rounded-lg opacity-0 animate-fade-in"
+              style={{ animationDelay: "400ms" }}
+            >
               <Image
                 src={VinylImage}
                 alt="Imagem de um disco de vinil"
-                className="w-full h-full opacity-0 animate-fade-in group-hover:scale-[102%] transition-transform"
-                style={{ animationDelay: "300ms" }}
+                className="w-full h-full group-hover:scale-[102%] transition-transform duration-300"
                 width={730}
                 height={440}
               />

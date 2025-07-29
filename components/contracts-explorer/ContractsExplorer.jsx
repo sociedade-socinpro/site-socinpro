@@ -151,7 +151,7 @@ export default function ContractsExplorer({
       </div>
       {view === "map" && (
         <p
-          className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-bold text-teal opacity-0 animate-fade-in border border-teal rounded-lg p-4"
+          className="flex flex-col sm:flex-row justify-center items-center text-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-bold text-teal opacity-0 animate-fade-in border border-teal rounded-lg p-4"
           style={{ animationDelay: "400ms" }}
         >
           <Info className="shrink-0" />

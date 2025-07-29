@@ -41,7 +41,10 @@ export const NewsSection = async () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <figure className="relative w-full h-56 lg:h-[340px] aspect-square rounded-lg overflow-hidden cursor-pointer hover:scale-[101%] transition-transform">
+                <figure
+                  className="relative w-full h-56 lg:h-[340px] aspect-square rounded-lg overflow-hidden cursor-pointer opacity-0 animate-fade-in"
+                  style={{ animationDelay: `${800 + i * 200}ms` }}
+                >
                   <Image
                     src={
                       post.media_type === "VIDEO"
@@ -54,8 +57,7 @@ export const NewsSection = async () => {
                       post.caption?.slice(0, 100) ??
                       "Imagem do Post do Instagram"
                     }
-                    className="object-cover opacity-0 animate-fade-in"
-                    style={{ animationDelay: `${800 + i * 200}ms` }}
+                    className="object-cover hover:scale-[101%] transition-transform duration-300"
                   />
                 </figure>
               </Link>

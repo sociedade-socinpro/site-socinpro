@@ -15,20 +15,24 @@ export const ArtistsSection = ({ artists }) => {
           {slice.map(
             (artist, index) =>
               artist.imgUrl && (
-                <Image
-                  key={artist.id}
-                  src={artist.imgUrl}
-                  alt={artist.titulo}
-                  height={index === 1 ? 864 : 768}
-                  width={index === 1 ? 780 : 586}
-                  className={cn(
-                    "object-contain z-10 w-full max-w-xs hover:scale-[102%] transition-transform opacity-0 animate-fade-in",
-                    {
-                      "translate-y-2 md:translate-y-5": index === 1,
-                    }
-                  )}
+                <div
+                  className="opacity-0 animate-fade-in z-10 w-full max-w-xs"
                   style={{ animationDelay: `${index * 200 + 1000}ms` }}
-                />
+                >
+                  <Image
+                    key={artist.id}
+                    src={artist.imgUrl}
+                    alt={artist.titulo}
+                    height={index === 1 ? 864 : 768}
+                    width={index === 1 ? 780 : 586}
+                    className={cn(
+                      "object-contain hover:scale-[102%] transition-transform duration-300",
+                      {
+                        "translate-y-2 md:translate-y-5": index === 1,
+                      }
+                    )}
+                  />
+                </div>
               )
           )}
         </div>
