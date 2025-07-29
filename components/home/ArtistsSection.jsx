@@ -18,9 +18,9 @@ export const ArtistsSection = ({ artists }) => {
                 <div
                   className="opacity-0 animate-fade-in z-10 w-full max-w-xs"
                   style={{ animationDelay: `${index * 200 + 1000}ms` }}
+                  key={artist.id}
                 >
                   <Image
-                    key={artist.id}
                     src={artist.imgUrl}
                     alt={artist.titulo}
                     height={index === 1 ? 864 : 768}
