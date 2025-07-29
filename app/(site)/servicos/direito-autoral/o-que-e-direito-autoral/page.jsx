@@ -77,7 +77,7 @@ export default function Page() {
             />
             <SectionIconItem
               title="Direito de execução pública"
-              description=" referente à execução de obras musicais em locais de frequência coletiva. Esse direito é exercido coletivamente pelas sociedades de titulares de música representadas"
+              description="referente à execução de obras musicais em locais de frequência coletiva. Esse direito é exercido coletivamente pelas sociedades de titulares de música representadas"
               icon={<Target />}
               style={{ animationDelay: "1100ms" }}
             />
