@@ -179,3 +179,5 @@ const MapChart = forwardRef(({ contracts, onMapReady, className }, ref) => {
 });
 
 export default memo(MapChart);
+
+MapChart.displayName = "MapChart";
