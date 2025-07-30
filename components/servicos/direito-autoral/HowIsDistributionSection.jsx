@@ -38,12 +38,14 @@ export function HowIsDistributionSection() {
           title="Música Mecânica"
           description="Como há utilização de fonograma, tanto os titulares de direitos de autor quanto os de direitos conexos (intérpretes, músicos e produtores) recebem."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
           title="Música ao Vivo"
           description="Contempla apenas os titulares autorais (compositores e editoras), visto que os demais artistas recebem seus cachês."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1000ms" }}
         />
       </div>

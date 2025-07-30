@@ -43,15 +43,13 @@ export function PartnerFederationsSection() {
             </>
           }
           image={
-            <div className="h-[75px] w-full">
-              <Image
-                src={CisacImage}
-                alt="Logo da CISAC"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="h-full w-full object-contain"
-              />
-            </div>
+            <Image
+              src={CisacImage}
+              alt="Logo da CISAC"
+              className="h-[75px] w-[75px]"
+            />
           }
+          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
@@ -67,15 +65,13 @@ export function PartnerFederationsSection() {
             </>
           }
           image={
-            <div className="h-[75px] w-full">
-              <Image
-                src={ScaprImage}
-                alt="Logo da SCAPR"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <Image
+              src={ScaprImage}
+              alt="Logo da SCAPR"
+              className="h-[75px] w-[215px]"
+            />
           }
+          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
@@ -92,15 +88,13 @@ export function PartnerFederationsSection() {
             </>
           }
           image={
-            <div className="h-[75px] w-full">
-              <Image
-                src={FilaieImage}
-                alt="Logo da FILAIE"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <Image
+              src={FilaieImage}
+              alt="Logo da FILAIE"
+              className="h-[75px] w-[215px]"
+            />
           }
+          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>

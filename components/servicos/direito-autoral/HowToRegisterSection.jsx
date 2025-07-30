@@ -30,26 +30,31 @@ export function HowToRegisterSection() {
         <SectionIconItem
           description="Ser filiado a uma das associações que compõem o Ecad."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
           description="Ter o repertório cadastrado e constantemente atualizado na sua associação."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "900ms" }}
         />
         <SectionIconItem
           description="Ter a música executada e captada pelo Ecad."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
           description="O usuário onde a música foi executada deve pagar direitos autorais ao Ecad."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1100ms" }}
         />
         <SectionIconItem
           description="No caso de shows, o organizador deve enviar o roteiro com as músicas tocadas."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>
@@ -64,18 +69,21 @@ export function HowToRegisterSection() {
           title="Direta"
           description="Baseada em roteiros musicais (shows, cinema, etc.)."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
           title="Indireta"
           description="Utiliza o critério de amostragem (rádio, TV, direitos gerais)."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
           title="Indireta Especial"
           description="Amostragem específica para eventos como Carnaval e Festas Juninas."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>
