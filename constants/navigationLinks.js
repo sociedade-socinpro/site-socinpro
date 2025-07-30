@@ -64,6 +64,14 @@ export const publicLinks = [
     ],
   },
   {
+    label: "Digital",
+    children: [
+      { label: "Distribuição", href: "/digital/distribuicao" },
+      { label: "Execução Pública", href: "/digital/execucao-publica" },
+      { label: "Reprodução", href: "/digital/reproducao" },
+    ],
+  },
+  {
     label: "Comunicação",
     children: [{ label: "Notícias", href: "/comunicacao/noticias" }],
   },

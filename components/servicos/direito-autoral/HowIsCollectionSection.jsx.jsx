@@ -40,16 +40,19 @@ export function HowIsCollectionSection() {
         <SectionIconItem
           description="O pagamento da retribuição autoral deve ser efetuado previamente."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
           description="O usuário fica obrigado a fornecer os dados necessários para o cálculo e para a distribuição."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
           description="Todos os pagamentos são realizados somente através de boleto bancário."
           icon={<Target />}
+          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>

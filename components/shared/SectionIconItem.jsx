@@ -1,7 +1,22 @@
-export function SectionIconItem({ title, description, image, icon, ...props }) {
+import { cn } from "@/utils/utils";
+
+export function SectionIconItem({
+  title,
+  description,
+  image,
+  icon,
+  className,
+  level = 3,
+  ...props
+}) {
+  const Tag = `h${level}`;
+
   return (
     <div
-      className="bg-gray-100 p-6 rounded-lg text-center w-full md:max-w-[270px] lg:max-w-[350px] xl:max-w-[440px] opacity-0 animate-fade-in"
+      className={cn(
+        "flex flex-col justify-center bg-gray-100 p-6 rounded-lg text-center w-full md:max-w-[270px] lg:max-w-[350px] xl:max-w-[440px] opacity-0 animate-fade-in",
+        className
+      )}
       {...props}
     >
       {image && (
@@ -12,10 +27,14 @@ export function SectionIconItem({ title, description, image, icon, ...props }) {
           {icon}
         </div>
       )}
-      <p className="text-base lg:text-xl xl:text-2xl font-medium mb-2">
-        {title}
-      </p>
-      <p className="text-sm lg:text-base">{description}</p>
+      {title && (
+        <Tag className="text-base lg:text-xl xl:text-2xl font-medium">
+          {title}
+        </Tag>
+      )}
+      {description && (
+        <p className="text-sm lg:text-base mt-2">{description}</p>
+      )}
     </div>
   );
 }

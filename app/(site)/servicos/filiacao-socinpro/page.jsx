@@ -48,24 +48,28 @@ export default function Page() {
               title="1. Solicitação Inicial"
               description='Clique no botão "Solicitar Filiação" ao final desta página e preencha um breve formulário de solicitação. Este é o nosso primeiro contato para iniciar seu processo.'
               icon={<Target />}
+              level={4}
               style={{ animationDelay: "400ms" }}
             />
             <SectionIconItem
               title="2. Análise e Convite"
               description="Nossa equipe analisará sua solicitação. Após a aprovação, você receberá um e-mail com um link exclusivo para acessar o formulário cadastral completo."
               icon={<Target />}
+              level={4}
               style={{ animationDelay: "600ms" }}
             />
             <SectionIconItem
               title="3. Cadastro Completo"
               description="Preencha o formulário cadastral com seus dados e repertório. Ao finalizar, você será direcionado para a etapa da assinatura."
               icon={<Target />}
+              level={4}
               style={{ animationDelay: "800ms" }}
             />
             <SectionIconItem
               title="4. Assinatura Digital"
               description="Para finalizar, você fará a assinatura digital do seu contrato de filiação de forma segura através da plataforma D4. Pronto, você faz parte da Socinpro!"
               icon={<Target />}
+              level={4}
               style={{ animationDelay: "1000ms" }}
             />
           </div>

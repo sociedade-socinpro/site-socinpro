@@ -73,18 +73,21 @@ export default function Page() {
               title="Nossa Missão:"
               description="Arrecadar e distribuir direitos autorais e conexos com transparência e eficiência, promovendo a valorização da música e cultura de nossos associados."
               icon={<Target />}
+              level={2}
               style={{ animationDelay: "900ms" }}
             />
             <SectionIconItem
               title="Nossa Visão:"
               description="Ser referência em gestão coletiva no Brasil, reconhecida pela excelência, inovação constante e total compromisso com os titulares."
               icon={<Eye />}
+              level={2}
               style={{ animationDelay: "1200ms" }}
             />
             <SectionIconItem
               title="Nossos Valores:"
               description="Conduta pautada na Ética, Transparência em todas as ações, busca incessante pela Eficiência, defesa da Justiça e a contínua Valorização da Cultura."
               icon={<Gem />}
+              level={2}
               style={{ animationDelay: "1500ms" }}
             />
           </div>
