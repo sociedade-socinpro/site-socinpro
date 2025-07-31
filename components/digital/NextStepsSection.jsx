@@ -36,8 +36,6 @@ export function NextStepsSection() {
             title="1. Envio sem ISRC"
             description="O artista envia a música para a distribuidora sem um ISRC previamente gerado."
             icon={<Image src={MicIcon} alt="" className="h-7 w-7" />}
-            level={4}
-            className="w-full lg:min-h-full"
             style={{ animationDelay: "600ms" }}
           />
           <ArrowRight
@@ -50,8 +48,6 @@ export function NextStepsSection() {
             title="2. Geração do ISRC"
             description="A distribuidora gera um novo código ISRC para a faixa."
             icon={<Image src={NetworkIcon} alt="" className="h-7 w-7" />}
-            level={4}
-            className="w-full lg:min-h-full"
             style={{ animationDelay: "800ms" }}
           />
           <ArrowRight
@@ -64,8 +60,6 @@ export function NextStepsSection() {
             title="3. Distribuição"
             description="A música é distribuída e fica disponível nas plataformas de streaming."
             icon={<Image src={PlayIcon} alt="" className="h-7 w-7" />}
-            level={4}
-            className="w-full lg:min-h-full"
             style={{ animationDelay: "1000ms" }}
           />
           <span className="w-6 xl:hidden" aria-hidden="true" />

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useCallback, useMemo } from "react";
-import { Info } from "lucide-react";
 import dynamic from "next/dynamic";
 
 import { cn } from "@/utils/utils";
@@ -17,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { InfoText } from "../shared/InfoText";
 
 const MapChart = dynamic(() => import("../map-chart/MapChart"), {
   ssr: false,
@@ -150,14 +150,10 @@ export default function ContractsExplorer({
         )}
       </div>
       {view === "map" && (
-        <p
-          className="flex flex-col sm:flex-row justify-center items-center text-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-bold text-teal opacity-0 animate-fade-in border border-teal rounded-lg p-4"
-          style={{ animationDelay: "400ms" }}
-        >
-          <Info className="shrink-0" />
+        <InfoText style={{ animationDelay: "400ms" }}>
           Clique nos países destacados para ver os detalhes da sociedade
           parceira.
-        </p>
+        </InfoText>
       )}
     </div>
   );

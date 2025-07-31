@@ -1,5 +1,13 @@
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const paymentData = [
   {
@@ -84,50 +92,28 @@ export default function Page() {
               Previsão de Pagamentos por Tipo de Uso
             </h2>
             <div
-              className="overflow-x-auto opacity-0 animate-fade-in"
+              className="text-left rounded-md border opacity-0 animate-fade-in"
               style={{ animationDelay: "700ms" }}
             >
-              <div className="inline-block min-w-full rounded-sm border border-gray-200 overflow-hidden">
-                <table className="min-w-full border-collapse text-left text-sm">
-                  <caption className="sr-only">
-                    Previsão de Pagamentos por Tipo de Uso
-                  </caption>
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th
-                        scope="col"
-                        className="px-4 py-2 font-medium text-gray-500 border-b border-gray-200"
-                      >
-                        Origem do Pagamento
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-4 py-2 font-medium text-gray-500 border-b border-gray-200"
-                      >
-                        Meses da Distribuição (Previsão)
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {paymentData.map((row) => (
-                      <tr
-                        key={row.origem}
-                        className="border-b border-gray-200 last:border-b-0"
-                      >
-                        <th
-                          scope="row"
-                          className="px-4 py-2 whitespace-nowrap font-normal"
-                        >
-                          {row.origem}
-                        </th>
-                        <td className="px-4 py-2 whitespace-nowrap">
-                          {row.meses}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <Table>
+                <caption className="sr-only">
+                  Previsão de Pagamentos por Tipo de Uso
+                </caption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Origem do Pagamento</TableHead>
+                    <TableHead>Meses da Distribuição (Previsão)</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {paymentData.map((row) => (
+                    <TableRow key={row.origem}>
+                      <TableCell>{row.origem}</TableCell>
+                      <TableCell>{row.meses}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
           </section>
         </div>

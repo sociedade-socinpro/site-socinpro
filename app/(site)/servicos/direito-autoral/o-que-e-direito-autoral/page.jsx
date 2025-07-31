@@ -61,30 +61,35 @@ export default function Page() {
               title="Direito de edição gráfica"
               description="relativo à exploração comercial de partituras musicais impressas."
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "800ms" }}
             />
             <SectionIconItem
               title="Direito fonomecânico"
               description="referente à exploração comercial de músicas gravadas em suporte material"
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "900ms" }}
             />
             <SectionIconItem
               title="Direito de representação pública"
               description="relaciona-se à exploração comercial de obras teatrais."
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "1000ms" }}
             />
             <SectionIconItem
               title="Direito de execução pública"
               description="referente à execução de obras musicais em locais de frequência coletiva. Esse direito é exercido coletivamente pelas sociedades de titulares de música representadas"
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "1100ms" }}
             />
             <SectionIconItem
               title="Direito de inclusão ou de sincronização"
               description="relativo à autorização para que determinada obra musical ou fonograma faça parte da trilha sonora de uma produção audiovisual."
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "1200ms" }}
             />
           </div>

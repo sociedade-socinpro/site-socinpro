@@ -1,9 +1,10 @@
 import { Target } from "lucide-react";
-import { Info } from "lucide-react";
+
+import { distributionRegulationUrl } from "@/constants/socinprotInfo";
 
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { SectionIconItem } from "@/components/shared/SectionIconItem";
-import { distributionRegulationUrl } from "@/constants/socinprotInfo";
+import { InfoText } from "@/components/shared/InfoText";
 
 export function HowToRegisterSection() {
   return (
@@ -30,31 +31,26 @@ export function HowToRegisterSection() {
         <SectionIconItem
           description="Ser filiado a uma das associações que compõem o Ecad."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
           description="Ter o repertório cadastrado e constantemente atualizado na sua associação."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "900ms" }}
         />
         <SectionIconItem
           description="Ter a música executada e captada pelo Ecad."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
           description="O usuário onde a música foi executada deve pagar direitos autorais ao Ecad."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "1100ms" }}
         />
         <SectionIconItem
           description="No caso de shows, o organizador deve enviar o roteiro com as músicas tocadas."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>
@@ -69,35 +65,31 @@ export function HowToRegisterSection() {
           title="Direta"
           description="Baseada em roteiros musicais (shows, cinema, etc.)."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
           title="Indireta"
           description="Utiliza o critério de amostragem (rádio, TV, direitos gerais)."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
           title="Indireta Especial"
           description="Amostragem específica para eventos como Carnaval e Festas Juninas."
           icon={<Target />}
-          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>
-      <a
-        href={distributionRegulationUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-bold text-teal opacity-0 animate-fade-in border border-teal rounded-lg p-4"
-        style={{ animationDelay: "1400ms" }}
-      >
-        <Info className="shrink-0" />
-        Clique aqui para ler o regulamento de Distribuição do Ecad e aqui para
-        ver as perguntas mais frequentes sobre este assunto.
-      </a>
+      <InfoText style={{ animationDelay: "1400ms" }}>
+        <a
+          href={distributionRegulationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Clique aqui para ler o regulamento de Distribuição do Ecad e aqui para
+          ver as perguntas mais frequentes sobre este assunto.
+        </a>
+      </InfoText>
     </section>
   );
 }
