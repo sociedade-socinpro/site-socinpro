@@ -50,18 +50,21 @@ export default function Page() {
               title="Apresentações ao vivo"
               description="Em shows, concertos, festivais, etc."
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "800ms" }}
             />
             <SectionIconItem
               title="Sonorização ambiental"
               description="Em bares, restaurantes, lojas, etc."
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "1000ms" }}
             />
             <SectionIconItem
               title="Trilhas sonoras"
               description="Em Obras audiovisuais."
               icon={<Target />}
+              level={3}
               style={{ animationDelay: "1200ms" }}
             />
           </div>

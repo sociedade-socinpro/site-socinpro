@@ -24,35 +24,30 @@ export function BenefitsOfCollectingSection() {
           title="Economia"
           description="Nossa taxa de administração é de apenas 10%."
           icon={<Image src={MoneyIcon} alt="" className="h-7 w-7" />}
-          level={4}
           style={{ animationDelay: "400ms" }}
         />
         <SectionIconItem
           title="Praticidade"
           description="Você só realiza o cadastro da obra uma vez, para execução pública e fonomecânico."
           icon={<Image src={TimerIcon} alt="" className="h-7 w-7" />}
-          level={4}
           style={{ animationDelay: "500ms" }}
         />
         <SectionIconItem
           title="Transparência"
           description="Oferecemos relatórios detalhados das distribuições com contabilidade separada por autor."
           icon={<Image src={EyeIcon} alt="" className="h-7 w-7" />}
-          level={4}
           style={{ animationDelay: "600ms" }}
         />
         <SectionIconItem
           title="Atendimento"
           description="Realizamos os cadastros via CWR no sistema da BACKOFFICE, atuamos na resolução de duplicidades e associação de retroativos."
           icon={<Image src={CallIcon} alt="" className="h-7 w-7" />}
-          level={4}
           style={{ animationDelay: "700ms" }}
         />
         <SectionIconItem
           title="Operacional"
           description="Realizamos os cadastros via CWR no sistema da BACKOFFICE, atuamos na resolução de duplicidades e associação de retroativos."
           icon={<Image src={GearsIcon} alt="" className="h-7 w-7" />}
-          level={4}
           style={{ animationDelay: "800ms" }}
         />
       </div>

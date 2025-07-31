@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Info } from "lucide-react";
 
 import { SectionHeader } from "@/components/shared/SectionHeader";
+import { InfoText } from "@/components/shared/InfoText";
 import MicImage from "@/public/images/mic.png";
 
 export function HowToCollectSection() {
@@ -51,15 +51,12 @@ export function HowToCollectSection() {
           />
         </div>
       </div>
-      <p
-        className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-bold text-teal opacity-0 animate-fade-in border border-teal rounded-lg p-4"
-        style={{ animationDelay: "1000ms" }}
-      >
-        <Info className="shrink-0" />A execução da música, somente, não garante
-        que o direito autoral será distribuído. Vários fatores são
-        determinantes, como a captação da música pela amostragem, o envio de
-        planilhas pelas rádios e a correta identificação da obra.
-      </p>
+      <InfoText style={{ animationDelay: "1000ms" }}>
+        A execução da música, somente, não garante que o direito autoral será
+        distribuído. Vários fatores são determinantes, como a captação da música
+        pela amostragem, o envio de planilhas pelas rádios e a correta
+        identificação da obra.
+      </InfoText>
       <p
         className="text-sm md:text-base opacity-0 animate-fade-in xl:px-32"
         style={{ animationDelay: "1200ms" }}

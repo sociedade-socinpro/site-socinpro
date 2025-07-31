@@ -5,31 +5,32 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";
 import { SectionTitle } from "@/components/shared/SectionTitle";
 import { SectionIconItem } from "@/components/shared/SectionIconItem";
-import { RoyaltyPaymentsSection } from "@/components/digital/RoyaltyPaymentsSection";
-import { PublisherPartnershipSection } from "@/components/digital/PublisherPartnershipSection";
-import { BenefitsOfCollectingSection } from "@/components/digital/BenefitsOfCollectingSection";
-import { NextStepsSection } from "@/components/digital/NextStepsSection";
-import { BackstageSection } from "@/components/digital/BackstageSection";
+import { StreamingRoyaltySection } from "@/components/digital/StreamingRoyaltySection";
+import { StreamingPaymentPeriodSection } from "@/components/digital/StreamingPaymentPeriodSection";
+import { HowToReceiveRoyaltiesSection } from "@/components/digital/HowToReceiveRoyaltiesSection";
+import { PlatformValuesSection } from "@/components/digital/PlatformValuesSection";
+import { ImportanceGeneratingISRCSection } from "@/components/digital/ImportanceGeneratingISRCSection";
+import { HowToRegisterIsrcSection } from "@/components/digital/HowToRegisterIsrcSection";
 import PlayIcon from "@/public/icons/play.svg";
-import SocinDigitalIcon from "@/public/icons/socin-digital.svg";
 import NetworkIcon from "@/public/icons/network.svg";
-import UserStarIcon from "@/public/icons/user-star.svg";
+import EcadIcon from "@/public/icons/ecad.svg";
+import LogoIcon from "@/public/icons/logo-green.svg";
 
 export const metadata = {
-  title: "SOCINPRO – Direito Autoral de Reprodução",
+  title: "SOCINPRO – Execução Pública",
   description:
-    "Entenda o direito de Reprodução Digital e como ele garante seus royalties.",
+    "Entenda a arrecadação de direitos autorais e conexos na era digital, com foco no streaming.",
 };
 
 export default function Page() {
   return (
     <>
       <PageHeader
-        title="O que é o Direito Autoral de Reprodução?"
+        title="O Ecad Paga Direitos do Streaming?"
         description={
           <>
-            Entenda o direito de reprodução Digital
-            <br /> e como ele garante seus royalties.
+            Entendendo a Arrecadação
+            <br /> na Era Digital
           </>
         }
       />
@@ -42,17 +43,17 @@ export default function Page() {
             className="text-sm md:text-base opacity-0 animate-fade-in 2xl:px-32"
             style={{ animationDelay: "400ms" }}
           >
-            Também conhecido como Fonomecânico Digital, trata-se de uma
-            modalidade de Direito Autoral que garante o pagamento de royalties
-            para Editoras e autores por cada download ou reprodução em
-            plataformas de streaming. Cada vez que uma música é tocada, o autor
-            tem direito a receber royalties por essas execuções.
+            O streaming é uma das principais fontes de receita do ECAD.
+            Atualmente, o ECAD possui contratos com as principais plataformas
+            digitais (DSPs) do mercado, realizando a arrecadação de direitos
+            autorais e conexos tanto no streaming de audiovisual quanto no de
+            áudio.
           </p>
           <SectionTitle
             id="distribuicao-digital"
             style={{ animationDelay: "600ms" }}
           >
-            Como o Autor Recebe Este Direito?
+            Caminho do Digital na Execução Pública:
           </SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:pl-12">
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
@@ -69,11 +70,13 @@ export default function Page() {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="Socinpro Digital"
+                title="ECAD"
                 image={
-                  <div className="h-12 w-full relative">
-                    <Image src={SocinDigitalIcon} alt="" fill />
-                  </div>
+                  <Image
+                    src={EcadIcon}
+                    alt="Logo do Ecad"
+                    className="h-16 w-16"
+                  />
                 }
                 level={3}
                 style={{ animationDelay: "800ms" }}
@@ -85,8 +88,14 @@ export default function Page() {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="Editora"
-                icon={<Image src={NetworkIcon} alt="" className="h-7 w-7" />}
+                title="SOCINPRO"
+                image={
+                  <Image
+                    src={LogoIcon}
+                    alt="Logo da Socinpro"
+                    className="h-14 w-40"
+                  />
+                }
                 level={3}
                 style={{ animationDelay: "1000ms" }}
               />
@@ -97,29 +106,23 @@ export default function Page() {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
               <SectionIconItem
-                title="Autor"
-                icon={<Image src={UserStarIcon} alt="" className="h-6 w-6" />}
+                title="Distribuidora"
+                icon={<Image src={NetworkIcon} alt="" className="h-6 w-6" />}
                 level={3}
                 style={{ animationDelay: "1200ms" }}
               />
               <span className="w-6 xl:hidden" aria-hidden="true" />
             </div>
           </div>
-          <p
-            className="text-sm md:text-base opacity-0 animate-fade-in 2xl:px-32"
-            style={{ animationDelay: "1200ms" }}
-          >
-            Para receber, o autor precisa celebrar um contrato com alguma
-            Editora que ofereça esse serviço. Essa Editora, por sua vez, precisa
-            estar filiada na UBEM ou na SOCINPRO DIGITAL para o recolhimento e
-            distribuição dos royalties.
-          </p>
         </section>
-        <RoyaltyPaymentsSection />
-        <PublisherPartnershipSection />
-        <BenefitsOfCollectingSection />
-        <NextStepsSection />
-        <BackstageSection />
+        <div className="space-y-16">
+          <StreamingRoyaltySection />
+          <StreamingPaymentPeriodSection />
+        </div>
+        <HowToReceiveRoyaltiesSection />
+        <PlatformValuesSection />
+        <ImportanceGeneratingISRCSection />
+        <HowToRegisterIsrcSection />
         <SupportSection />
       </div>
     </>

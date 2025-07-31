@@ -6,7 +6,7 @@ export function SectionIconItem({
   image,
   icon,
   className,
-  level = 3,
+  level = 4,
   ...props
 }) {
   const Tag = `h${level}`;
@@ -14,7 +14,7 @@ export function SectionIconItem({
   return (
     <div
       className={cn(
-        "flex flex-col justify-center bg-gray-100 p-6 rounded-lg text-center w-full md:max-w-[270px] lg:max-w-[350px] xl:max-w-[440px] opacity-0 animate-fade-in",
+        "flex flex-col justify-center bg-gray-100 p-6 rounded-lg text-center w-full md:max-w-[270px] lg:max-w-[350px] xl:max-w-[440px] sm:min-h-full opacity-0 animate-fade-in",
         className
       )}
       {...props}

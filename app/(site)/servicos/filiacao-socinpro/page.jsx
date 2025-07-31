@@ -1,4 +1,4 @@
-import { Target, Info } from "lucide-react";
+import { Target } from "lucide-react";
 
 import { membershipRequestFormUrl } from "@/constants/socinprotInfo";
 
@@ -7,6 +7,7 @@ import { SupportSection } from "@/components/shared/SupportSection";
 import { SectionIconItem } from "@/components/shared/SectionIconItem";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
+import { InfoText } from "@/components/shared/InfoText";
 
 export const metadata = {
   title: "SOCINPRO – Filição Socinpro",
@@ -48,36 +49,28 @@ export default function Page() {
               title="1. Solicitação Inicial"
               description='Clique no botão "Solicitar Filiação" ao final desta página e preencha um breve formulário de solicitação. Este é o nosso primeiro contato para iniciar seu processo.'
               icon={<Target />}
-              level={4}
               style={{ animationDelay: "400ms" }}
             />
             <SectionIconItem
               title="2. Análise e Convite"
               description="Nossa equipe analisará sua solicitação. Após a aprovação, você receberá um e-mail com um link exclusivo para acessar o formulário cadastral completo."
               icon={<Target />}
-              level={4}
               style={{ animationDelay: "600ms" }}
             />
             <SectionIconItem
               title="3. Cadastro Completo"
               description="Preencha o formulário cadastral com seus dados e repertório. Ao finalizar, você será direcionado para a etapa da assinatura."
               icon={<Target />}
-              level={4}
               style={{ animationDelay: "800ms" }}
             />
             <SectionIconItem
               title="4. Assinatura Digital"
               description="Para finalizar, você fará a assinatura digital do seu contrato de filiação de forma segura através da plataforma D4. Pronto, você faz parte da Socinpro!"
               icon={<Target />}
-              level={4}
               style={{ animationDelay: "1000ms" }}
             />
           </div>
-          <p
-            className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-bold text-teal opacity-0 animate-fade-in border border-teal rounded-lg p-4"
-            style={{ animationDelay: "1200ms" }}
-          >
-            <Info className="shrink-0" />
+          <InfoText style={{ animationDelay: "1200ms" }}>
             <span>
               Para saber mais, acesse:{" "}
               <a
@@ -92,7 +85,7 @@ export default function Page() {
               entre em contato com a representação mais próxima para mais
               informações.
             </span>
-          </p>
+          </InfoText>
           <div>
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-6 opacity-0 animate-fade-in font-medium mb-3">
               Pronto para começar?

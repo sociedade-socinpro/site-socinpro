@@ -49,7 +49,6 @@ export function PartnerFederationsSection() {
               className="h-[75px] w-[75px]"
             />
           }
-          level={4}
           style={{ animationDelay: "800ms" }}
         />
         <SectionIconItem
@@ -71,7 +70,6 @@ export function PartnerFederationsSection() {
               className="h-[75px] w-[215px]"
             />
           }
-          level={4}
           style={{ animationDelay: "1000ms" }}
         />
         <SectionIconItem
@@ -94,7 +92,6 @@ export function PartnerFederationsSection() {
               className="h-[75px] w-[215px]"
             />
           }
-          level={4}
           style={{ animationDelay: "1200ms" }}
         />
       </div>

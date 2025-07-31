@@ -1,5 +1,3 @@
-import { Info } from "lucide-react";
-
 import {
   anydeskSoftwareUrl,
   sisrcSoftwareUpdateUrl,
@@ -9,6 +7,7 @@ import {
 import { PageHeader } from "@/components/shared/PageHeader";
 import { OpenDocumentCard } from "@/components/shared/OpenDocumentCard";
 import { SupportSection } from "@/components/shared/SupportSection";
+import { InfoText } from "@/components/shared/InfoText";
 
 export const metadata = {
   title: "SOCINPRO – Software SISRC e Suporte",
@@ -30,7 +29,7 @@ export default async function Page() {
       <div className="py-12 space-y-24">
         <section className="text-center px-[6%] md:px-[14%]">
           <p
-            className="text-sm md:text-base opacity-0 animate-fade-in"
+            className="text-sm md:text-base opacity-0 animate-fade-in mb-8"
             style={{ animationDelay: "800ms" }}
           >
             O ISRC (International Standard Recording Code ou Código de Gravação
@@ -40,17 +39,16 @@ export default async function Page() {
             distribuição de direitos autorais. A Socinpro auxilia seus
             associados na obtenção do ISRC através do software SISRC.
           </p>
-          <p
-            className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 uppercase text-xs md:text-base font-normal text-teal opacity-0 animate-fade-in mt-8 border border-teal rounded-lg p-4"
+          <InfoText
+            className="font-normal"
             style={{ animationDelay: "1000ms" }}
           >
-            <Info className="shrink-0" />
             <span>
               <strong>Para obter o ISRC através da Socinpro</strong>, é
               fundamental que você seja um artista filiado à nossa associação e
               que seu cadastro esteja completamente atualizado.
             </span>
-          </p>
+          </InfoText>
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 w-fit mx-auto">
             <OpenDocumentCard
               title="Gerador de ISRC (SISRC)"
