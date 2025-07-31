@@ -45,7 +45,8 @@ export function HowToRegisterIsrcSection() {
             <span className="sr-only">Passos no cadastro de fonogramas</span>
             <ol className="list-decimal list-inside">
               <li>
-                <strong>Marque a opção</strong> "ISRC Agregadora" como "Sim".
+                <strong>Marque a opção</strong> &quot;ISRC Agregadora&quot; como
+                &quot;Sim&quot;.
               </li>
               <li>
                 <strong>Selecione a distribuidora</strong> que gerou o ISRC na
