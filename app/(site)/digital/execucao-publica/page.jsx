@@ -55,22 +55,21 @@ export default function Page() {
           >
             Caminho do Digital na Execução Pública:
           </SectionTitle>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:pl-12">
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+          <ol className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:pl-12">
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="Plataforma de Streaming"
+                label="Plataforma de Streaming"
                 icon={<Image src={PlayIcon} alt="" className="h-7 w-7" />}
-                level={3}
                 style={{ animationDelay: "600ms" }}
               />
               <ArrowRight
                 className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
                 style={{ animationDelay: "700ms" }}
               />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+            </li>
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="ECAD"
+                label="ECAD"
                 image={
                   <Image
                     src={EcadIcon}
@@ -78,17 +77,16 @@ export default function Page() {
                     className="h-16 w-16"
                   />
                 }
-                level={3}
                 style={{ animationDelay: "800ms" }}
               />
               <ArrowRight
                 className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
                 style={{ animationDelay: "900ms" }}
               />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+            </li>
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="SOCINPRO"
+                label="SOCINPRO"
                 image={
                   <Image
                     src={LogoIcon}
@@ -96,24 +94,22 @@ export default function Page() {
                     className="h-14 w-40"
                   />
                 }
-                level={3}
                 style={{ animationDelay: "1000ms" }}
               />
               <ArrowRight
                 className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
                 style={{ animationDelay: "1100ms" }}
               />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
+            </li>
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
               <SectionIconItem
-                title="Distribuidora"
+                label="Distribuidora"
                 icon={<Image src={NetworkIcon} alt="" className="h-6 w-6" />}
-                level={3}
                 style={{ animationDelay: "1200ms" }}
               />
               <span className="w-6 xl:hidden" aria-hidden="true" />
-            </div>
-          </div>
+            </li>
+          </ol>
         </section>
         <div className="space-y-16">
           <StreamingRoyaltySection />

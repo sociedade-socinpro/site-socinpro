@@ -41,8 +41,8 @@ export function ImportanceGeneratingISRCSection() {
         >
           O Caminho que Gera Perdas (Problemático):
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 sm:justify-items-center xl:justify-items-start xl:pl-12">
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+        <ol className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 sm:justify-items-center xl:justify-items-start xl:pl-12">
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
             <SectionIconItem
               title="1. Envio sem ISRC"
               description="O artista envia a música para a distribuidora sem um ISRC previamente gerado."
@@ -53,8 +53,8 @@ export function ImportanceGeneratingISRCSection() {
               className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
               style={{ animationDelay: "700ms" }}
             />
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+          </li>
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
             <SectionIconItem
               title="2. Geração do ISRC"
               description="A distribuidora gera um novo código ISRC para a faixa."
@@ -67,8 +67,8 @@ export function ImportanceGeneratingISRCSection() {
               className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
               style={{ animationDelay: "900ms" }}
             />
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 sm:col-span-2 xl:col-span-1 xl:w-[calc(100%-48px)]">
+          </li>
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 sm:col-span-2 xl:col-span-1 xl:w-[calc(100%-48px)]">
             <SectionIconItem
               title="3. Distribuição"
               description="A música é distribuída e fica disponível nas plataformas de streaming."
@@ -76,8 +76,8 @@ export function ImportanceGeneratingISRCSection() {
               style={{ animationDelay: "1000ms" }}
             />
             <span className="w-6 xl:hidden" aria-hidden="true" />
-          </div>
-        </div>
+          </li>
+        </ol>
         <SectionIconItem
           title="Resultado: Perda de Direitos de Execução Pública"
           description="Como o ISRC não foi informado à associação, o Ecad não tem conhecimento sobre a titularidade da gravação e, portanto, não há pagamento dos direitos de execução pública."
@@ -93,8 +93,8 @@ export function ImportanceGeneratingISRCSection() {
         >
           O Caminho Completo (Recomendado):
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 sm:justify-items-center xl:justify-items-start 2xl:pl-12">
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+        <ol className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 sm:justify-items-center xl:justify-items-start 2xl:pl-12">
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
             <SectionIconItem
               title="1. Cadastro"
               description="O artista cadastra o fonograma no portal da Socinpro e gera o código ISRC."
@@ -111,8 +111,8 @@ export function ImportanceGeneratingISRCSection() {
               className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
               style={{ animationDelay: "700ms" }}
             />
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+          </li>
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
             <SectionIconItem
               title="2. Registro no Ecad"
               description="A Socinpro registra o ISRC e a titularidade da gravação no banco de dados do Ecad."
@@ -129,8 +129,8 @@ export function ImportanceGeneratingISRCSection() {
               className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
               style={{ animationDelay: "900ms" }}
             />
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+          </li>
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
             <SectionIconItem
               title="3. Envio com ISRC"
               description="O artista envia a música para a distribuidora, informando o ISRC já existente."
@@ -141,8 +141,8 @@ export function ImportanceGeneratingISRCSection() {
               className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
               style={{ animationDelay: "1100ms" }}
             />
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
+          </li>
+          <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
             <SectionIconItem
               title="4. Distribuição"
               description="A música é distribuída nas plataformas, já com seu ISRC oficial."
@@ -150,8 +150,8 @@ export function ImportanceGeneratingISRCSection() {
               style={{ animationDelay: "1200ms" }}
             />
             <span className="w-6 xl:hidden" aria-hidden="true" />
-          </div>
-        </div>
+          </li>
+        </ol>
         <SectionIconItem
           title="Resultado: Pagamento Garantido"
           description={

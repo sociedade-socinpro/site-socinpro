@@ -30,8 +30,8 @@ export function NextStepsSection() {
           contamos com a sua colaboração para a melhor arrecadação.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 sm:justify-items-center xl:justify-items-start xl:pl-12">
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+      <ol className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 sm:justify-items-center xl:justify-items-start xl:pl-12">
+        <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
           <SectionIconItem
             title="1. Envio sem ISRC"
             description="O artista envia a música para a distribuidora sem um ISRC previamente gerado."
@@ -42,8 +42,8 @@ export function NextStepsSection() {
             className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
             style={{ animationDelay: "700ms" }}
           />
-        </div>
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+        </li>
+        <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
           <SectionIconItem
             title="2. Geração do ISRC"
             description="A distribuidora gera um novo código ISRC para a faixa."
@@ -54,8 +54,8 @@ export function NextStepsSection() {
             className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
             style={{ animationDelay: "900ms" }}
           />
-        </div>
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 sm:col-span-2 xl:col-span-1 xl:w-[calc(100%-48px)]">
+        </li>
+        <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 sm:col-span-2 xl:col-span-1 xl:w-[calc(100%-48px)]">
           <SectionIconItem
             title="3. Distribuição"
             description="A música é distribuída e fica disponível nas plataformas de streaming."
@@ -63,8 +63,8 @@ export function NextStepsSection() {
             style={{ animationDelay: "1000ms" }}
           />
           <span className="w-6 xl:hidden" aria-hidden="true" />
-        </div>
-      </div>
+        </li>
+      </ol>
     </section>
   );
 }

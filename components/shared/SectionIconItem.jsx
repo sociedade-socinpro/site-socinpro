@@ -3,6 +3,7 @@ import { cn } from "@/utils/utils";
 export function SectionIconItem({
   title,
   description,
+  label,
   image,
   icon,
   className,
@@ -26,6 +27,9 @@ export function SectionIconItem({
         <div className="text-white bg-teal rounded-full h-10 w-10 mx-auto mb-4 flex items-center justify-center">
           {icon}
         </div>
+      )}
+      {label && (
+        <p className="text-base lg:text-xl xl:text-2xl font-medium">{label}</p>
       )}
       {title && (
         <Tag className="text-base lg:text-xl xl:text-2xl font-medium">
