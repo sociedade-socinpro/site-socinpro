@@ -36,7 +36,7 @@ export default function Page() {
       <div className="py-12 space-y-24">
         <section
           className="text-center px-[6%] md:px-[14%] space-y-10"
-          aria-labelledby="distribuicao-digital"
+          aria-labelledby="reproducao-digital"
         >
           <p
             className="text-sm md:text-base opacity-0 animate-fade-in 2xl:px-32"
@@ -49,62 +49,58 @@ export default function Page() {
             tem direito a receber royalties por essas execuções.
           </p>
           <SectionTitle
-            id="distribuicao-digital"
+            id="reproducao-digital"
             style={{ animationDelay: "600ms" }}
           >
             Como o Autor Recebe Este Direito?
           </SectionTitle>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:pl-12">
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+          <ol className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:pl-12">
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="Plataforma de Streaming"
+                label="Plataforma de Streaming"
                 icon={<Image src={PlayIcon} alt="" className="h-7 w-7" />}
-                level={3}
                 style={{ animationDelay: "600ms" }}
               />
               <ArrowRight
                 className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
                 style={{ animationDelay: "700ms" }}
               />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+            </li>
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="Socinpro Digital"
+                label="Socinpro Digital"
                 image={
                   <div className="h-12 w-full relative">
                     <Image src={SocinDigitalIcon} alt="" fill />
                   </div>
                 }
-                level={3}
                 style={{ animationDelay: "800ms" }}
               />
               <ArrowRight
                 className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
                 style={{ animationDelay: "900ms" }}
               />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
+            </li>
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6">
               <SectionIconItem
-                title="Editora"
+                label="Editora"
                 icon={<Image src={NetworkIcon} alt="" className="h-7 w-7" />}
-                level={3}
                 style={{ animationDelay: "1000ms" }}
               />
               <ArrowRight
                 className="shrink-0 transform sm:rotate-0 rotate-90 opacity-0 animate-fade-in w-6"
                 style={{ animationDelay: "1100ms" }}
               />
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
+            </li>
+            <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
               <SectionIconItem
-                title="Autor"
+                label="Autor"
                 icon={<Image src={UserStarIcon} alt="" className="h-6 w-6" />}
-                level={3}
                 style={{ animationDelay: "1200ms" }}
               />
               <span className="w-6 xl:hidden" aria-hidden="true" />
-            </div>
-          </div>
+            </li>
+          </ol>
           <p
             className="text-sm md:text-base opacity-0 animate-fade-in 2xl:px-32"
             style={{ animationDelay: "1200ms" }}
