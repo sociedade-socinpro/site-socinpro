@@ -28,8 +28,8 @@ export function RecordProducerRoleSection() {
           >
             O produtor fonográfico é o responsável por financiar a gravação e
             pelo cadastro e distribuição do fonograma. Para as distribuidoras,
-            ele é visto como o "dono da conta" – o selo ou a pessoa física que
-            cria e gerencia uma conta na plataforma para realizar a
+            ele é visto como o &quot;dono da conta&quot; – o selo ou a pessoa
+            física que cria e gerencia uma conta na plataforma para realizar a
             distribuição.
           </p>
         </div>
