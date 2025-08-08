@@ -1,4 +1,4 @@
-import { AudioLines } from "lucide-react";
+import { DynamicIcon } from "lucide-react/dynamic";
 
 import { fetcher } from "@/utils/fetcher";
 
@@ -48,6 +48,7 @@ export default async function Page({ searchParams }) {
               href={`/faq/categorias/${category.id}/perguntas-frequentes`}
               title={category.titulo}
               description={category.descricao}
+              iconName={category.nomeIconeFaq}
               style={{ animationDelay: `${index * 100 + 200}ms` }}
             />
           ))}
@@ -62,7 +63,13 @@ export default async function Page({ searchParams }) {
   );
 }
 
-const CategoryItem = ({ title, description, href, style }) => (
+const CategoryItem = ({
+  title,
+  description,
+  href,
+  style,
+  iconName = "audio-lines",
+}) => (
   <li className="opacity-0 animate-fade-in" style={style} role="listitem">
     <FaqCard href={href}>
       <FaqCardHeader>
@@ -70,7 +77,7 @@ const CategoryItem = ({ title, description, href, style }) => (
           className="flex items-center justify-center p-2 rounded-full bg-coal-200/10"
           aria-hidden="true"
         >
-          <AudioLines />
+          <DynamicIcon name={iconName} />
         </div>
         <FaqCardTitle>{title}</FaqCardTitle>
       </FaqCardHeader>
