@@ -45,16 +45,19 @@ jobs:
         run: |
           tar -tf next-standalone-$GITHUB_SHA.tgz | grep -q 'standalone/server.js' || (echo "server.js não encontrado no pacote" && exit 1)
 
-
-
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region:     ${{ env.AWS_REGION }}
 
-      - name: WhoAmI #Verifica o identificador ARN
+      - name: WhoAmI #Verifica o ARN assumido
         run: aws sts get-caller-identity
+
+      - name: Validate tar content
+        run: |
+          tar -tf next-standalone-$GITHUB_SHA.tgz standalone/server.js >/dev/null 2>&1 \
+            || (echo "server.js não encontrado no pacote" && exit 1)
 
       - name: Upload para S3 (releases/)
         run: aws s3 cp next-standalone-$GITHUB_SHA.tgz s3://$S3_BUCKET/releases/
