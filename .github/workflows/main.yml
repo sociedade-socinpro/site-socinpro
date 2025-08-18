@@ -33,11 +33,19 @@ jobs:
 
       - name: Package artifact
         run: |
-          mkdir -p artifact
+          rm -rf artifact
+          mkdir -p artifact/standalone
           cp -r .next/standalone artifact/
           cp -r .next/static artifact/standalone/.next/static
           cp -r public artifact/standalone/public || true
-          cd artifact && tar -czf next-standalone-$GITHUB_SHA.tgz .
+          # Cria o .tgz no diretório raiz do workspace
+          tar --warning=no-file-changed -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
+
+      - name: Validate tar content
+        run: |
+          tar -tf next-standalone-$GITHUB_SHA.tgz | grep -q 'standalone/server.js' || (echo "server.js não encontrado no pacote" && exit 1)
+
+
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
@@ -49,4 +57,5 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Upload para S3 (releases/)
-        run: aws s3 cp artifact/next-standalone-$GITHUB_SHA.tgz s3://$S3_BUCKET/releases/
+        run: aws s3 cp next-standalone-$GITHUB_SHA.tgz s3://$S3_BUCKET/releases/
+
