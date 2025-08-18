@@ -2,7 +2,7 @@ name: Build & Upload Next
 
 on:
   push:
-    branches: [main]
+    branches: main
 
 permissions:
   id-token: write
@@ -28,6 +28,9 @@ jobs:
           NEXT_PUBLIC_API_URL:  https://staging-gateway.socinpro.org.br
           NEXT_PUBLIC_SITE_URL: https://socinpro.org.br
 
+      - name: Valida se standalone existe
+        run: test -f .next/standalone/server.js || (echo "❌ Standalone not found. Configure output:'standalone' in next.config.mjs" && exit 1)
+
       - name: Package artifact
         run: |
           mkdir -p artifact
@@ -42,5 +45,8 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region:     ${{ env.AWS_REGION }}
 
-      - name: Upload to S3 (releases/)
+      - name: WhoAmI #Verifica o identificador ARN
+        run: aws sts get-caller-identity
+
+      - name: Upload para S3 (releases/)
         run: aws s3 cp artifact/next-standalone-$GITHUB_SHA.tgz s3://$S3_BUCKET/releases/
