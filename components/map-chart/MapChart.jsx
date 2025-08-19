@@ -24,6 +24,9 @@ import { cn } from "@/utils/utils";
 import { Button } from "../ui/button";
 import { CountryMarkers } from "./CountryMarkers";
 
+const DEFAULT_CENTER = [0, 40];
+const DEFAULT_ZOOM = 1;
+
 const MapChart = forwardRef(({ contracts, onMapReady, className }, ref) => {
   const [geography, setGeography] = useState(null);
   const [center, setCenter] = useState([0, 40]);
@@ -60,7 +63,7 @@ const MapChart = forwardRef(({ contracts, onMapReady, className }, ref) => {
 
   useImperativeHandle(ref, () => ({
     focusCountry(iso) {
-      const feat = geography.find(
+      const feat = geography?.find(
         (g) => g.properties["ISO3166-1-Alpha-2"] === iso
       );
       if (!feat) return;
@@ -68,6 +71,11 @@ const MapChart = forwardRef(({ contracts, onMapReady, className }, ref) => {
       setCenter([x, y]);
       setZoom(30);
       setSelectedIso(iso);
+    },
+    focusWorld() {
+      setSelectedIso(null);
+      setCenter(DEFAULT_CENTER);
+      setZoom(DEFAULT_ZOOM);
     },
   }));
 

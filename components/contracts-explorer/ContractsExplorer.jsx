@@ -73,10 +73,14 @@ export default function ContractsExplorer({
     mapRef.current?.focusCountry(iso);
   }, []);
 
-  const handleCountryChange = useCallback((iso) => {
-    setSelectedCountry(iso);
+  const handleCountryChange = useCallback((value) => {
+    setSelectedCountry(value);
     setTimeout(() => {
-      mapRef.current?.focusCountry(iso);
+      if (value === GLOBAL) {
+        mapRef.current?.focusWorld?.();
+      } else {
+        mapRef.current?.focusCountry?.(value);
+      }
     }, 100);
   }, []);
 
@@ -96,7 +100,7 @@ export default function ContractsExplorer({
                 <SelectValue placeholder="Selecione um país" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={GLOBAL}>Mapa global</SelectItem>
+                <SelectItem value={GLOBAL}>MUNDO</SelectItem>
                 {countryOptions.map(({ iso, name }) => (
                   <SelectItem key={iso} value={iso}>
                     {name}
