@@ -36,11 +36,19 @@ jobs:
       - name: Package artifact
         run: |
           rm -rf artifact
-          mkdir -p artifact/standalone
-          cp -r .next/standalone artifact/
-          cp -r .next/static artifact/standalone/.next/static
-          cp -r public artifact/standalone/public || true
-          tar --warning=no-file-changed -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
+          mkdir -p artifact
+          # Copia a pasta standalone inteira corretamente
+          cp -r .next/standalone artifact/      
+          # Copia .next/static se existir
+          if [ -d ".next/static" ]; then
+            cp -r .next/static artifact/standalone/.next/static
+          fi      
+          # Copia public se existir
+          if [ -d "public" ]; then
+            cp -r public artifact/standalone/public
+          fi 
+          # Cria pacote final
+          tar -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
 
       - name: Configura credenciais AWS (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
@@ -57,6 +65,10 @@ jobs:
           chmod 600 id_rsa
           mkdir -p ~/.ssh          
           ssh-keyscan -p "${EC2_SSH_PORT:-22}" "$EC2_HOST" >> ~/.ssh/known_hosts
+
+      - name: Instalacao dependencia
+        run: | 
+         pnpm install 
 
       - name: Deploy remoto com SSH
         env:
