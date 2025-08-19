@@ -59,6 +59,10 @@ jobs:
           tar -tf next-standalone-$GITHUB_SHA.tgz standalone/server.js >/dev/null 2>&1 \
             || (echo "server.js não encontrado no pacote" && exit 1)
 
+      - name: Lista conteúdo do artefato
+        run: |
+          tar -tvf next-standalone-$GITHUB_SHA.tgz | grep server.js
+
       - name: Upload para S3 (releases/)
         run: aws s3 cp next-standalone-$GITHUB_SHA.tgz s3://$S3_BUCKET/releases/
 
@@ -92,7 +96,7 @@ jobs:
           aws s3 cp "s3://$BUCKET/releases/next-standalone-$SHA.tgz" ./
           mkdir -p "$SHA"
           tar -xzf "next-standalone-$SHA.tgz" -C "$SHA"
-          rm -f "next-standalone-$SHA.tgz"
+          #rm -f "next-standalone-$SHA.tgz"
 
           # 3) Atualiza symlink -> current
           ln -sfn "$RELEASES/$SHA" "$CURRENT"
