@@ -87,35 +87,42 @@ export function PlatformValuesSection() {
           conexo por DSP (Digital Service Provider).
         </p>
       </div>
-      <div
-        className="text-left rounded-md border opacity-0 animate-fade-in"
-        style={{ animationDelay: "700ms" }}
-      >
-        <Table>
-          <caption className="sr-only">
-            Valores de referência do ponto autoral e conexo por plataforma (DSP)
-          </caption>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Usuário</TableHead>
-              <TableHead>Identificação Pós-Corte (Média)</TableHead>
-              <TableHead>Linha de Corte (Qtd. Execuções) (Média)</TableHead>
-              <TableHead>Valor Ponto Autoral (Média)</TableHead>
-              <TableHead>Valor do Ponto Conexo (Média)</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {pointsData.map((row) => (
-              <TableRow key={row.usuario}>
-                <TableCell>{row.usuario}</TableCell>
-                <TableCell>{row.identificacaoPosCorte}</TableCell>
-                <TableCell>{row.linhaDeCorte}</TableCell>
-                <TableCell>{row.valorPontoAutoral}</TableCell>
-                <TableCell>{row.valorPontoConexo}</TableCell>
+      <div>
+        <span className="text-sm md:text-base text-gray-500 opacity-0 animate-fade-in">
+          DADOS REFERENTES AO ANO DE 2024 *
+        </span>
+
+        <div
+          className="text-left rounded-md border opacity-0 animate-fade-in"
+          style={{ animationDelay: "700ms" }}
+        >
+          <Table>
+            <caption className="sr-only">
+              Valores de referência do ponto autoral e conexo por plataforma
+              (DSP)
+            </caption>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Usuário</TableHead>
+                <TableHead>Identificação Pós-Corte (Média)</TableHead>
+                <TableHead>Linha de Corte (Qtd. Execuções) (Média)</TableHead>
+                <TableHead>Valor Ponto Autoral (Média)</TableHead>
+                <TableHead>Valor do Ponto Conexo (Média)</TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {pointsData.map((row) => (
+                <TableRow key={row.usuario}>
+                  <TableCell>{row.usuario}</TableCell>
+                  <TableCell>{row.identificacaoPosCorte}</TableCell>
+                  <TableCell>{row.linhaDeCorte}</TableCell>
+                  <TableCell>{row.valorPontoAutoral}</TableCell>
+                  <TableCell>{row.valorPontoConexo}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
       </div>
     </section>
   );

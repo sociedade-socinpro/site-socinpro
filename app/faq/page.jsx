@@ -4,6 +4,8 @@ import Link from "next/link";
 import QrCodeImage from "@/public/images/qr_code.png";
 
 import { Button } from "@/components/ui/button";
+import { Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Page() {
   return (
@@ -31,9 +33,15 @@ export default function Page() {
           className="flex flex-wrap items-center justify-around gap-10 sm:gap-16 2xl:gap-28 opacity-0 animate-fade-in"
           style={{ animationDelay: "600ms" }}
         >
-          <QrCodeItem src={QrCodeImage} title="Filiação Socinpro" />
-          <QrCodeItem src={QrCodeImage} title="Aplicativo Socinpro" />
-          <QrCodeItem src={QrCodeImage} title="Site Socinpro" />
+          <QrCodeItem
+            title="Filiação Socinpro"
+            url="https://associado.socinpro.org.br/portal-web/pages/public/solicitacao-filiacao.xhtml"
+          />
+          <QrCodeItem
+            title="Aplicativo Socinpro"
+            url="http://192.168.5.168:3000/smartappredirect"
+          />
+          <QrCodeItem title="Site Socinpro" url="https://www.socinpro.org.br" />
         </div>
       </div>
       <div
@@ -45,22 +53,36 @@ export default function Page() {
           <br /> ao lado para navegar
         </span>
         <Button size="xl" className="w-full sm:w-auto" asChild>
-          <Link href="/faq/categorias">Ver Perguntas Frequentes (FAQ)</Link>
+          <Link href="/faq/categorias" className="flex items-center gap-2">
+            Comece por Aqui
+            <ArrowRight />
+          </Link>
         </Button>
       </div>
     </section>
   );
 }
 
-const QrCodeItem = ({ title, src }) => (
-  <div className="flex flex-col gap-2 items-center justify-center">
-    <Image
-      src={src}
-      alt={title}
-      className="w-20 h-20 lg:w-24 lg:h-24 2xl:w-32 2xl:h-32"
-    />
-    <span className="text-dust text-sm lg:text-base xl:text-lg font-bold">
-      {title}
-    </span>
-  </div>
-);
+// components/QrCodeItem.tsx
+
+export function QrCodeItem({ title, url }) {
+  const apiSrc = `/api/qr?u=${encodeURIComponent(url)}`;
+  return (
+    <div className="flex flex-col gap-2 items-center justify-center">
+      <Image
+        src={apiSrc}
+        alt={title}
+        width={128}
+        height={128}
+        className="w-20 h-20 lg:w-24 lg:h-24 2xl:w-32 2xl:h-32"
+        priority
+      />
+      <Link
+        href={url}
+        className="text-dust text-sm lg:text-base xl:text-lg font-bold  hover:underline hover:decoration-dust  transition duration-200"
+      >
+        {title}
+      </Link>
+    </div>
+  );
+}

@@ -35,13 +35,13 @@ export const SupportSection = () => {
                 Suporte completo para suas dúvidas.
               </CardTitle>
               <CardDescription className="md:text-left">
-                Consulte nosso FAQ e encontre respostas para as perguntas mais
-                frequentes sobre direitos autorais, filiação e mais.
+                Consulte nosso lista de perguntas e repostas mais frequentes
+                sobre direitos autorais, filiação e mais.
               </CardDescription>
             </CardHeader>
             <CardFooter className="justify-center md:justify-start">
               <Link href="/faq">
-                <Button size="lg">Acesse o FAQ</Button>
+                <Button size="lg">Acesse aqui</Button>
               </Link>
             </CardFooter>
           </div>

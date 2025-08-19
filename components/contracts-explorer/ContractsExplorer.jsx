@@ -27,6 +27,7 @@ const MapChart = dynamic(() => import("../map-chart/MapChart"), {
   ),
 });
 
+const GLOBAL = "__GLOBAL__";
 export default function ContractsExplorer({
   contracts = [],
   className,
@@ -95,6 +96,7 @@ export default function ContractsExplorer({
                 <SelectValue placeholder="Selecione um país" />
               </SelectTrigger>
               <SelectContent>
+                <SelectItem value={GLOBAL}>Mapa global</SelectItem>
                 {countryOptions.map(({ iso, name }) => (
                   <SelectItem key={iso} value={iso}>
                     {name}

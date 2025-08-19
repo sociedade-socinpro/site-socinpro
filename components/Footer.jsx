@@ -41,9 +41,18 @@ export function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 uppercase">
               {publicLinks.map((section) => (
                 <div key={section.label}>
-                  <h4 className="font-semibold text-xs sm:text-sm mb-2">
-                    {section.label}
-                  </h4>
+                  {section.href ? (
+                    <Link
+                      href={section.href}
+                      className="font-semibold text-xs sm:text-sm mb-2"
+                    >
+                      {section.label}
+                    </Link>
+                  ) : (
+                    <h4 className="font-semibold text-xs sm:text-sm mb-2">
+                      {section.label}
+                    </h4>
+                  )}
                   <FooterLinksTree items={section.children} />
                 </div>
               ))}
@@ -87,7 +96,7 @@ export function Footer() {
 function FooterLinksTree({ items }) {
   return (
     <ul className="space-y-1 pl-1">
-      {items.map((item) => (
+      {items?.map((item) => (
         <li key={item.label}>
           {item.href ? (
             <Link

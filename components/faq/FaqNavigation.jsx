@@ -57,12 +57,12 @@ export function FaqNavigation({ categoryId, categoryTitle, faqTitle }) {
                   {crumb.clickable && !isLast ? (
                     <Link
                       href={crumb.href}
-                      className="text-teal underline hover:text-teal-400 transition duration-200"
+                      className="text-coal-200 underline hover:text-teal-400 transition duration-200"
                     >
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="text-coal-200">{crumb.label}</span>
+                    <span className="text-coal-100">{crumb.label}</span>
                   )}
                   {!isLast && (
                     <span

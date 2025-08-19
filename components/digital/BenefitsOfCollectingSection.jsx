@@ -28,7 +28,7 @@ export function BenefitsOfCollectingSection() {
         />
         <SectionIconItem
           title="Praticidade"
-          description="Você só realiza o cadastro da obra uma vez, para execução pública e fonomecânico."
+          description="Você só realiza o cadastro da obra uma vez, para execução pública e reprodução."
           icon={<Image src={TimerIcon} alt="" className="h-7 w-7" />}
           style={{ animationDelay: "500ms" }}
         />

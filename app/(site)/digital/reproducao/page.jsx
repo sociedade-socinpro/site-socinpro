@@ -42,11 +42,11 @@ export default function Page() {
             className="text-sm md:text-base opacity-0 animate-fade-in 2xl:px-32"
             style={{ animationDelay: "400ms" }}
           >
-            Também conhecido como Fonomecânico Digital, trata-se de uma
-            modalidade de Direito Autoral que garante o pagamento de royalties
-            para Editoras e autores por cada download ou reprodução em
-            plataformas de streaming. Cada vez que uma música é tocada, o autor
-            tem direito a receber royalties por essas execuções.
+            Também conhecido como como Direito autoral de Reprodução Digital,
+            trata-se de uma modalidade de Direito Autoral que garante o
+            pagamento de royalties para Editoras e autores por cada download ou
+            reprodução em plataformas de streaming. Cada vez que uma música é
+            tocada, o autor tem direito a receber royalties por essas execuções.
           </p>
           <SectionTitle
             id="reproducao-digital"

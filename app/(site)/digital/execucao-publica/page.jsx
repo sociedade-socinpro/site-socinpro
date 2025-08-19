@@ -12,7 +12,7 @@ import { PlatformValuesSection } from "@/components/digital/PlatformValuesSectio
 import { ImportanceGeneratingISRCSection } from "@/components/digital/ImportanceGeneratingISRCSection";
 import { HowToRegisterIsrcSection } from "@/components/digital/HowToRegisterIsrcSection";
 import PlayIcon from "@/public/icons/play.svg";
-import NetworkIcon from "@/public/icons/network.svg";
+import SongWriter from "@/public/images/songwriter.svg";
 import EcadIcon from "@/public/icons/ecad.svg";
 import LogoIcon from "@/public/icons/logo-green.svg";
 
@@ -103,8 +103,10 @@ export default function Page() {
             </li>
             <li className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:w-[calc(100%-48px)]">
               <SectionIconItem
-                label="Distribuidora"
-                icon={<Image src={NetworkIcon} alt="" className="h-6 w-6" />}
+                label="Autor"
+                image={
+                  <Image src={SongWriter} alt="" className="h-16 w-16  " />
+                }
                 style={{ animationDelay: "1200ms" }}
               />
               <span className="w-6 xl:hidden" aria-hidden="true" />

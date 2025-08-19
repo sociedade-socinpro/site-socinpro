@@ -58,7 +58,22 @@ export function MainNav() {
 }
 
 function NavSection({ item }) {
-  if (!Array.isArray(item.children) || item.children.length === 0) return null;
+  const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+
+  if (!hasChildren) {
+    return (
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild>
+          <Link
+            href={item.href}
+            className=" inline-flex h-9 w-max items-center justify-center rounded-md bg-coal-900 px-4 py-2 uppercase text-white text-sm font-normal transition-colors duration-200 hover:bg-teal/60 hover:text-white focus:bg-teal focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          >
+            {item.label}
+          </Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+    );
+  }
 
   return (
     <NavigationMenuItem>
@@ -71,7 +86,6 @@ function NavSection({ item }) {
     </NavigationMenuItem>
   );
 }
-
 function NavSubmenu({ items }) {
   return items.map((node) => {
     if (Array.isArray(node.children) && node.children.length > 0) {

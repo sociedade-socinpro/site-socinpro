@@ -56,10 +56,15 @@ export const publicLinks = [
           },
         ],
       },
-      {
-        label: "Direito Internacional",
-        href: "/servicos/direito-internacional",
-      },
+      // {
+      //   label: "Digital",
+      //   children: [
+      //     { label: "Distribuição", href: "/digital/distribuicao" },
+      //     { label: "Execução Pública", href: "/digital/execucao-publica" },
+      //     { label: "Reprodução", href: "/digital/reproducao" },
+      //   ],
+      // },
+
       { label: "Filiação Socinpro", href: "/servicos/filiacao-socinpro" },
     ],
   },
@@ -71,6 +76,11 @@ export const publicLinks = [
       { label: "Reprodução", href: "/digital/reproducao" },
     ],
   },
+  {
+    label: "Internacional",
+    href: "/servicos/direito-internacional",
+  },
+
   {
     label: "Comunicação",
     children: [{ label: "Notícias", href: "/comunicacao/noticias" }],
