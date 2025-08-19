@@ -90,8 +90,8 @@ jobs:
           # 2) Baixa e extrai o artefato
           cd "$RELEASES"
           aws s3 cp "s3://$BUCKET/releases/next-standalone-$SHA.tgz" ./
-          mkdir -p "$SHA"
-          tar -xzf "next-standalone-$SHA.tgz" -C "$SHA"
+          mkdir -p "$SHA/standalone"
+          tar -xzf "next-standalone-$SHA.tgz" -C "$SHA/standalone"
           rm -f "next-standalone-$SHA.tgz"
 
           # 3) Atualiza symlink -> current
@@ -99,7 +99,7 @@ jobs:
 
           # 4) Atualiza o /etc/socinpro/site.env
           sudo mkdir -p /etc/socinpro
-          sudo bash -c "cat > /etc/socinpro/site.env" <<EOFENV
+          sudo tee /etc/socinpro/site.env > /dev/null <<EOFENV
           NODE_ENV=production
           PORT=3000
           NODE_OPTIONS=--max_old_space_size=512
@@ -110,7 +110,7 @@ jobs:
           IG_PAGE_ID=${IG_PAGE_ID}
           IG_PAGE_ACCESS_TOKEN=${IG_PAGE_ACCESS_TOKEN}
           EOFENV
-
+          
           sudo chmod 600 /etc/socinpro/site.env
 
           # 5) Garante ecosystem.config.js
