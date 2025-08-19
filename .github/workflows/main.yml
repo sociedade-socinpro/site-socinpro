@@ -55,6 +55,7 @@ jobs:
 
           # Copia .next/static se existir
           if [ -d ".next/static" ]; then
+            mkdir -p artifact/standalone/.next
             cp -r .next/static artifact/standalone/.next/static
           fi      
 
@@ -64,7 +65,8 @@ jobs:
           fi 
 
           # Verificação opcional
-          ls -l artifact/standalone
+          echo "Conteúdo do standalone:"
+          ls -lh artifact/standalone/
 
           # Cria pacote final
           tar -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
