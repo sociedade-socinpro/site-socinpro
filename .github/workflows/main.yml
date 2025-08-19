@@ -20,16 +20,20 @@ jobs:
       EC2_SSH_PORT: ${{ vars.EC2_SSH_PORT }}
     steps:
       - uses: actions/checkout@v4
+      
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
+      - name: Check pnpm version
+        run: pnpm --version
 
-      - run: corepack enable && pnpm i --no-frozen-lockfile
+      - name: Install dependencies        
+      - run: pnpm install --no-frozen-lockfile
 
       - name: Build Next
         run: pnpm build
