@@ -1,4 +1,4 @@
-name: Build & Upload Next
+name: Build & Upload NextJs
 
 on:
   push:
@@ -12,13 +12,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      AWS_REGION: ${{ vars.AWS_REGION }}
-      S3_BUCKET:  ${{ vars.S3_BUCKET }}
+      AWS_REGION:   ${{ vars.AWS_REGION }}
+      S3_BUCKET:    ${{ vars.S3_BUCKET }}
       AWS_ROLE_ARN: ${{ vars.AWS_ROLE_ARN }}
+      EC2_HOST:     ${{ vars.EC2_HOST }}
+      EC2_SSH_USER: ${{ vars.EC2_SSH_USER }}
+      EC2_SSH_PORT: ${{ vars.EC2_SSH_PORT }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
+        with:
+          node-version: 20
 
       - run: corepack enable && pnpm i --frozen-lockfile
 
@@ -38,23 +43,18 @@ jobs:
           cp -r .next/standalone artifact/
           cp -r .next/static artifact/standalone/.next/static
           cp -r public artifact/standalone/public || true
-          # Cria o .tgz no diretório raiz do workspace
           tar --warning=no-file-changed -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
 
-      - name: Validate tar content
-        run: |
-          tar -tf next-standalone-$GITHUB_SHA.tgz | grep -q 'standalone/server.js' || (echo "server.js não encontrado no pacote" && exit 1)
-
-      - name: Configure AWS credentials (OIDC)
+      - name: Configura credenciais AWS (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region:     ${{ env.AWS_REGION }}
 
-      - name: WhoAmI #Verifica o ARN assumido
+      - name: Quem sou eu (verifica o caller da credencial aws)
         run: aws sts get-caller-identity
 
-      - name: Validate tar content
+      - name: Valida conteudo TAR
         run: |
           tar -tf next-standalone-$GITHUB_SHA.tgz standalone/server.js >/dev/null 2>&1 \
             || (echo "server.js não encontrado no pacote" && exit 1)
@@ -62,3 +62,85 @@ jobs:
       - name: Upload para S3 (releases/)
         run: aws s3 cp next-standalone-$GITHUB_SHA.tgz s3://$S3_BUCKET/releases/
 
+      - name: Prepara SSH key
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > id_rsa
+          chmod 600 id_rsa
+          # adiciona a chave do host ao known_hosts para evitar prompt
+          ssh-keyscan -p "${EC2_SSH_PORT:-22}" "$EC2_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy remoto com SSH
+        env:
+          GIT_SHA: ${{ github.sha }}
+          IG_PAGE_ID: ${{ secrets.IG_PAGE_ID }}
+          IG_PAGE_ACCESS_TOKEN: ${{ secrets.IG_PAGE_ACCESS_TOKEN }}
+        run: |
+          ssh -i id_rsa -p "${EC2_SSH_PORT:-22}" "${EC2_SSH_USER}@${EC2_HOST}" 'bash -s' <<'EOSH'
+          set -euo pipefail
+
+          BUCKET="site-socinpro"
+          SHA="'${GIT_SHA}'"
+          RELEASES="/var/www/socinpro/releases"
+          CURRENT="/var/www/socinpro/current"
+
+          # 1) Garante estrutura de diretórios
+          sudo mkdir -p "$RELEASES" "$CURRENT"
+
+          # 2) Baixa e extrai o artefato
+          cd "$RELEASES"
+          aws s3 cp "s3://$BUCKET/releases/next-standalone-$SHA.tgz" ./
+          mkdir -p "$SHA"
+          tar -xzf "next-standalone-$SHA.tgz" -C "$SHA"
+          rm -f "next-standalone-$SHA.tgz"
+
+          # 3) Atualiza symlink -> current
+          ln -sfn "$RELEASES/$SHA" "$CURRENT"
+
+          # 4) Escreve/atualiza o /etc/socinpro/site.env (segredos vindos do GitHub Secrets)
+          sudo mkdir -p /etc/socinpro
+          sudo bash -c 'cat > /etc/socinpro/site.env' <<'EOFENV'
+          NODE_ENV=production
+          PORT=3000
+          NODE_OPTIONS=--max_old_space_size=512
+
+          NEXT_PUBLIC_API_URL=https://staging-gateway.socinpro.org.br
+          NEXT_PUBLIC_SITE_URL=https://socinpro.org.br
+
+          IG_PAGE_ID='${IG_PAGE_ID}'
+          IG_PAGE_ACCESS_TOKEN='${IG_PAGE_ACCESS_TOKEN}'
+          EOFENV
+          sudo chmod 600 /etc/socinpro/site.env
+
+          # 5) Garante ecosystem.config.js
+          if [ ! -f "$CURRENT/ecosystem.config.js" ]; then
+            cat > "$CURRENT/ecosystem.config.js" <<'EOFPM2'
+            module.exports = {
+              apps: [
+                {
+                  name: "socinpro-next",
+                  script: "./standalone/server.js",
+                  cwd: "/var/www/socinpro/current",
+                  instances: 1,
+                  exec_mode: "fork",
+                  env_file: "/etc/socinpro/site.env",
+                  env: { NODE_ENV: "production", PORT: "3000", NODE_OPTIONS: "--max_old_space_size=512" },
+                  max_memory_restart: "300M",
+                  watch: false,
+                  autorestart: true
+                }
+              ]
+            }
+            EOFPM2
+          fi
+
+          # 6) Sobe/rec arrega o PM2 e Nginx
+          if pm2 list | grep -q "socinpro-next"; then
+            pm2 reload "$CURRENT/ecosystem.config.js" --update-env
+          else
+            pm2 start "$CURRENT/ecosystem.config.js"
+            pm2 save
+          fi
+
+          sudo systemctl reload nginx || true
+          echo "Deploy OK: $SHA"
+          EOSH
