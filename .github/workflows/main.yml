@@ -25,6 +25,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Instala pnpm
+        run: npm install -g pnpm
+
       - run: corepack enable && pnpm i --frozen-lockfile
 
       - name: Build Next
