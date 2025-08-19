@@ -21,9 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: pnpm/action-setup@v4
-        with:
-          version: pnpm@9.4.0+sha1.9217c800d4ab947a7aee520242a7b70d64fc7638
+      - name: Instalacao dependencias
+        uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v4
         with:
