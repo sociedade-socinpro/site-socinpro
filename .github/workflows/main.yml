@@ -90,8 +90,8 @@ jobs:
           # 2) Baixa e extrai o artefato
           cd "$RELEASES"
           aws s3 cp "s3://$BUCKET/releases/next-standalone-$SHA.tgz" ./
-          mkdir -p "$SHA/standalone"
-          tar -xzf "next-standalone-$SHA.tgz" -C "$SHA/standalone"
+          mkdir -p "$SHA"
+          tar -xzf "next-standalone-$SHA.tgz" -C "$SHA"
           rm -f "next-standalone-$SHA.tgz"
 
           # 3) Atualiza symlink -> current
