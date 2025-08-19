@@ -23,7 +23,7 @@ jobs:
       
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.4.0
+          version: pnpm@9.4.0+sha1.9217c800d4ab947a7aee520242a7b70d64fc7638
 
       - uses: actions/setup-node@v4
         with:
