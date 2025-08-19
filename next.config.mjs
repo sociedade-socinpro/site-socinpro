@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone', // <- necessário pro deploy em EC2 com Nginx
   images: {
     remotePatterns: [
       {
