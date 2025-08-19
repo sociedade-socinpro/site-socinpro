@@ -33,7 +33,7 @@ jobs:
         run: pnpm --version
 
       - name: Install dependencies        
-      - run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Next
         run: pnpm build
@@ -73,10 +73,6 @@ jobs:
           chmod 600 id_rsa
           mkdir -p ~/.ssh          
           ssh-keyscan -p "${EC2_SSH_PORT:-22}" "$EC2_HOST" >> ~/.ssh/known_hosts
-
-      - name: Instalacao dependencia
-        run: | 
-         pnpm install 
 
       - name: Deploy remoto com SSH
         env:
