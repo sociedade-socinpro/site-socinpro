@@ -110,9 +110,9 @@ jobs:
           sudo npm install -g pnpm
           
           # 2.2) Instala dependências dentro do standalone!
-          cd "$SHA/standalone"
-          pnpm install --production
-          cd "$RELEASES"
+          #cd "$SHA/standalone"
+          #pnpm install --production
+          #cd "$RELEASES"
 
           # 3) Atualiza symlink -> current
           ln -sfn "$RELEASES/$SHA" "$CURRENT"
@@ -136,8 +136,7 @@ jobs:
             apps: [
               {
                 name: "socinpro-next",
-                script: "node_modules/.bin/next",
-                args: "start",
+                script: "server.js",
                 cwd: "/var/www/socinpro/current/standalone",
                 instances: 1,
                 exec_mode: "fork",
