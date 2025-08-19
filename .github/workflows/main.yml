@@ -25,8 +25,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Instala pnpm
-        run: npm install -g pnpm
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - run: corepack enable && pnpm i --frozen-lockfile
 
