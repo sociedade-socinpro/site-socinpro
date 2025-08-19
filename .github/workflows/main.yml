@@ -95,6 +95,11 @@ jobs:
           tar -xzf "next-standalone-$SHA.tgz" -C "$SHA/standalone"
           rm -f "next-standalone-$SHA.tgz"
 
+          # 2.1) Instala dependências dentro do standalone!
+          cd "$SHA/standalone"
+          pnpm install --production
+          cd "$RELEASES"
+
           # 3) Atualiza symlink -> current
           ln -sfn "$RELEASES/$SHA" "$CURRENT"
 
