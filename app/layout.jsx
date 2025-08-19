@@ -5,6 +5,9 @@ import Providers from "./providers";
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
+  icons: {
+    icon: "/favicon.svg", // caminho dentro da pasta public
+  },
 };
 
 export default function RootLayout({ children }) {

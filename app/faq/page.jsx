@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-
-import QrCodeImage from "@/public/images/qr_code.png";
+import { getOrigin } from "@/lib/get-origin";
 
 import { Button } from "@/components/ui/button";
 import { Target } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 
 export default function Page() {
+  const origin = getOrigin(); // ex.: https://socinpro.org.br
+  const smartUrl = `${origin}/smart`;
+
   return (
     <section className="flex flex-col flex-1 py-10 sm:py-16 2xl:py-32 px-6 lg:px-10 gap-6 sm:gap-10 lg:gap-20">
       <div className="flex flex-col flex-1 mx-auto items-center justify-center max-w-xl 2xl:max-w-2xl gap-10 sm:gap-20 2xl:gap-32">
@@ -37,10 +39,7 @@ export default function Page() {
             title="Filiação Socinpro"
             url="https://associado.socinpro.org.br/portal-web/pages/public/solicitacao-filiacao.xhtml"
           />
-          <QrCodeItem
-            title="Aplicativo Socinpro"
-            url="http://192.168.5.168:3000/smartappredirect"
-          />
+          <QrCodeItem title="Aplicativo Socinpro" url={smartUrl} />
           <QrCodeItem title="Site Socinpro" url="https://www.socinpro.org.br" />
         </div>
       </div>

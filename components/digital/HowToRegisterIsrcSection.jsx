@@ -29,16 +29,14 @@ export function HowToRegisterIsrcSection() {
           </p>
         </div>
         <figure
-          className="w-full mx-auto mt-5 2xl:mt-0 opacity-0 animate-fade-in space-y-4"
+          className="w-full mx-auto mt-5 2xl:mt-0  opacity-0 animate-fade-in space-y-4"
           style={{ animationDelay: "800ms" }}
         >
           <picture className="max-h-[45px] max-w-[680px]">
             <Image
               src={RegisterIsrcImage}
               alt="Passos para cadastrar ISRC gerado pela distribuidora no Portal do Associado Socinpro"
-              className="w-full h-auto group-hover:scale-[99%] transition-transform duration-300"
-              width={680}
-              height={45}
+              className="w-full  max-h-[100px]   object-cover group-hover:scale-[150%] transition-transform duration-300"
             />
           </picture>
           <figcaption className="text-center text-xs lg:text-sm text-gray-600">
