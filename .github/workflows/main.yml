@@ -44,8 +44,14 @@ jobs:
         run: |
           rm -rf artifact
           mkdir -p artifact
+          
           # Copia a pasta standalone inteira corretamente
-          cp -r .next/standalone artifact/      
+          cp -r .next/standalone artifact/
+
+          # Copia o package.json e o pnpm-lock.yaml dentro do pacote standalone
+          cp package.json artifact/standalone/
+          cp pnpm-lock.yaml artifact/standalone/
+          
           # Copia .next/static se existir
           if [ -d ".next/static" ]; then
             cp -r .next/static artifact/standalone/.next/static
