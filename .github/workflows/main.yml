@@ -87,6 +87,7 @@ jobs:
 
           # 1) Garante estrutura de diretórios
           sudo mkdir -p "$RELEASES" "$CURRENT"
+          sudo chmod -R 755 "$RELEASES"
 
           # 2) Baixa e extrai o artefato
           cd "$RELEASES"
