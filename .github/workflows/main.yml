@@ -36,18 +36,17 @@ jobs:
       - name: Package artifact
         run: |
           rm -rf artifact
-          mkdir -p artifact/standalone
-          # Copia tudo da standalone
-          cp -r .next/standalone/* artifact/standalone/      
+          mkdir -p artifact
+          # Copia a pasta standalone inteira corretamente
+          cp -r .next/standalone artifact/      
           # Copia .next/static se existir
           if [ -d ".next/static" ]; then
-            mkdir -p artifact/standalone/.next
             cp -r .next/static artifact/standalone/.next/static
           fi      
           # Copia public se existir
           if [ -d "public" ]; then
             cp -r public artifact/standalone/public
-          fi      
+          fi 
           # Cria pacote final
           tar -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
 
