@@ -66,6 +66,10 @@ jobs:
           mkdir -p ~/.ssh          
           ssh-keyscan -p "${EC2_SSH_PORT:-22}" "$EC2_HOST" >> ~/.ssh/known_hosts
 
+      - name: Instalacao dependencia
+        run: | 
+         pnpm install 
+
       - name: Deploy remoto com SSH
         env:
           GIT_SHA: ${{ github.sha }}
