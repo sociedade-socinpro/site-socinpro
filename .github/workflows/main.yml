@@ -21,11 +21,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Instalacao dependencias
+        uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: corepack enable && pnpm i --frozen-lockfile
+      - name: Check pnpm version
+        run: pnpm --version
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Next
         run: pnpm build
@@ -36,17 +43,29 @@ jobs:
       - name: Package artifact
         run: |
           rm -rf artifact
-          mkdir -p artifact
+          mkdir -p artifact/standalone
+
           # Copia a pasta standalone inteira corretamente
-          cp -r .next/standalone artifact/      
+          cp -r .next/standalone/* artifact/standalone/
+
+          # Copia o package.json, o pnpm-lock.yaml e o server.js dentro do pacote standalone
+          cp package.json artifact/standalone/
+          cp pnpm-lock.yaml artifact/standalone/
+          cp server.js artifact/standalone/
+
           # Copia .next/static se existir
           if [ -d ".next/static" ]; then
             cp -r .next/static artifact/standalone/.next/static
           fi      
+
           # Copia public se existir
           if [ -d "public" ]; then
             cp -r public artifact/standalone/public
           fi 
+
+          # Verificação opcional
+          ls -l artifact/standalone
+
           # Cria pacote final
           tar -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
 
@@ -87,6 +106,8 @@ jobs:
 
           # 1) Garante estrutura de diretórios
           sudo mkdir -p "$RELEASES" "$CURRENT"
+          sudo chown -R $(whoami):$(whoami) "$RELEASES"
+          sudo chmod -R 775 "$RELEASES"
 
           # 2) Baixa e extrai o artefato
           cd "$RELEASES"
@@ -94,6 +115,14 @@ jobs:
           mkdir -p "$SHA/standalone"
           tar -xzf "next-standalone-$SHA.tgz" -C "$SHA/standalone"
           rm -f "next-standalone-$SHA.tgz"
+
+          # 2.1) Instalacao do PNPM
+          sudo npm install -g pnpm
+
+          # 2.2) Instala dependências dentro do standalone!
+          cd "$SHA/standalone"
+          pnpm install --production
+          cd "$RELEASES"
 
           # 3) Atualiza symlink -> current
           ln -sfn "$RELEASES/$SHA" "$CURRENT"
@@ -117,8 +146,7 @@ jobs:
             apps: [
               {
                 name: "socinpro-next",
-                script: "node_modules/.bin/next",
-                args: "start",
+                script: "server.js",
                 cwd: "/var/www/socinpro/current/standalone",
                 instances: 1,
                 exec_mode: "fork",
