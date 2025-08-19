@@ -37,10 +37,10 @@ jobs:
         run: |
           rm -rf artifact
           mkdir -p artifact/standalone
-          cp -r .next/standalone artifact/
+          cp -r .next/standalone/* artifact/standalone/
           cp -r .next/static artifact/standalone/.next/static
           cp -r public artifact/standalone/public || true
-          tar --warning=no-file-changed -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
+          tar -czf next-standalone-$GITHUB_SHA.tgz -C artifact standalone
 
       - name: Configura credenciais AWS (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
