@@ -101,7 +101,7 @@ jobs:
           rm -f "next-standalone-$SHA.tgz"
 
           # 2.1) Instalacao do PNPM
-          npm install -g pnpm
+          sudo npm install -g pnpm
           
           # 2.2) Instala dependências dentro do standalone!
           cd "$SHA/standalone"
