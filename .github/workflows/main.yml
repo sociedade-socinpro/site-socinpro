@@ -29,7 +29,7 @@ jobs:
         with:
           version: 8
 
-      - run: corepack enable && pnpm i --frozen-lockfile
+      - run: corepack enable && pnpm i --no-frozen-lockfile
 
       - name: Build Next
         run: pnpm build
