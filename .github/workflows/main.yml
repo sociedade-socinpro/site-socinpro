@@ -21,13 +21,16 @@ jobs:
           ssh-keyscan -p "$EC2_SSH_PORT" "$EC2_HOST" >> ~/.ssh/known_hosts
 
       - name: Executa deploy remoto via SSH
-        env:
-          IG_PAGE_ID: ${{ secrets.IG_PAGE_ID }}
-          IG_PAGE_ACCESS_TOKEN: ${{ secrets.IG_PAGE_ACCESS_TOKEN }}
         run: |
-          ssh -i id_rsa -p "$EC2_SSH_PORT" "$EC2_SSH_USER@$EC2_HOST" bash <<'EOSH'
+          ssh -i id_rsa -p "$EC2_SSH_PORT" \
+          -o StrictHostKeyChecking=no \
+          "$EC2_SSH_USER@$EC2_HOST" \
+          IG_PAGE_ID="${{ secrets.IG_PAGE_ID }}" \
+          IG_PAGE_ACCESS_TOKEN="${{ secrets.IG_PAGE_ACCESS_TOKEN }}" \
+          bash <<'EOSH'
+
           set -euo pipefail
-          
+            
           echo "⚙️ Criando arquivo de variáveis de ambiente"
           echo "IG_PAGE_ID=$IG_PAGE_ID" >> .env
           echo "IG_PAGE_ACCESS_TOKEN=$IG_PAGE_ACCESS_TOKEN" >> .env
