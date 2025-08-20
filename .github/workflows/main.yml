@@ -2,7 +2,7 @@ name: Deploy Next.js via SSH na EC2
 
 on:
   push:
-    branches: [main]
+    branches: main
 
 jobs:
   deploy:
@@ -47,6 +47,10 @@ jobs:
 
           echo "📦 Instalando dependências"
           pnpm install --no-frozen-lockfile
+
+          echo "📦 Exportando variáveis de ambiente"
+          export NEXT_PUBLIC_API_URL=https://staging-gateway.socinpro.org.br
+          export NEXT_PUBLIC_SITE_URL=https://socinpro.org.br
 
           echo "🔧 Gerando build de produção"
           pnpm build
