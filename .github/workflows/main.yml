@@ -33,10 +33,7 @@ jobs:
           echo "IG_PAGE_ACCESS_TOKEN=$IG_PAGE_ACCESS_TOKEN" >> .env
           
           echo "🔄 Iniciando deploy..."
-
-          APP_DIR="/var/www/socinpro"
-          CURRENT="$APP_DIR/current"
-
+          CURRENT="/var/www/socinpro/current"
           if [ ! -d "$CURRENT/.git" ]; then
             echo "📥 Clonando repositório pela primeira vez..."
             git clone https://github.com/sociedade-socinpro/site-socinpro.git "$CURRENT"
@@ -46,7 +43,6 @@ jobs:
             git reset --hard
             git pull origin main
           fi
-
           cd "$CURRENT"
 
           echo "📦 Instalando dependências"
