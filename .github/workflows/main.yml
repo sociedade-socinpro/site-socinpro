@@ -125,7 +125,7 @@ jobs:
 
           # 2.2) Instala dependências dentro do standalone!
           cd "$SHA/standalone"
-          pnpm install --production
+          pnpm install
           cd "$RELEASES"
 
           # 3) Atualiza symlink -> current
