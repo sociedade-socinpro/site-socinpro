@@ -6,7 +6,7 @@ import {
   socinproAddress,
   socinproEmail,
   socinproPhone,
-} from "@/constants/socinprotInfo";
+} from "@/constants/socinproInfo";
 import { publicLinks } from "@/constants/navigationLinks";
 
 import { CopyrightFooter } from "@/components/CopyrightFooter";

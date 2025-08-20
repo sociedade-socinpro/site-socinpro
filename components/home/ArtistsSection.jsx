@@ -11,12 +11,12 @@ export const ArtistsSection = ({ artists }) => {
   return (
     <section aria-labelledby="artistas">
       <div className="flex flex-col md:flex-col-reverse">
-        <div className="grid grid-cols-3 mb-8 md:mt-8 md:mb-5 justify-items-center px-[14%] lg:px-[20%]">
+        <div className="grid grid-cols-3 gap-5 mb-8 md:mt-8 md:mb-5 justify-items-center px-[14%] lg:px-[20%]">
           {slice.map(
             (artist, index) =>
               artist.imgUrl && (
                 <div
-                  className="opacity-0 animate-fade-in z-10 w-full max-w-xs"
+                  className="opacity-0 animate-fade-in z-10 w-full space-x-3 max-w-xs"
                   style={{ animationDelay: `${index * 200 + 1000}ms` }}
                   key={artist.id}
                 >
@@ -26,7 +26,7 @@ export const ArtistsSection = ({ artists }) => {
                     height={index === 1 ? 864 : 768}
                     width={index === 1 ? 780 : 586}
                     className={cn(
-                      "object-contain hover:scale-[102%] transition-transform duration-300 rounded-3xl",
+                      "object-contain hover:scale-[102%]  transition-transform duration-300 rounded-3xl",
                       {
                         "translate-y-2 md:translate-y-5": index === 1,
                       }

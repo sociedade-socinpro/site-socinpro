@@ -7,7 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { SectionTitle } from "@/components/shared/SectionTitle";
-import { locations } from "@/constants/socinprotInfo";
+import { locations } from "@/constants/socinproInfo";
 import TargetSvg from "@/public/icons/target.svg";
 import LocationIcon from "@/public/icons/location.svg";
 import WhatsappIcon from "@/public/icons/whatsapp.svg";

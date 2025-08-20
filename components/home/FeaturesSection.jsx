@@ -15,7 +15,17 @@ export const FeaturesSection = () => {
           description="Gerencie seus direitos autorais, acompanhe relatórios e muito mais."
           className="flex-1 w-full"
         >
-          <Button size="lg">Acesse o portal</Button>
+          <Button size="lg" asChild>
+            <Link
+              href={
+                "https://associado.socinpro.org.br/portal-web/pages/public/access/login.xhtml"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acesse o portal
+            </Link>
+          </Button>
         </InfoCard>
         <InfoCard
           title="Aplicativo SOCINPRO"

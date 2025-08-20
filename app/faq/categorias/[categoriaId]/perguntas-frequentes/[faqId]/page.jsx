@@ -30,7 +30,16 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { faqId } = await params;
-
+  function toEmbedUrl(watchUrl) {
+    try {
+      const url = new URL(watchUrl);
+      const id = url.searchParams.get("v");
+      if (!id) return null;
+      return `https://www.youtube.com/embed/${id}`;
+    } catch {
+      return null;
+    }
+  }
   const data = await fetcher(
     `/sipa-documentacao/v1/site/publico/faqs/${faqId}`
   );
@@ -94,12 +103,9 @@ export default async function Page({ params }) {
               </div>
             )}
             {data.videoUrl && (
-              <figure
-                className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden shadow-lg opacity-0 animate-fade-in"
-                style={{ animationDelay: "400ms" }}
-              >
+              <figure className="…">
                 <iframe
-                  src={data.videoUrl}
+                  src={toEmbedUrl(data.videoUrl)}
                   title={data.titulo}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

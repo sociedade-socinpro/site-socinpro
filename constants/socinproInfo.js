@@ -17,8 +17,15 @@ export const socialLinks = [
     ),
   },
   {
-    href: "https://x.com/socinpro",
-    icon: <Image src="/icons/x.svg" alt="X" width={20} height={20} />,
+    href: "https://www.instagram.com/socinpro/",
+    icon: (
+      <Image
+        src="/icons/instagram.svg"
+        alt="Instagram"
+        width={20}
+        height={20}
+      />
+    ),
   },
   {
     href: "https://www.linkedin.com/company/socinpro",

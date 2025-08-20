@@ -1,6 +1,6 @@
 import { Target } from "lucide-react";
 
-import { distributionRegulationUrl } from "@/constants/socinprotInfo";
+import { distributionRegulationUrl } from "@/constants/socinproInfo";
 
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { SectionIconItem } from "@/components/shared/SectionIconItem";

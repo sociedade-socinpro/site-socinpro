@@ -1,7 +1,7 @@
 import { User } from "lucide-react";
 import Image from "next/image";
 
-import { socinproDirectors } from "@/constants/socinprotInfo";
+import { socinproDirectors } from "@/constants/socinproInfo";
 import { cn } from "@/utils/utils";
 
 import { Button } from "@/components/ui/button";

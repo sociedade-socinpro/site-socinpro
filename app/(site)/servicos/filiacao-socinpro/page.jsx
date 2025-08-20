@@ -1,6 +1,6 @@
 import { Target } from "lucide-react";
 
-import { membershipRequestFormUrl } from "@/constants/socinprotInfo";
+import { membershipRequestFormUrl } from "@/constants/socinproInfo";
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";

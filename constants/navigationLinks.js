@@ -1,4 +1,4 @@
-import { webConsultationUrl } from "./socinprotInfo";
+import { webConsultationUrl } from "./socinproInfo";
 
 export const publicLinks = [
   {

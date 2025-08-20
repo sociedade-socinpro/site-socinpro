@@ -1,4 +1,4 @@
-import { receivableCreditsUrl } from "@/constants/socinprotInfo";
+import { receivableCreditsUrl } from "@/constants/socinproInfo";
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import { OpenDocumentCard } from "@/components/shared/OpenDocumentCard";

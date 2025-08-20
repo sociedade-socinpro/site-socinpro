@@ -1,4 +1,4 @@
-import { socinproOrganizationalChartUrl } from "@/constants/socinprotInfo";
+import { socinproOrganizationalChartUrl } from "@/constants/socinproInfo";
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";

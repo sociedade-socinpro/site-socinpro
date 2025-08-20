@@ -1,4 +1,4 @@
-import { socinproArticlesOfAssociationUrl } from "@/constants/socinprotInfo";
+import { socinproArticlesOfAssociationUrl } from "@/constants/socinproInfo";
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SupportSection } from "@/components/shared/SupportSection";

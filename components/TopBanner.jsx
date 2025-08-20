@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { socialLinks } from "@/constants/socinprotInfo";
+import { socialLinks } from "@/constants/socinproInfo";
 
 export function TopBanner() {
   return (

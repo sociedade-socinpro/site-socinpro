@@ -3,11 +3,10 @@ import Link from "next/link";
 import { getOrigin } from "@/lib/get-origin";
 
 import { Button } from "@/components/ui/button";
-import { Target } from "lucide-react";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export default function Page() {
-  const origin = getOrigin(); // ex.: https://socinpro.org.br
+export default async function Page() {
+  const origin = await getOrigin(); // ex.: https://socinpro.org.br
   const smartUrl = `${origin}/smart`;
 
   return (
@@ -54,7 +53,6 @@ export default function Page() {
         <Button size="xl" className="w-full sm:w-auto" asChild>
           <Link href="/faq/categorias" className="flex items-center gap-2">
             Comece por Aqui
-            <ArrowRight />
           </Link>
         </Button>
       </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { socinproInstagramUrl } from "@/constants/socinprotInfo";
+import { socinproInstagramUrl } from "@/constants/socinproInfo";
 
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";

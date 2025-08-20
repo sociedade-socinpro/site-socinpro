@@ -4,7 +4,7 @@ import {
   berneConventionUrl,
   genevaConventionUrl,
   romeConventionUrl,
-} from "@/constants/socinprotInfo";
+} from "@/constants/socinproInfo";
 
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { OpenDocumentCard } from "../shared/OpenDocumentCard";

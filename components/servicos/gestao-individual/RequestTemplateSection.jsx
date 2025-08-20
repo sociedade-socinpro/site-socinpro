@@ -1,4 +1,4 @@
-import { individualManagementModelUrl } from "@/constants/socinprotInfo";
+import { individualManagementModelUrl } from "@/constants/socinproInfo";
 
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";

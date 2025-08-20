@@ -1,5 +1,5 @@
 import { fetchPdfAndReturnResponse } from "@/utils/pdfHandler";
-import { socinproOrganizationalChartUrl } from "@/constants/socinprotInfo";
+import { socinproOrganizationalChartUrl } from "@/constants/socinproInfo";
 
 export async function GET() {
   return await fetchPdfAndReturnResponse(

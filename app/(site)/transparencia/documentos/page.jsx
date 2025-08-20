@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { cn } from "@/utils/utils";
-import { documents } from "@/constants/socinprotInfo";
+import { documents } from "@/constants/socinproInfo";
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import { OpenDocumentCard } from "@/components/shared/OpenDocumentCard";

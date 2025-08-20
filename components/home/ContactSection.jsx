@@ -5,7 +5,7 @@ import {
   socinproAddress,
   socinproEmail,
   socinproPhone,
-} from "@/constants/socinprotInfo";
+} from "@/constants/socinproInfo";
 
 export const ContactSection = () => {
   return (
