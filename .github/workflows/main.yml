@@ -1,0 +1,119 @@
+name: Deploy Next.js via SSH na EC2
+
+on:
+  push:
+    branches: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      EC2_HOST: ${{ vars.EC2_HOST }}
+      EC2_SSH_USER: ${{ vars.EC2_SSH_USER }}
+      EC2_SSH_PORT: ${{ vars.EC2_SSH_PORT || 22 }}
+
+    steps:
+      - name: Prepara chave SSH e hosts
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > id_rsa
+          chmod 600 id_rsa
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "$EC2_SSH_PORT" "$EC2_HOST" >> ~/.ssh/known_hosts
+
+      - name: Executa deploy remoto via SSH
+        run: |
+          ssh -i id_rsa -p "$EC2_SSH_PORT" \
+          -o StrictHostKeyChecking=no \
+          "$EC2_SSH_USER@$EC2_HOST" \
+          IG_PAGE_ID="${{ secrets.IG_PAGE_ID }}" \
+          IG_PAGE_ACCESS_TOKEN="${{ secrets.IG_PAGE_ACCESS_TOKEN }}" \
+          bash <<'EOSH'
+
+          set -euo pipefail
+            
+          echo "⚙️ Criando arquivo de variáveis de ambiente"
+          echo "IG_PAGE_ID=$IG_PAGE_ID" >> .env
+          echo "IG_PAGE_ACCESS_TOKEN=$IG_PAGE_ACCESS_TOKEN" >> .env
+          
+          echo "🔄 Iniciando deploy..."
+          # Define o diretório base da aplicação
+          APP_DIR="/var/www/socinpro"
+          CURRENT="$APP_DIR/current"
+
+          # Garante que o diretório base exista e tenha as permissões corretas
+          # Isso é feito ANTES de qualquer operação git
+          echo "🔧 Preparando diretório de deploy: $APP_DIR"
+          sudo mkdir -p "$APP_DIR"
+          sudo chown -R $USER:$USER "$APP_DIR"
+
+          # Clona ou atualiza o repositório
+          if [ ! -d "$CURRENT/.git" ]; then
+            echo "📥 Clonando repositório pela primeira vez..."
+            git clone https://github.com/sociedade-socinpro/site-socinpro.git "$CURRENT"
+          else
+            echo "🔃 Atualizando repositório..."
+            cd "$CURRENT"
+            git reset --hard
+            git pull origin main
+          fi
+
+          cd "$CURRENT"
+
+          echo "📦 Instalando dependências"
+          pnpm install --no-frozen-lockfile
+
+          echo "📦 Exportando variáveis de ambiente"
+          export NEXT_PUBLIC_API_URL=https://staging-gateway.socinpro.org.br
+          export NEXT_PUBLIC_SITE_URL=https://socinpro.org.br
+
+          echo "🔧 Gerando build de produção"
+          pnpm build
+
+          echo "⚙️ Criando arquivo de variáveis de ambiente"
+          sudo tee /etc/socinpro/site.env > /dev/null <<EOFENV
+          NODE_ENV=production
+          PORT=3000
+          NODE_OPTIONS=--max_old_space_size=512
+          NEXT_PUBLIC_API_URL=https://staging-gateway.socinpro.org.br
+          NEXT_PUBLIC_SITE_URL=https://socinpro.org.br
+          IG_PAGE_ID=${IG_PAGE_ID}
+          IG_PAGE_ACCESS_TOKEN=${IG_PAGE_ACCESS_TOKEN}
+          EOFENV
+          sudo chmod 600 /etc/socinpro/site.env
+
+          echo "📝 Gerando ecosystem.config.js"
+          cat > ecosystem.config.js <<'EOFPM2'
+          module.exports = {
+            apps: [
+              {
+                name: "socinpro-next",
+                script: "server.js",
+                instances: 1,
+                exec_mode: "fork",
+                env_file: "/etc/socinpro/site.env",
+                env: {
+                  NODE_ENV: "production",
+                  PORT: "3000",
+                  NODE_OPTIONS: "--max_old_space_size=512"
+                },
+                max_memory_restart: "300M",
+                watch: false,
+                autorestart: true
+              }
+            ]
+          }
+          EOFPM2
+
+          echo "🚀 Reiniciando aplicação com PM2"
+          if pm2 list | grep -q "socinpro-next"; then
+            pm2 reload ecosystem.config.js --update-env
+          else
+            pm2 start ecosystem.config.js
+            pm2 save
+          fi
+
+          echo "🔁 Reload Nginx (caso necessário)"
+          sudo systemctl reload nginx || true
+
+          echo "✅ Deploy finalizado com sucesso!"
+          EOSH
