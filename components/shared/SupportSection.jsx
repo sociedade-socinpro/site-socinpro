@@ -40,7 +40,7 @@ export const SupportSection = () => {
               </CardDescription>
             </CardHeader>
             <CardFooter className="justify-center md:justify-start">
-              <Link href="/faq">
+              <Link href="/faq" target="_blank">
                 <Button size="lg">Acesse aqui</Button>
               </Link>
             </CardFooter>

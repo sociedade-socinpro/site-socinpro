@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { getOrigin } from "@/lib/get-origin";
 
 import { InfoCard } from "@/components/shared/InfoCard";
 import { Button } from "@/components/ui/button";
 
-export const FeaturesSection = () => {
+export const FeaturesSection = async () => {
+  const origin = await getOrigin(); // ex.: https://socinpro.org.br
+  const smartUrl = `${origin}/smart`;
+
   return (
     <>
       <div
@@ -32,7 +36,9 @@ export const FeaturesSection = () => {
           description="Leve o controle dos seus direitos autorais para onde quiser."
           className="flex-1 w-full"
         >
-          <Button size="lg">Faça o download do aplicativo</Button>
+          <Button size="lg" asChild>
+            <Link href={smartUrl}>Faça o download do aplicativo</Link>
+          </Button>
         </InfoCard>
       </div>
       <div className="relative flex justify-center items-center px-[6%] md:px-[14%] py-16">

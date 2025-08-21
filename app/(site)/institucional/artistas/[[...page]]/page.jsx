@@ -80,10 +80,27 @@ export default async function Page(props) {
                     }}
                   />
                   <figcaption
-                    className="absolute bottom-2 left-4 text-white opacity-0 animate-fade-in"
+                    className="absolute flex justify-between bottom-2 w-full  pr-6 left-4 text-white opacity-0 animate-fade-in"
                     style={{ animationDelay: `${i * 200 + 400}ms` }}
                   >
                     {art.titulo}
+                    <Link
+                      href={`https://instagram.com/${art.instagram}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 flex items-center gap-1 hover:underline"
+                    >
+                      <Image
+                        src="/icons/instagram.svg"
+                        alt="Instagram"
+                        width={18}
+                        height={18}
+                        className="inline-block bg-white rounded-full"
+                      />
+                      <span className="lowercase text-white">
+                        {art.instagram}
+                      </span>
+                    </Link>
                   </figcaption>
                 </figure>
               </li>
