@@ -26,7 +26,7 @@ export const ArtistsSection = ({ artists }) => {
                     height={index === 1 ? 864 : 768}
                     width={index === 1 ? 780 : 586}
                     className={cn(
-                      "object-contain hover:scale-[105%] border md:scale-125 transition-transform duration-300 rounded-3xl",
+                      "object-contain hover:scale-[105%] border  transition-transform duration-300 rounded-3xl",
                       {
                         "translate-y-2 md:translate-y-5": index === 1,
                       }
